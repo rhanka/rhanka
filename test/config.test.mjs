@@ -18,5 +18,7 @@ test('normalizeConfig keeps unique identities and repo overrides', () => {
     'fabien.antoine@gmail.com',
     'fabien.antoine@m4x.org'
   ]);
+  assert.deepEqual(config.includeRepos, ['rhanka/graphify']);
+  assert.deepEqual(config.excludeRepos, ['rhanka/archive']);
   assert.equal(config.windowWeeks, 52);
 });
