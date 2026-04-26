@@ -1,0 +1,9 @@
+{
+  "identities": {
+    "logins": ["rhanka"],
+    "emails": ["fabien.antoine@m4x.org", "fabien.antoine@gmail.com"]
+  },
+  "includeRepos": [],
+  "excludeRepos": [],
+  "windowWeeks": 52
+}
