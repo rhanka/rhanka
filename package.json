@@ -6,7 +6,6 @@
     "node": ">=20"
   },
   "scripts": {
-    "test": "node --test",
-    "stats": "node scripts/github-profile-stats.mjs --write"
+    "test": "node --test"
   }
 }
