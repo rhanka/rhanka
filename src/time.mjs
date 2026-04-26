@@ -18,6 +18,7 @@ export function buildRollingWindow(nowIso, weekCount) {
 
   return {
     start: weeks[0],
+    // Inclusive upper bound: last millisecond of the week following the final entry.
     end: new Date(
       new Date(weeks[weeks.length - 1]).getTime() + 7 * 24 * 60 * 60 * 1000 - 1
     ).toISOString(),
