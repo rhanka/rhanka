@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   buildListCommitsPath,
   dedupeCommitsBySha,
+  fetchCommitDetails,
   toCollectedCommit
 } from '../src/collect-commits.mjs';
 
@@ -87,4 +88,32 @@ test('buildListCommitsPath builds the commits rest path with filters and paginat
     }),
     '/repos/rhanka/graphify/commits?sha=main&author=graph-author&since=2026-04-01T00%3A00%3A00.000Z&until=2026-04-30T23%3A59%3A59.999Z&per_page=100&page=3'
   );
+});
+
+test('fetchCommitDetails requests the full REST commit payload for a sha', async () => {
+  const commit = await fetchCommitDetails('rhanka', 'graphify', 'abc123', 'secret-token', async (url, init) => {
+    assert.equal(url, 'https://api.github.com/repos/rhanka/graphify/commits/abc123');
+    assert.equal(init.headers.Authorization, 'Bearer secret-token');
+
+    return {
+      ok: true,
+      async json() {
+        return {
+          sha: 'abc123',
+          stats: {
+            additions: 5,
+            deletions: 3
+          }
+        };
+      }
+    };
+  });
+
+  assert.deepEqual(commit, {
+    sha: 'abc123',
+    stats: {
+      additions: 5,
+      deletions: 3
+    }
+  });
 });
