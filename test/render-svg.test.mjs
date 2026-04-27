@@ -71,6 +71,13 @@ test('renderTopReposTable renders the expected markdown table', () => {
   );
 });
 
+test('renderTopReposTable renders a fallback when there are no repos', () => {
+  assert.equal(
+    renderTopReposTable([]),
+    '_Aucune activite sur les 4 dernieres semaines._'
+  );
+});
+
 test('replaceStatsBlock swaps the full stats block and preserves outer content', () => {
   const readme = [
     '# Profile',

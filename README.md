@@ -9,6 +9,5 @@
 
 ### Top 5 des 4 dernieres semaines
 
-| Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
-| --- | --- | --- | --- |
+_Aucune activite sur les 4 dernieres semaines._
 <!-- github-profile-stats:end -->
