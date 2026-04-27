@@ -43,6 +43,11 @@ function buildEmptyStats(config) {
   return buildStats(config, { generatedAt, window, commits: [] });
 }
 
+function warningMessage(message, error) {
+  const detail = error instanceof Error ? error.message : String(error);
+  return `[github-profile-stats] ${message}: ${detail}`;
+}
+
 function splitRepoName(repo) {
   const [owner, name] = repo.split('/');
 
@@ -109,18 +114,75 @@ async function listCommitsForAuthor({
   return commits;
 }
 
-async function buildLiveStats(config, token) {
-  const generatedAt = new Date().toISOString();
+export function mergeDiscoveredRepoEntries(discoveredRepoEntries) {
+  const merged = new Map();
+
+  for (const entry of discoveredRepoEntries) {
+    const existing = merged.get(entry.repo);
+
+    if (!existing) {
+      merged.set(entry.repo, {
+        repo: entry.repo,
+        defaultBranch: entry.defaultBranch ?? null
+      });
+      continue;
+    }
+
+    if (existing.defaultBranch === null && entry.defaultBranch !== null) {
+      existing.defaultBranch = entry.defaultBranch;
+    }
+  }
+
+  return [...merged.values()].sort((left, right) => left.repo.localeCompare(right.repo));
+}
+
+export async function discoverReposForLogins({
+  logins,
+  from,
+  to,
+  token,
+  discoverReposImpl = discoverRepos,
+  warn = console.warn
+}) {
+  const discoveredRepoEntries = [];
+
+  for (const login of [...new Set(logins)]) {
+    const repos = await discoverReposImpl({
+      login,
+      from,
+      to,
+      token
+    });
+
+    if (repos.length === 100) {
+      warn(
+        `[github-profile-stats] repo discovery for login "${login}" returned 100 repositories; results may be truncated`
+      );
+    }
+
+    discoveredRepoEntries.push(...repos);
+  }
+
+  return mergeDiscoveredRepoEntries(discoveredRepoEntries);
+}
+
+export async function buildLiveStats(config, token, {
+  nowIso = new Date().toISOString(),
+  warn = console.warn,
+  discoverReposForLoginsImpl = discoverReposForLogins,
+  fetchDefaultBranchImpl = fetchDefaultBranch,
+  listCommitsForAuthorImpl = listCommitsForAuthor,
+  fetchCommitDetailsImpl = fetchCommitDetails
+} = {}) {
+  const generatedAt = nowIso;
   const window = buildRollingWindow(generatedAt, config.windowWeeks);
-  const primaryLogin = config.identities.logins[0] ?? null;
-  const discoveredRepoEntries = primaryLogin
-    ? await discoverRepos({
-        login: primaryLogin,
-        from: window.start,
-        to: window.end,
-        token
-      })
-    : [];
+  const discoveredRepoEntries = await discoverReposForLoginsImpl({
+    logins: config.identities.logins,
+    from: window.start,
+    to: window.end,
+    token,
+    warn
+  });
   const repoBranchByName = new Map(
     discoveredRepoEntries.map(({ repo, defaultBranch }) => [repo, defaultBranch])
   );
@@ -134,20 +196,42 @@ async function buildLiveStats(config, token) {
 
   for (const candidateRepo of candidateRepos) {
     const { owner, name } = splitRepoName(candidateRepo);
-    const defaultBranch =
-      repoBranchByName.get(candidateRepo) ?? (await fetchDefaultBranch(owner, name, token));
+    let defaultBranch = repoBranchByName.get(candidateRepo) ?? null;
+
+    if (defaultBranch === null) {
+      try {
+        defaultBranch = await fetchDefaultBranchImpl(owner, name, token);
+      } catch (error) {
+        warn(
+          warningMessage(
+            `skipping repo "${candidateRepo}" while fetching default branch`,
+            error
+          )
+        );
+        continue;
+      }
+    }
 
     for (const author of authors) {
-      const commits = await listCommitsForAuthor({
-        owner,
-        repo: name,
-        branch: defaultBranch,
-        author,
-        since: window.start,
-        until: window.end,
-        token
-      });
-      collectedCommits.push(...commits);
+      try {
+        const commits = await listCommitsForAuthorImpl({
+          owner,
+          repo: name,
+          branch: defaultBranch,
+          author,
+          since: window.start,
+          until: window.end,
+          token
+        });
+        collectedCommits.push(...commits);
+      } catch (error) {
+        warn(
+          warningMessage(
+            `skipping author "${author}" for repo "${candidateRepo}" while listing commits`,
+            error
+          )
+        );
+      }
     }
   }
 
@@ -155,8 +239,18 @@ async function buildLiveStats(config, token) {
 
   for (const commit of dedupeCommitsBySha(collectedCommits)) {
     const { owner, name } = splitRepoName(commit.repo);
-    const details = await fetchCommitDetails(owner, name, commit.sha, token);
-    hydratedCommits.push(toAggregatedCommit(toCollectedCommit(commit.repo, details), commit));
+
+    try {
+      const details = await fetchCommitDetailsImpl(owner, name, commit.sha, token);
+      hydratedCommits.push(toAggregatedCommit(toCollectedCommit(commit.repo, details), commit));
+    } catch (error) {
+      warn(
+        warningMessage(
+          `skipping commit "${commit.sha}" in repo "${commit.repo}" while fetching details`,
+          error
+        )
+      );
+    }
   }
 
   return buildStats(config, {
