@@ -1,3 +1,4 @@
+import { githubRest } from './github-api.mjs';
 import { weekStartUtc } from './time.mjs';
 
 export function dedupeCommitsBySha(commits) {
@@ -16,13 +17,14 @@ export function dedupeCommitsBySha(commits) {
   return deduped;
 }
 
-export function toCollectedCommit(repo, apiCommit) {
+export function toCollectedCommit(repo, apiCommit, sourceAuthor = null) {
   const author = apiCommit.commit?.author ?? null;
   const authoredAt = author?.date ?? null;
 
   return {
     sha: apiCommit.sha,
     repo,
+    ...(sourceAuthor === null ? {} : { sourceAuthor }),
     authorName: author?.name ?? null,
     authorEmail: author?.email ?? null,
     authoredAt,
@@ -49,4 +51,8 @@ export function buildListCommitsPath({
   params.set('page', String(page));
 
   return `/repos/${owner}/${repo}/commits?${params.toString()}`;
+}
+
+export async function fetchCommitDetails(owner, repo, sha, token, fetchImpl = fetch) {
+  return githubRest(`/repos/${owner}/${repo}/commits/${sha}`, token, fetchImpl);
 }
