@@ -3,6 +3,10 @@ function formatDate(isoDate) {
 }
 
 export function renderTopReposTable(rows) {
+  if (rows.length === 0) {
+    return '_Aucune activite sur les 4 dernieres semaines._';
+  }
+
   const lines = [
     '| Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |',
     '| --- | --- | --- | --- |'
