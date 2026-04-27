@@ -7,6 +7,6 @@
   },
   "scripts": {
     "test": "node --test",
-    "stats": "node scripts/github-profile-stats.mjs"
+    "stats": "node scripts/github-profile-stats.mjs --write"
   }
 }
