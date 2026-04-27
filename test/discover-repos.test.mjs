@@ -1,6 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mergeCandidateRepos } from '../src/discover-repos.mjs';
+import {
+  contributionReposFromGraphql,
+  mergeCandidateRepos
+} from '../src/discover-repos.mjs';
 
 test('mergeCandidateRepos merges GraphQL repos with manual includes and excludes', () => {
   const repos = mergeCandidateRepos({
@@ -13,4 +16,19 @@ test('mergeCandidateRepos merges GraphQL repos with manual includes and excludes
     'matchID-project/deces-dataprep',
     'rhanka/graphify'
   ]);
+});
+
+test('contributionReposFromGraphql returns repository names from a minimal GraphQL payload', () => {
+  const repos = contributionReposFromGraphql({
+    user: {
+      contributionsCollection: {
+        commitContributionsByRepository: [
+          { repository: { nameWithOwner: 'rhanka/rhanka' } },
+          { repository: { nameWithOwner: 'rhanka/graphify' } }
+        ]
+      }
+    }
+  });
+
+  assert.deepEqual(repos, ['rhanka/graphify', 'rhanka/rhanka']);
 });
