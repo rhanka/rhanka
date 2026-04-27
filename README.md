@@ -3,9 +3,9 @@
 <!-- github-profile-stats:start -->
 ## GitHub activity
 
-![Weekly commits](generated/weekly-commits.svg)
+![Commits hebdomadaires](generated/weekly-commits.svg)
 
-![Weekly lines](generated/weekly-lines.svg)
+![Lignes modifiees hebdomadaires](generated/weekly-lines.svg)
 
 ### Top 5 des 4 dernieres semaines
 
