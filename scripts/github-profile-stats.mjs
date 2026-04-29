@@ -48,6 +48,41 @@ function warningMessage(message, error) {
   return `[github-profile-stats] ${message}: ${detail}`;
 }
 
+export async function mapWithConcurrency(limit, items, worker) {
+  if (!Number.isInteger(limit) || limit < 1) {
+    throw new RangeError(`Concurrency limit must be a positive integer, got ${limit}`);
+  }
+
+  const results = new Array(items.length);
+  let nextIndex = 0;
+
+  async function runWorker() {
+    while (nextIndex < items.length) {
+      const currentIndex = nextIndex;
+      nextIndex += 1;
+      results[currentIndex] = await worker(items[currentIndex], currentIndex);
+    }
+  }
+
+  const workerCount = Math.min(limit, items.length);
+
+  await Promise.all(Array.from({ length: workerCount }, () => runWorker()));
+
+  return results;
+}
+
+export function resolveGithubToken(env = process.env) {
+  const profileStatsToken = typeof env.PROFILE_STATS_TOKEN === 'string'
+    ? env.PROFILE_STATS_TOKEN.trim()
+    : '';
+
+  if (profileStatsToken) {
+    return profileStatsToken;
+  }
+
+  return typeof env.GITHUB_TOKEN === 'string' ? env.GITHUB_TOKEN.trim() : '';
+}
+
 function splitRepoName(repo) {
   const [owner, name] = repo.split('/');
 
@@ -172,7 +207,10 @@ export async function buildLiveStats(config, token, {
   discoverReposForLoginsImpl = discoverReposForLogins,
   fetchDefaultBranchImpl = fetchDefaultBranch,
   listCommitsForAuthorImpl = listCommitsForAuthor,
-  fetchCommitDetailsImpl = fetchCommitDetails
+  fetchCommitDetailsImpl = fetchCommitDetails,
+  listAuthorsConcurrency = 4,
+  hydrateCommitsConcurrency = 10,
+  mapWithConcurrencyImpl = mapWithConcurrency
 } = {}) {
   const generatedAt = nowIso;
   const window = buildRollingWindow(generatedAt, config.windowWeeks);
@@ -192,7 +230,7 @@ export async function buildLiveStats(config, token, {
     excludeRepos: config.excludeRepos
   });
   const authors = [...new Set([...config.identities.logins, ...config.identities.emails])];
-  const collectedCommits = [];
+  const repoAuthorTasks = [];
 
   for (const candidateRepo of candidateRepos) {
     const { owner, name } = splitRepoName(candidateRepo);
@@ -213,17 +251,34 @@ export async function buildLiveStats(config, token, {
     }
 
     for (const author of authors) {
+      repoAuthorTasks.push({
+        owner,
+        repo: name,
+        candidateRepo,
+        branch: defaultBranch,
+        author
+      });
+    }
+  }
+
+  const collectedCommits = (
+    await mapWithConcurrencyImpl(listAuthorsConcurrency, repoAuthorTasks, async ({
+      owner,
+      repo,
+      candidateRepo,
+      branch,
+      author
+    }) => {
       try {
-        const commits = await listCommitsForAuthorImpl({
+        return await listCommitsForAuthorImpl({
           owner,
-          repo: name,
-          branch: defaultBranch,
+          repo,
+          branch,
           author,
           since: window.start,
           until: window.end,
           token
         });
-        collectedCommits.push(...commits);
       } catch (error) {
         warn(
           warningMessage(
@@ -231,27 +286,33 @@ export async function buildLiveStats(config, token, {
             error
           )
         );
+        return [];
       }
-    }
-  }
+    })
+  ).flat();
 
-  const hydratedCommits = [];
+  const hydratedCommits = (
+    await mapWithConcurrencyImpl(
+      hydrateCommitsConcurrency,
+      dedupeCommitsBySha(collectedCommits),
+      async (commit) => {
+        const { owner, name } = splitRepoName(commit.repo);
 
-  for (const commit of dedupeCommitsBySha(collectedCommits)) {
-    const { owner, name } = splitRepoName(commit.repo);
-
-    try {
-      const details = await fetchCommitDetailsImpl(owner, name, commit.sha, token);
-      hydratedCommits.push(toAggregatedCommit(toCollectedCommit(commit.repo, details), commit));
-    } catch (error) {
-      warn(
-        warningMessage(
-          `skipping commit "${commit.sha}" in repo "${commit.repo}" while fetching details`,
-          error
-        )
-      );
-    }
-  }
+        try {
+          const details = await fetchCommitDetailsImpl(owner, name, commit.sha, token);
+          return toAggregatedCommit(toCollectedCommit(commit.repo, details), commit);
+        } catch (error) {
+          warn(
+            warningMessage(
+              `skipping commit "${commit.sha}" in repo "${commit.repo}" while fetching details`,
+              error
+            )
+          );
+          return null;
+        }
+      }
+    )
+  ).filter((commit) => commit !== null);
 
   return buildStats(config, {
     generatedAt,
@@ -279,7 +340,7 @@ export async function main({
   env = process.env
 } = {}) {
   const writeMode = argv.includes('--write');
-  const token = env.PROFILE_STATS_TOKEN ?? env.GITHUB_TOKEN ?? '';
+  const token = resolveGithubToken(env);
 
   if (writeMode && !token) {
     throw new Error('PROFILE_STATS_TOKEN or GITHUB_TOKEN is required for live API collection');
