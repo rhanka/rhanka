@@ -26,6 +26,7 @@ jobs:
 
       - name: Refresh profile stats
         env:
+          PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/github-profile-stats.mjs --write
 

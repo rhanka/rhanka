@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import {
   buildLiveStats,
   discoverReposForLogins,
-  main
+  main,
+  mapWithConcurrency,
+  resolveGithubToken
 } from '../scripts/github-profile-stats.mjs';
 import { toCollectedCommit } from '../src/collect-commits.mjs';
 
@@ -20,6 +22,33 @@ test('github-profile-stats write mode requires a GitHub token for live collectio
       }),
     /PROFILE_STATS_TOKEN or GITHUB_TOKEN is required for live API collection/
   );
+});
+
+test('resolveGithubToken falls back to GITHUB_TOKEN when PROFILE_STATS_TOKEN is empty', () => {
+  assert.equal(
+    resolveGithubToken({
+      PROFILE_STATS_TOKEN: '',
+      GITHUB_TOKEN: 'fallback-token'
+    }),
+    'fallback-token'
+  );
+});
+
+test('mapWithConcurrency runs more than one task in parallel without exceeding the limit', async () => {
+  let activeTasks = 0;
+  let maxActiveTasks = 0;
+
+  const results = await mapWithConcurrency(2, [1, 2, 3, 4], async (value) => {
+    activeTasks += 1;
+    maxActiveTasks = Math.max(maxActiveTasks, activeTasks);
+    await new Promise((resolve) => setTimeout(resolve, 20));
+    activeTasks -= 1;
+    return value * 10;
+  });
+
+  assert.deepEqual(results, [10, 20, 30, 40]);
+  assert.equal(maxActiveTasks > 1, true);
+  assert.equal(maxActiveTasks <= 2, true);
 });
 
 test('discoverReposForLogins merges repos across configured logins and keeps any available default branch', async () => {
@@ -180,10 +209,10 @@ test('buildLiveStats warns and skips failing repos, failing identities, and fail
       lines4w: 5
     }
   ]);
-  assert.deepEqual(warnings, [
+  assert.deepEqual([...warnings].sort(), [
     '[github-profile-stats] skipping author "rhanka" for repo "org/bad-list" while listing commits: 502 listing failed for rhanka',
     '[github-profile-stats] skipping author "rhanka@example.com" for repo "org/bad-list" while listing commits: 502 listing failed for rhanka@example.com',
     '[github-profile-stats] skipping repo "org/no-branch" while fetching default branch: 403 branch lookup denied',
     '[github-profile-stats] skipping commit "bad-sha" in repo "org/good" while fetching details: 500 detail lookup failed'
-  ]);
+  ].sort());
 });
