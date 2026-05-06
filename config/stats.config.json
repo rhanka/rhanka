@@ -1,0 +1,24 @@
+{
+  "identities": {
+    "logins": ["rhanka"],
+    "emails": ["fabien.antoine@m4x.org", "fabien.antoine@gmail.com"]
+  },
+  "includeRepos": [],
+  "excludeRepos": [],
+  "windowWeeks": 52,
+  "lineFilters": {
+    "excludePathGlobs": [
+      "**/.graphify/**",
+      "**/graph.json",
+      "**/GRAPH_REPORT.md",
+      "**/package-lock.json",
+      "**/pnpm-lock.yaml",
+      "**/yarn.lock",
+      "**/*.lock",
+      "**/*.generated.*",
+      "**/dist/**",
+      "**/build/**",
+      "**/coverage/**"
+    ]
+  }
+}
