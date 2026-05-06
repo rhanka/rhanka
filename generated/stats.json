@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T03:24:15.538Z",
+  "generatedAt": "2026-05-06T07:15:30.655Z",
   "window": {
     "start": "2025-05-11T00:00:00.000Z",
     "end": "2026-05-09T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "count": 156
+      "count": 174
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 33372,
-      "deletions": 12649,
-      "net": 20723
+      "additions": 253270,
+      "deletions": 12683,
+      "net": 240587
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 246795,
-      "deletions": 102510,
-      "net": 144285
+      "additions": 469119,
+      "deletions": 102544,
+      "net": 366575
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-05-06T03:13:20Z",
-      "commits4w": 9,
-      "lines4w": 1576
+      "lastActivityAt": "2026-05-06T05:54:37Z",
+      "commits4w": 15,
+      "lines4w": 2798
     },
     {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-06T03:08:18Z",
-      "commits4w": 53,
-      "lines4w": 33532
-    },
-    {
-      "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-06T03:05:54Z",
-      "commits4w": 229,
-      "lines4w": 74486
+      "repo": "rhanka/public-domaine-mystery-sagas-pack",
+      "lastActivityAt": "2026-05-06T05:10:11Z",
+      "commits4w": 3,
+      "lines4w": 210762
     },
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-06T03:05:05Z",
-      "commits4w": 20,
-      "lines4w": 5129
+      "lastActivityAt": "2026-05-06T04:30:16Z",
+      "commits4w": 25,
+      "lines4w": 5975
     },
     {
-      "repo": "rhanka/entropic",
-      "lastActivityAt": "2026-05-06T02:56:27Z",
-      "commits4w": 97,
-      "lines4w": 21331
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-06T04:17:41Z",
+      "commits4w": 56,
+      "lines4w": 37053
+    },
+    {
+      "repo": "rhanka/rhanka",
+      "lastActivityAt": "2026-05-06T03:55:11Z",
+      "commits4w": 1,
+      "lines4w": 3581
     }
   ]
 }
