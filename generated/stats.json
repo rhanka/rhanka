@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T07:15:30.655Z",
+  "generatedAt": "2026-05-07T07:20:36.935Z",
   "window": {
     "start": "2025-05-11T00:00:00.000Z",
     "end": "2026-05-09T23:59:59.999Z",
@@ -266,15 +266,15 @@
     },
     {
       "weekStart": "2026-04-19T00:00:00.000Z",
-      "count": 307
+      "count": 313
     },
     {
       "weekStart": "2026-04-26T00:00:00.000Z",
-      "count": 92
+      "count": 95
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "count": 174
+      "count": 210
     }
   ],
   "weeklyLines": [
@@ -574,21 +574,21 @@
     },
     {
       "weekStart": "2026-04-19T00:00:00.000Z",
-      "additions": 54046,
-      "deletions": 6823,
-      "net": 47223
+      "additions": 54357,
+      "deletions": 6961,
+      "net": 47396
     },
     {
       "weekStart": "2026-04-26T00:00:00.000Z",
-      "additions": 10856,
-      "deletions": 2132,
-      "net": 8724
+      "additions": 10880,
+      "deletions": 2142,
+      "net": 8738
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 253270,
-      "deletions": 12683,
-      "net": 240587
+      "additions": 259410,
+      "deletions": 13133,
+      "net": 246277
     }
   ],
   "weeklyLinesRaw": [
@@ -888,53 +888,53 @@
     },
     {
       "weekStart": "2026-04-19T00:00:00.000Z",
-      "additions": 389710,
-      "deletions": 159572,
-      "net": 230138
+      "additions": 403631,
+      "deletions": 159712,
+      "net": 243919
     },
     {
       "weekStart": "2026-04-26T00:00:00.000Z",
-      "additions": 21262,
-      "deletions": 14677,
-      "net": 6585
+      "additions": 21342,
+      "deletions": 14691,
+      "net": 6651
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 469119,
-      "deletions": 102544,
-      "net": 366575
+      "additions": 506807,
+      "deletions": 130914,
+      "net": 375893
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-05-06T05:54:37Z",
-      "commits4w": 15,
-      "lines4w": 2798
-    },
-    {
-      "repo": "rhanka/public-domaine-mystery-sagas-pack",
-      "lastActivityAt": "2026-05-06T05:10:11Z",
-      "commits4w": 3,
-      "lines4w": 210762
-    },
-    {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-06T04:30:16Z",
-      "commits4w": 25,
-      "lines4w": 5975
+      "lastActivityAt": "2026-05-07T04:24:51Z",
+      "commits4w": 29,
+      "lines4w": 7326
+    },
+    {
+      "repo": "rhanka/openerp",
+      "lastActivityAt": "2026-05-07T04:21:39Z",
+      "commits4w": 21,
+      "lines4w": 3759
     },
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-06T04:17:41Z",
-      "commits4w": 56,
-      "lines4w": 37053
+      "lastActivityAt": "2026-05-07T04:18:09Z",
+      "commits4w": 59,
+      "lines4w": 38492
     },
     {
-      "repo": "rhanka/rhanka",
-      "lastActivityAt": "2026-05-06T03:55:11Z",
-      "commits4w": 1,
-      "lines4w": 3581
+      "repo": "matchID-project/matchID",
+      "lastActivityAt": "2026-05-07T03:18:12Z",
+      "commits4w": 304,
+      "lines4w": 19134
+    },
+    {
+      "repo": "rhanka/sentech-forge",
+      "lastActivityAt": "2026-05-07T02:22:14Z",
+      "commits4w": 3,
+      "lines4w": 291
     }
   ]
 }
