@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-09T18:50:38.375Z",
+  "generatedAt": "2026-05-09T19:50:48.878Z",
   "window": {
     "start": "2025-05-11T00:00:00.000Z",
     "end": "2026-05-09T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "count": 290
+      "count": 294
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 74746,
-      "deletions": 13929,
-      "net": 60817
+      "additions": 75505,
+      "deletions": 13999,
+      "net": 61506
     }
   ],
   "weeklyLinesRaw": [
@@ -900,12 +900,30 @@
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 547332,
-      "deletions": 132455,
-      "net": 414877
+      "additions": 548108,
+      "deletions": 132542,
+      "net": 415566
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-09T19:48:27Z",
+      "commits4w": 74,
+      "lines4w": 44084
+    },
+    {
+      "repo": "rhanka/sentech-forge",
+      "lastActivityAt": "2026-05-09T19:46:15Z",
+      "commits4w": 6,
+      "lines4w": 538
+    },
+    {
+      "repo": "rhanka/rhanka",
+      "lastActivityAt": "2026-05-09T18:53:24Z",
+      "commits4w": 4,
+      "lines4w": 3006
+    },
     {
       "repo": "rhanka/openerp",
       "lastActivityAt": "2026-05-09T15:18:14Z",
@@ -913,28 +931,10 @@
       "lines4w": 11058
     },
     {
-      "repo": "rhanka/rhanka",
-      "lastActivityAt": "2026-05-09T15:00:18Z",
-      "commits4w": 3,
-      "lines4w": 2992
-    },
-    {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-09T14:46:32Z",
-      "commits4w": 72,
-      "lines4w": 43415
-    },
-    {
       "repo": "rhanka/opendb",
       "lastActivityAt": "2026-05-09T14:44:23Z",
       "commits4w": 27,
       "lines4w": 13359
-    },
-    {
-      "repo": "rhanka/sentech-forge",
-      "lastActivityAt": "2026-05-09T14:13:51Z",
-      "commits4w": 5,
-      "lines4w": 392
     }
   ]
 }
