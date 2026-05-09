@@ -310,7 +310,7 @@ test('buildLiveStats filters noisy file paths from line totals while preserving 
     excludeRepos: [],
     windowWeeks: 1,
     lineFilters: {
-      excludePathGlobs: ['**/.graphify/**', '**/package-lock.json']
+      excludePathGlobs: ['**/.graphify/**', '**/*.json', '**/*.txt']
     }
   };
 
@@ -342,13 +342,14 @@ test('buildLiveStats filters noisy file paths from line totals while preserving 
         }
       },
       stats: {
-        additions: 110,
-        deletions: 15
+        additions: 115,
+        deletions: 16
       },
       files: [
         { filename: 'src/index.ts', additions: 10, deletions: 2 },
         { filename: '.graphify/graph.json', additions: 90, deletions: 10 },
-        { filename: 'package-lock.json', additions: 10, deletions: 3 }
+        { filename: 'data/config.json', additions: 10, deletions: 3 },
+        { filename: 'corpus/story.txt', additions: 5, deletions: 1 }
       ]
     })
   });
@@ -362,9 +363,9 @@ test('buildLiveStats filters noisy file paths from line totals while preserving 
   });
   assert.deepEqual(stats.weeklyLinesRaw.at(-1), {
     weekStart: '2026-04-26T00:00:00.000Z',
-    additions: 110,
-    deletions: 15,
-    net: 95
+    additions: 115,
+    deletions: 16,
+    net: 99
   });
   assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 12);
 });
