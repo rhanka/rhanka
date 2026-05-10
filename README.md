@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/surch | 2026-05-10 | 86 | 49035 |
-| rhanka/opendb | 2026-05-10 | 35 | 17676 |
+| rhanka/spa-transpose-cv | 2026-05-10 | 7 | 3047 |
+| rhanka/openerp | 2026-05-10 | 62 | 14709 |
+| rhanka/surch | 2026-05-10 | 100 | 53348 |
+| rhanka/opendb | 2026-05-10 | 39 | 20199 |
 | rhanka/sentech-forge | 2026-05-10 | 12 | 812 |
-| rhanka/rhanka | 2026-05-10 | 7 | 3473 |
-| rhanka/graphify | 2026-05-10 | 208 | 41761 |
 
 </details>
 <!-- github-profile-stats:end -->
