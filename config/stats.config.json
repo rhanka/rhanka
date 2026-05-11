@@ -9,6 +9,7 @@
   "lineFilters": {
     "excludePathGlobs": [
       "**/.graphify/**",
+      "**/*.md",
       "**/*.json",
       "**/*.txt",
       "**/graph.json",
