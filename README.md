@@ -12,9 +12,9 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/opendb | 2026-05-12 | 50 | 16690 |
+| rhanka/surch | 2026-05-12 | 121 | 51448 |
+| rhanka/opendb | 2026-05-12 | 53 | 16733 |
 | rhanka/entropiq | 2026-05-12 | 109 | 12587 |
-| rhanka/surch | 2026-05-12 | 118 | 50233 |
 | rhanka/openerp | 2026-05-12 | 87 | 2424 |
 | rhanka/rhanka | 2026-05-12 | 14 | 4952 |
 
