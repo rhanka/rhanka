@@ -1,4 +1,5 @@
 name: Profile Stats
+# Push-triggered workflow edits let maintainers refresh stats without local API auth.
 
 on:
   workflow_dispatch:
