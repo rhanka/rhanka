@@ -253,6 +253,11 @@ export async function buildLiveStats(config, token, {
     token,
     warn
   });
+
+  if (discoveredRepoEntries.length === 0 && config.includeRepos.length === 0) {
+    throw new Error('No contributed repositories discovered; refusing to write empty stats');
+  }
+
   const repoBranchByName = new Map(
     discoveredRepoEntries.map(({ repo, defaultBranch }) => [repo, defaultBranch])
   );
@@ -322,6 +327,11 @@ export async function buildLiveStats(config, token, {
       }
     })
   ).flat();
+
+  if (collectedCommits.length === 0) {
+    throw new Error('No commits collected; refusing to write empty stats');
+  }
+
   let skippedCommitDetailCount = 0;
 
   const hydratedCommits = (

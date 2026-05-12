@@ -100,6 +100,51 @@ test('discoverReposForLogins warns when GitHub discovery returns 100 repos for a
   ]);
 });
 
+test('buildLiveStats rejects empty repository discovery without manual includes', async () => {
+  const config = {
+    identities: {
+      logins: ['rhanka'],
+      emails: []
+    },
+    includeRepos: [],
+    excludeRepos: [],
+    windowWeeks: 1
+  };
+
+  await assert.rejects(
+    () =>
+      buildLiveStats(config, 'secret-token', {
+        nowIso: '2026-04-30T12:00:00.000Z',
+        discoverReposForLoginsImpl: async () => []
+      }),
+    /No contributed repositories discovered; refusing to write empty stats/
+  );
+});
+
+test('buildLiveStats rejects empty commit collection', async () => {
+  const config = {
+    identities: {
+      logins: ['rhanka'],
+      emails: []
+    },
+    includeRepos: [],
+    excludeRepos: [],
+    windowWeeks: 1
+  };
+
+  await assert.rejects(
+    () =>
+      buildLiveStats(config, 'secret-token', {
+        nowIso: '2026-04-30T12:00:00.000Z',
+        discoverReposForLoginsImpl: async () => [
+          { repo: 'org/good', defaultBranch: 'main' }
+        ],
+        listCommitsForAuthorImpl: async () => []
+      }),
+    /No commits collected; refusing to write empty stats/
+  );
+});
+
 test('buildLiveStats warns and skips failing repos and identities, but rejects missing commit details', async () => {
   const warnings = [];
   const config = {
