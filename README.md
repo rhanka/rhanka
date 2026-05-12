@@ -12,9 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
+| rhanka/surch | 2026-05-11 | 106 | 45570 |
+| rhanka/opendb | 2026-05-11 | 41 | 15090 |
 | matchID-project/matchID | 2026-05-11 | 186 | 6980 |
-| rhanka/entropiq | 2026-05-09 | 107 | 12155 |
-| matchID-project/deces-ui | 2026-04-26 | 6 | 31 |
+| rhanka/sentech-forge | 2026-05-11 | 13 | 869 |
+| rhanka/rhanka | 2026-05-11 | 9 | 3761 |
 
 </details>
 <!-- github-profile-stats:end -->

@@ -322,6 +322,7 @@ export async function buildLiveStats(config, token, {
       }
     })
   ).flat();
+  let skippedCommitDetailCount = 0;
 
   const hydratedCommits = (
     await mapWithConcurrencyImpl(
@@ -336,6 +337,7 @@ export async function buildLiveStats(config, token, {
             excludePath: excludeLinePath
           });
         } catch (error) {
+          skippedCommitDetailCount += 1;
           warn(
             warningMessage(
               `skipping commit "${commit.sha}" in repo "${commit.repo}" while fetching details`,
@@ -347,6 +349,12 @@ export async function buildLiveStats(config, token, {
       }
     )
   ).filter((commit) => commit !== null);
+
+  if (skippedCommitDetailCount > 0) {
+    throw new Error(
+      `Unable to fetch details for ${skippedCommitDetailCount} commits; refusing to write partial stats`
+    );
+  }
 
   return buildStats(config, {
     generatedAt,

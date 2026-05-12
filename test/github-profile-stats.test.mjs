@@ -100,7 +100,7 @@ test('discoverReposForLogins warns when GitHub discovery returns 100 repos for a
   ]);
 });
 
-test('buildLiveStats warns and skips failing repos, failing identities, and failing commit details', async () => {
+test('buildLiveStats warns and skips failing repos and identities, but rejects missing commit details', async () => {
   const warnings = [];
   const config = {
     identities: {
@@ -113,102 +113,97 @@ test('buildLiveStats warns and skips failing repos, failing identities, and fail
   };
   const authoredAt = '2026-04-29T11:00:00.000Z';
 
-  const stats = await buildLiveStats(config, 'secret-token', {
-    nowIso: '2026-04-30T12:00:00.000Z',
-    warn: (message) => warnings.push(message),
-    discoverReposForLoginsImpl: async () => [
-      { repo: 'org/good', defaultBranch: 'main' },
-      { repo: 'org/no-branch', defaultBranch: null },
-      { repo: 'org/bad-list', defaultBranch: 'main' },
-      { repo: 'org/excluded', defaultBranch: 'main' }
-    ],
-    fetchDefaultBranchImpl: async (owner, repo) => {
-      if (`${owner}/${repo}` === 'org/no-branch') {
-        throw new Error('403 branch lookup denied');
-      }
+  await assert.rejects(
+    () =>
+      buildLiveStats(config, 'secret-token', {
+        nowIso: '2026-04-30T12:00:00.000Z',
+        warn: (message) => warnings.push(message),
+        discoverReposForLoginsImpl: async () => [
+          { repo: 'org/good', defaultBranch: 'main' },
+          { repo: 'org/no-branch', defaultBranch: null },
+          { repo: 'org/bad-list', defaultBranch: 'main' },
+          { repo: 'org/excluded', defaultBranch: 'main' }
+        ],
+        fetchDefaultBranchImpl: async (owner, repo) => {
+          if (`${owner}/${repo}` === 'org/no-branch') {
+            throw new Error('403 branch lookup denied');
+          }
 
-      return 'main';
-    },
-    listCommitsForAuthorImpl: async ({ owner, repo, author }) => {
-      const fullRepo = `${owner}/${repo}`;
+          return 'main';
+        },
+        listCommitsForAuthorImpl: async ({ owner, repo, author }) => {
+          const fullRepo = `${owner}/${repo}`;
 
-      if (fullRepo === 'org/bad-list') {
-        throw new Error(`502 listing failed for ${author}`);
-      }
+          if (fullRepo === 'org/bad-list') {
+            throw new Error(`502 listing failed for ${author}`);
+          }
 
-      if (fullRepo === 'org/good') {
-        if (author === 'rhanka') {
-          return [
-            toCollectedCommit(fullRepo, {
-              sha: 'ok-sha',
-              commit: {
-                author: {
-                  name: 'Rhanka',
-                  email: 'rhanka@example.com',
-                  date: authoredAt
+          if (fullRepo === 'org/good') {
+            if (author === 'rhanka') {
+              return [
+                toCollectedCommit(fullRepo, {
+                  sha: 'ok-sha',
+                  commit: {
+                    author: {
+                      name: 'Rhanka',
+                      email: 'rhanka@example.com',
+                      date: authoredAt
+                    }
+                  }
+                }, author),
+                toCollectedCommit(fullRepo, {
+                  sha: 'bad-sha',
+                  commit: {
+                    author: {
+                      name: 'Rhanka',
+                      email: 'rhanka@example.com',
+                      date: authoredAt
+                    }
+                  }
+                }, author)
+              ];
+            }
+
+            return [
+              toCollectedCommit(fullRepo, {
+                sha: 'ok-sha',
+                commit: {
+                  author: {
+                    name: 'Rhanka',
+                    email: 'rhanka@example.com',
+                    date: authoredAt
+                  }
                 }
-              }
-            }, author),
-            toCollectedCommit(fullRepo, {
-              sha: 'bad-sha',
-              commit: {
-                author: {
-                  name: 'Rhanka',
-                  email: 'rhanka@example.com',
-                  date: authoredAt
-                }
-              }
-            }, author)
-          ];
-        }
+              }, author)
+            ];
+          }
 
-        return [
-          toCollectedCommit(fullRepo, {
-            sha: 'ok-sha',
+          return [];
+        },
+        fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
+          if (sha === 'bad-sha') {
+            throw new Error('500 detail lookup failed');
+          }
+
+          return {
+            sha,
             commit: {
               author: {
                 name: 'Rhanka',
                 email: 'rhanka@example.com',
                 date: authoredAt
               }
+            },
+            stats: {
+              additions: 4,
+              deletions: 1
             }
-          }, author)
-        ];
-      }
-
-      return [];
-    },
-    fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
-      if (sha === 'bad-sha') {
-        throw new Error('500 detail lookup failed');
-      }
-
-      return {
-        sha,
-        commit: {
-          author: {
-            name: 'Rhanka',
-            email: 'rhanka@example.com',
-            date: authoredAt
-          }
-        },
-        stats: {
-          additions: 4,
-          deletions: 1
+          };
         }
-      };
-    }
-  });
+      }),
+    /Unable to fetch details for 1 commits; refusing to write partial stats/
+  );
 
-  assert.equal(stats.weeklyCommits.at(-1).count, 1);
-  assert.deepEqual(stats.topReposLast4Weeks, [
-    {
-      repo: 'org/good',
-      lastActivityAt: authoredAt,
-      commits4w: 1,
-      lines4w: 5
-    }
-  ]);
   assert.deepEqual([...warnings].sort(), [
     '[github-profile-stats] skipping author "rhanka" for repo "org/bad-list" while listing commits: 502 listing failed for rhanka',
     '[github-profile-stats] skipping author "rhanka@example.com" for repo "org/bad-list" while listing commits: 502 listing failed for rhanka@example.com',
