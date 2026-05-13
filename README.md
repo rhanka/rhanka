@@ -12,8 +12,8 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/opendb | 2026-05-13 | 83 | 21361 |
-| rhanka/spa-transpose-cv | 2026-05-13 | 48 | 20434 |
+| rhanka/opendb | 2026-05-13 | 95 | 23182 |
+| rhanka/spa-transpose-cv | 2026-05-13 | 50 | 20510 |
 | rhanka/surch | 2026-05-13 | 126 | 53045 |
 | rhanka/entropiq | 2026-05-13 | 111 | 12773 |
 | matchID-project/matchID | 2026-05-12 | 191 | 7360 |
