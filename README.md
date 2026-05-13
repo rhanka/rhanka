@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
+| rhanka/sent-tech-design-system | 2026-05-13 | 45 | 5565 |
+| rhanka/spa-transpose-cv | 2026-05-13 | 55 | 21129 |
 | rhanka/opendb | 2026-05-13 | 95 | 23182 |
-| rhanka/spa-transpose-cv | 2026-05-13 | 50 | 20510 |
 | rhanka/surch | 2026-05-13 | 126 | 53045 |
 | rhanka/entropiq | 2026-05-13 | 111 | 12773 |
-| matchID-project/matchID | 2026-05-12 | 191 | 7360 |
 
 </details>
 <!-- github-profile-stats:end -->
