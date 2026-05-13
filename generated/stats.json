@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T01:19:45.419Z",
+  "generatedAt": "2026-05-13T07:24:41.635Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 241
+      "count": 255
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 48278,
-      "deletions": 6811,
-      "net": 41467
+      "additions": 50134,
+      "deletions": 6852,
+      "net": 43282
     }
   ],
   "weeklyLinesRaw": [
@@ -900,23 +900,23 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 173320,
-      "deletions": 82696,
-      "net": 90624
+      "additions": 175623,
+      "deletions": 82738,
+      "net": 92885
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/opendb",
-      "lastActivityAt": "2026-05-13T01:17:35Z",
-      "commits4w": 83,
-      "lines4w": 21361
+      "lastActivityAt": "2026-05-13T01:55:55Z",
+      "commits4w": 95,
+      "lines4w": 23182
     },
     {
       "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-13T01:13:47Z",
-      "commits4w": 48,
-      "lines4w": 20434
+      "lastActivityAt": "2026-05-13T01:30:11Z",
+      "commits4w": 50,
+      "lines4w": 20510
     },
     {
       "repo": "rhanka/surch",
