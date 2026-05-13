@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-12T23:40:13.608Z",
+  "generatedAt": "2026-05-13T01:19:45.419Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 221
+      "count": 241
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 45634,
-      "deletions": 6684,
-      "net": 38950
+      "additions": 48278,
+      "deletions": 6811,
+      "net": 41467
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 169982,
-      "deletions": 82564,
-      "net": 87418
+      "additions": 173320,
+      "deletions": 82696,
+      "net": 90624
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/opendb",
-      "lastActivityAt": "2026-05-12T23:39:15Z",
-      "commits4w": 66,
-      "lines4w": 19186
+      "lastActivityAt": "2026-05-13T01:17:35Z",
+      "commits4w": 83,
+      "lines4w": 21361
+    },
+    {
+      "repo": "rhanka/spa-transpose-cv",
+      "lastActivityAt": "2026-05-13T01:13:47Z",
+      "commits4w": 48,
+      "lines4w": 20434
+    },
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-13T00:59:22Z",
+      "commits4w": 126,
+      "lines4w": 53045
     },
     {
       "repo": "rhanka/entropiq",
-      "lastActivityAt": "2026-05-12T23:37:50Z",
-      "commits4w": 110,
-      "lines4w": 12689
+      "lastActivityAt": "2026-05-13T00:00:52Z",
+      "commits4w": 111,
+      "lines4w": 12773
     },
     {
       "repo": "matchID-project/matchID",
       "lastActivityAt": "2026-05-12T19:00:09Z",
       "commits4w": 191,
       "lines4w": 7360
-    },
-    {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-12T18:11:02Z",
-      "commits4w": 125,
-      "lines4w": 52553
-    },
-    {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-12T15:33:48Z",
-      "commits4w": 47,
-      "lines4w": 20414
     }
   ]
 }
