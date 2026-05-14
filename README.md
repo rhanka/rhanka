@@ -12,9 +12,9 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
+| rhanka/opendb | 2026-05-14 | 99 | 23614 |
+| rhanka/spa-transpose-cv | 2026-05-14 | 59 | 21543 |
 | rhanka/sentech-forge | 2026-05-14 | 23 | 1337 |
-| rhanka/spa-transpose-cv | 2026-05-14 | 58 | 21483 |
-| rhanka/opendb | 2026-05-14 | 97 | 23614 |
 | rhanka/sent-tech-design-system | 2026-05-13 | 45 | 5565 |
 | rhanka/surch | 2026-05-13 | 126 | 53045 |
 
