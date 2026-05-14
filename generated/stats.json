@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-13T23:05:28.659Z",
+  "generatedAt": "2026-05-14T02:43:41.336Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 266
+      "count": 275
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 50665,
-      "deletions": 6943,
-      "net": 43722
+      "additions": 51419,
+      "deletions": 7001,
+      "net": 44418
     }
   ],
   "weeklyLinesRaw": [
@@ -900,12 +900,30 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 176238,
-      "deletions": 82898,
-      "net": 93340
+      "additions": 178306,
+      "deletions": 83752,
+      "net": 94554
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/sentech-forge",
+      "lastActivityAt": "2026-05-14T02:28:59Z",
+      "commits4w": 23,
+      "lines4w": 1337
+    },
+    {
+      "repo": "rhanka/spa-transpose-cv",
+      "lastActivityAt": "2026-05-14T02:06:05Z",
+      "commits4w": 58,
+      "lines4w": 21483
+    },
+    {
+      "repo": "rhanka/opendb",
+      "lastActivityAt": "2026-05-14T02:02:22Z",
+      "commits4w": 97,
+      "lines4w": 23614
+    },
     {
       "repo": "rhanka/sent-tech-design-system",
       "lastActivityAt": "2026-05-13T23:02:43Z",
@@ -913,28 +931,10 @@
       "lines4w": 5565
     },
     {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-13T22:45:24Z",
-      "commits4w": 55,
-      "lines4w": 21129
-    },
-    {
-      "repo": "rhanka/opendb",
-      "lastActivityAt": "2026-05-13T01:55:55Z",
-      "commits4w": 95,
-      "lines4w": 23182
-    },
-    {
       "repo": "rhanka/surch",
       "lastActivityAt": "2026-05-13T00:59:22Z",
       "commits4w": 126,
       "lines4w": 53045
-    },
-    {
-      "repo": "rhanka/entropiq",
-      "lastActivityAt": "2026-05-13T00:00:52Z",
-      "commits4w": 111,
-      "lines4w": 12773
     }
   ]
 }
