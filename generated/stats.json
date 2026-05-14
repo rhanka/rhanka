@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-14T11:40:04.589Z",
+  "generatedAt": "2026-05-14T21:08:50.318Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 278
+      "count": 342
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 51423,
-      "deletions": 7057,
-      "net": 44366
+      "additions": 56903,
+      "deletions": 7683,
+      "net": 49220
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 178477,
-      "deletions": 83809,
-      "net": 94668
+      "additions": 195271,
+      "deletions": 90643,
+      "net": 104628
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/opendb",
-      "lastActivityAt": "2026-05-14T11:36:32Z",
-      "commits4w": 99,
-      "lines4w": 23614
-    },
-    {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-14T11:06:30Z",
-      "commits4w": 59,
-      "lines4w": 21543
-    },
-    {
-      "repo": "rhanka/sentech-forge",
-      "lastActivityAt": "2026-05-14T02:28:59Z",
-      "commits4w": 23,
-      "lines4w": 1337
-    },
-    {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-13T23:02:43Z",
-      "commits4w": 45,
-      "lines4w": 5565
+      "repo": "rhanka/entropiq",
+      "lastActivityAt": "2026-05-14T18:22:25Z",
+      "commits4w": 136,
+      "lines4w": 12773
     },
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-13T00:59:22Z",
-      "commits4w": 126,
-      "lines4w": 53045
+      "lastActivityAt": "2026-05-14T18:07:02Z",
+      "commits4w": 128,
+      "lines4w": 53496
+    },
+    {
+      "repo": "rhanka/spa-transpose-cv",
+      "lastActivityAt": "2026-05-14T17:32:06Z",
+      "commits4w": 62,
+      "lines4w": 22421
+    },
+    {
+      "repo": "rhanka/openerp",
+      "lastActivityAt": "2026-05-14T17:17:30Z",
+      "commits4w": 103,
+      "lines4w": 3494
+    },
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-14T17:07:16Z",
+      "commits4w": 48,
+      "lines4w": 5645
     }
   ]
 }
