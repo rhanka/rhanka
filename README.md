@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
+| rhanka/sentech-forge | 2026-05-14 | 23 | 1337 |
+| rhanka/spa-transpose-cv | 2026-05-14 | 58 | 21483 |
+| rhanka/opendb | 2026-05-14 | 97 | 23614 |
 | rhanka/sent-tech-design-system | 2026-05-13 | 45 | 5565 |
-| rhanka/spa-transpose-cv | 2026-05-13 | 55 | 21129 |
-| rhanka/opendb | 2026-05-13 | 95 | 23182 |
 | rhanka/surch | 2026-05-13 | 126 | 53045 |
-| rhanka/entropiq | 2026-05-13 | 111 | 12773 |
 
 </details>
 <!-- github-profile-stats:end -->
