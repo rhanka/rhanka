@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T00:41:18.149Z",
+  "generatedAt": "2026-05-15T02:05:30.474Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 420
+      "count": 316
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 68709,
-      "deletions": 8089,
-      "net": 60620
+      "additions": 62740,
+      "deletions": 7629,
+      "net": 55111
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 245102,
-      "deletions": 123849,
-      "net": 121253
+      "additions": 231270,
+      "deletions": 129359,
+      "net": 101911
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-15T00:37:00Z",
-      "commits4w": 79,
-      "lines4w": 25858
-    },
-    {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-15T00:27:48Z",
-      "commits4w": 131,
-      "lines4w": 53855
+      "lastActivityAt": "2026-05-14T21:57:48-04:00",
+      "commits4w": 135,
+      "lines4w": 54328
     },
     {
-      "repo": "rhanka/opendb",
-      "lastActivityAt": "2026-05-15T00:21:35Z",
-      "commits4w": 116,
-      "lines4w": 28467
+      "repo": "rhanka/spa-transpose-cv",
+      "lastActivityAt": "2026-05-14T21:54:12-04:00",
+      "commits4w": 88,
+      "lines4w": 26790
+    },
+    {
+      "repo": "rhanka/remote-controle",
+      "lastActivityAt": "2026-05-14T21:47:22-04:00",
+      "commits4w": 27,
+      "lines4w": 5915
     },
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-14T23:49:19Z",
-      "commits4w": 50,
-      "lines4w": 5725
+      "lastActivityAt": "2026-05-14T21:32:10-04:00",
+      "commits4w": 11,
+      "lines4w": 410
     },
     {
-      "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-05-14T22:46:12Z",
-      "commits4w": 109,
-      "lines4w": 4788
+      "repo": "rhanka/sentech-forge",
+      "lastActivityAt": "2026-05-14T21:18:17-04:00",
+      "commits4w": 9,
+      "lines4w": 557
     }
   ]
 }
