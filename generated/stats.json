@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T21:55:08.188Z",
+  "generatedAt": "2026-05-15T22:06:49.459Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 405
+      "count": 411
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 78445,
-      "deletions": 8162,
-      "net": 70283
+      "additions": 79812,
+      "deletions": 8172,
+      "net": 71640
     }
   ],
   "weeklyLinesRaw": [
@@ -900,35 +900,35 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 260502,
-      "deletions": 141528,
-      "net": 118974
+      "additions": 261877,
+      "deletions": 141546,
+      "net": 120331
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-15T17:39:57-04:00",
-      "commits4w": 181,
-      "lines4w": 64652
+      "lastActivityAt": "2026-05-15T18:06:07-04:00",
+      "commits4w": 184,
+      "lines4w": 65011
+    },
+    {
+      "repo": "rhanka/remote-controle",
+      "lastActivityAt": "2026-05-15T17:57:18-04:00",
+      "commits4w": 38,
+      "lines4w": 7304
+    },
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-15T17:44:42-04:00",
+      "commits4w": 23,
+      "lines4w": 3728
     },
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-05-15T17:21:19-04:00",
       "commits4w": 282,
       "lines4w": 35637
-    },
-    {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-15T16:14:32-04:00",
-      "commits4w": 21,
-      "lines4w": 2724
-    },
-    {
-      "repo": "rhanka/remote-controle",
-      "lastActivityAt": "2026-05-15T15:02:11-04:00",
-      "commits4w": 37,
-      "lines4w": 7290
     },
     {
       "repo": "rhanka/spa-transpose-cv",
