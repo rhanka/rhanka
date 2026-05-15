@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T07:29:07.319Z",
+  "generatedAt": "2026-05-15T21:55:08.188Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 478
+      "count": 405
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 77179,
-      "deletions": 8500,
-      "net": 68679
+      "additions": 78445,
+      "deletions": 8162,
+      "net": 70283
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 258714,
-      "deletions": 127145,
-      "net": 131569
+      "additions": 260502,
+      "deletions": 141528,
+      "net": 118974
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-15T03:32:59Z",
-      "commits4w": 140,
-      "lines4w": 54713
-    },
-    {
-      "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-05-15T03:16:38Z",
-      "commits4w": 125,
-      "lines4w": 9654
-    },
-    {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-15T03:08:39Z",
-      "commits4w": 96,
-      "lines4w": 27696
-    },
-    {
-      "repo": "rhanka/rhanka",
-      "lastActivityAt": "2026-05-15T02:55:11Z",
-      "commits4w": 17,
-      "lines4w": 5144
+      "lastActivityAt": "2026-05-15T17:39:57-04:00",
+      "commits4w": 181,
+      "lines4w": 64652
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-15T02:41:29Z",
-      "commits4w": 279,
-      "lines4w": 35237
+      "lastActivityAt": "2026-05-15T17:21:19-04:00",
+      "commits4w": 282,
+      "lines4w": 35637
+    },
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-15T16:14:32-04:00",
+      "commits4w": 21,
+      "lines4w": 2724
+    },
+    {
+      "repo": "rhanka/remote-controle",
+      "lastActivityAt": "2026-05-15T15:02:11-04:00",
+      "commits4w": 37,
+      "lines4w": 7290
+    },
+    {
+      "repo": "rhanka/spa-transpose-cv",
+      "lastActivityAt": "2026-05-15T14:01:51-04:00",
+      "commits4w": 99,
+      "lines4w": 27882
     }
   ]
 }
