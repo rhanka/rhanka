@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/remote-controle | 2026-05-14 | 28 | 6020 |
-| rhanka/graphify | 2026-05-14 | 275 | 35237 |
-| rhanka/surch | 2026-05-14 | 136 | 54441 |
-| rhanka/spa-transpose-cv | 2026-05-14 | 91 | 27216 |
-| rhanka/sent-tech-design-system | 2026-05-14 | 12 | 410 |
+| rhanka/surch | 2026-05-15 | 140 | 54713 |
+| rhanka/openerp | 2026-05-15 | 125 | 9654 |
+| rhanka/spa-transpose-cv | 2026-05-15 | 96 | 27696 |
+| rhanka/rhanka | 2026-05-15 | 17 | 5144 |
+| rhanka/graphify | 2026-05-15 | 279 | 35237 |
 
 </details>
 <!-- github-profile-stats:end -->
