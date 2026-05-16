@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-16T01:15:41.753Z",
+  "generatedAt": "2026-05-16T07:06:02.747Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 505
+      "count": 726
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 94268,
-      "deletions": 8376,
-      "net": 85892
+      "additions": 114646,
+      "deletions": 9662,
+      "net": 104984
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 288493,
-      "deletions": 163955,
-      "net": 124538
+      "additions": 346703,
+      "deletions": 164092,
+      "net": 182611
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/mcp-wave",
-      "lastActivityAt": "2026-05-15T20:57:41-04:00",
-      "commits4w": 64,
-      "lines4w": 11568
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-16T03:02:56Z",
+      "commits4w": 79,
+      "lines4w": 11037
+    },
+    {
+      "repo": "rhanka/opendb",
+      "lastActivityAt": "2026-05-16T02:55:25Z",
+      "commits4w": 129,
+      "lines4w": 32195
     },
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-15T20:51:49-04:00",
-      "commits4w": 194,
-      "lines4w": 67742
+      "lastActivityAt": "2026-05-16T02:53:04Z",
+      "commits4w": 229,
+      "lines4w": 69336
     },
     {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-15T20:44:22-04:00",
-      "commits4w": 26,
-      "lines4w": 3776
+      "repo": "rhanka/openerp",
+      "lastActivityAt": "2026-05-16T02:40:56Z",
+      "commits4w": 143,
+      "lines4w": 12363
     },
     {
-      "repo": "rhanka/poc-k8s",
-      "lastActivityAt": "2026-05-15T20:34:52-04:00",
-      "commits4w": 7,
-      "lines4w": 371
-    },
-    {
-      "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-15T20:19:05-04:00",
-      "commits4w": 289,
-      "lines4w": 35784
+      "repo": "rhanka/mcp-wave",
+      "lastActivityAt": "2026-05-16T01:58:12Z",
+      "commits4w": 72,
+      "lines4w": 11622
     }
   ]
 }
