@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-15T22:06:49.459Z",
+  "generatedAt": "2026-05-16T00:23:53.519Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 411
+      "count": 434
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 79812,
-      "deletions": 8172,
-      "net": 71640
+      "additions": 81766,
+      "deletions": 8256,
+      "net": 73510
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 261877,
-      "deletions": 141546,
-      "net": 120331
+      "additions": 271488,
+      "deletions": 150518,
+      "net": 120970
     }
   ],
   "topReposLast4Weeks": [
     {
+      "repo": "rhanka/graphify",
+      "lastActivityAt": "2026-05-15T20:19:05-04:00",
+      "commits4w": 289,
+      "lines4w": 35784
+    },
+    {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-15T18:06:07-04:00",
-      "commits4w": 184,
-      "lines4w": 65011
+      "lastActivityAt": "2026-05-15T20:10:26-04:00",
+      "commits4w": 191,
+      "lines4w": 66736
+    },
+    {
+      "repo": "rhanka/poc-k8s",
+      "lastActivityAt": "2026-05-15T19:58:24-04:00",
+      "commits4w": 5,
+      "lines4w": 371
     },
     {
       "repo": "rhanka/remote-controle",
-      "lastActivityAt": "2026-05-15T17:57:18-04:00",
-      "commits4w": 38,
-      "lines4w": 7304
+      "lastActivityAt": "2026-05-15T19:58:04-04:00",
+      "commits4w": 42,
+      "lines4w": 7424
     },
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-15T17:44:42-04:00",
-      "commits4w": 23,
+      "lastActivityAt": "2026-05-15T18:07:46-04:00",
+      "commits4w": 24,
       "lines4w": 3728
-    },
-    {
-      "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-15T17:21:19-04:00",
-      "commits4w": 282,
-      "lines4w": 35637
-    },
-    {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-15T14:01:51-04:00",
-      "commits4w": 99,
-      "lines4w": 27882
     }
   ]
 }
