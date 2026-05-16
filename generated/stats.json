@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-16T00:23:53.519Z",
+  "generatedAt": "2026-05-16T00:37:50.062Z",
   "window": {
     "start": "2025-05-18T00:00:00.000Z",
     "end": "2026-05-16T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 434
+      "count": 501
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 81766,
-      "deletions": 8256,
-      "net": 73510
+      "additions": 93211,
+      "deletions": 8347,
+      "net": 84864
     }
   ],
   "weeklyLinesRaw": [
@@ -900,12 +900,30 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 271488,
-      "deletions": 150518,
-      "net": 120970
+      "additions": 283549,
+      "deletions": 152395,
+      "net": 131154
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/poc-k8s",
+      "lastActivityAt": "2026-05-15T20:34:52-04:00",
+      "commits4w": 7,
+      "lines4w": 371
+    },
+    {
+      "repo": "rhanka/mcp-wave",
+      "lastActivityAt": "2026-05-15T20:33:57-04:00",
+      "commits4w": 63,
+      "lines4w": 11507
+    },
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-15T20:27:19-04:00",
+      "commits4w": 192,
+      "lines4w": 66765
+    },
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-05-15T20:19:05-04:00",
@@ -913,28 +931,10 @@
       "lines4w": 35784
     },
     {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-15T20:10:26-04:00",
-      "commits4w": 191,
-      "lines4w": 66736
-    },
-    {
-      "repo": "rhanka/poc-k8s",
-      "lastActivityAt": "2026-05-15T19:58:24-04:00",
-      "commits4w": 5,
-      "lines4w": 371
-    },
-    {
       "repo": "rhanka/remote-controle",
       "lastActivityAt": "2026-05-15T19:58:04-04:00",
       "commits4w": 42,
       "lines4w": 7424
-    },
-    {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-15T18:07:46-04:00",
-      "commits4w": 24,
-      "lines4w": 3728
     }
   ]
 }
