@@ -12,9 +12,9 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/mcp-wave | 2026-05-16 | 66 | 11568 |
+| rhanka/mcp-wave | 2026-05-16 | 67 | 11587 |
+| rhanka/surch | 2026-05-16 | 201 | 70084 |
 | rhanka/sent-tech-design-system | 2026-05-16 | 31 | 5722 |
-| rhanka/surch | 2026-05-15 | 200 | 69336 |
 | rhanka/poc-k8s | 2026-05-15 | 8 | 399 |
 | rhanka/graphify | 2026-05-15 | 289 | 35784 |
 
