@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T12:01:34.264Z",
+  "generatedAt": "2026-05-17T23:42:18.159Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -270,11 +270,11 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 946
+      "count": 959
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 34
+      "count": 41
     }
   ],
   "weeklyLines": [
@@ -580,15 +580,15 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 150587,
-      "deletions": 18735,
-      "net": 131852
+      "additions": 151351,
+      "deletions": 18885,
+      "net": 132466
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 4770,
-      "deletions": 972,
-      "net": 3798
+      "additions": 6254,
+      "deletions": 1158,
+      "net": 5096
     }
   ],
   "weeklyLinesRaw": [
@@ -894,29 +894,35 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 401291,
-      "deletions": 189900,
-      "net": 211391
+      "additions": 403788,
+      "deletions": 190051,
+      "net": 213737
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 84457,
-      "deletions": 51331,
-      "net": 33126
+      "additions": 93415,
+      "deletions": 57734,
+      "net": 35681
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-17T11:19:03Z",
-      "commits4w": 203,
-      "lines4w": 19435
+      "lastActivityAt": "2026-05-17T23:40:27Z",
+      "commits4w": 205,
+      "lines4w": 20641
+    },
+    {
+      "repo": "rhanka/spa-transpose-cv",
+      "lastActivityAt": "2026-05-17T23:20:28Z",
+      "commits4w": 130,
+      "lines4w": 29461
     },
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-17T03:21:02Z",
-      "commits4w": 272,
-      "lines4w": 79769
+      "lastActivityAt": "2026-05-17T12:17:41Z",
+      "commits4w": 274,
+      "lines4w": 80015
     },
     {
       "repo": "rhanka/mcp-wave",
@@ -929,12 +935,6 @@
       "lastActivityAt": "2026-05-17T01:11:47Z",
       "commits4w": 149,
       "lines4w": 14960
-    },
-    {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-17T00:36:50Z",
-      "commits4w": 114,
-      "lines4w": 28329
     }
   ]
 }
