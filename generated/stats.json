@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T03:06:18.091Z",
+  "generatedAt": "2026-05-17T07:18:12.063Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 23
+      "count": 24
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 2568,
+      "additions": 2714,
       "deletions": 869,
-      "net": 1699
+      "net": 1845
     }
   ],
   "weeklyLinesRaw": [
@@ -900,12 +900,18 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 3850,
+      "additions": 3996,
       "deletions": 1124,
-      "net": 2726
+      "net": 2872
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/mcp-wave",
+      "lastActivityAt": "2026-05-17T03:18:38Z",
+      "commits4w": 85,
+      "lines4w": 13204
+    },
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-05-17T02:53:35Z",
@@ -929,12 +935,6 @@
       "lastActivityAt": "2026-05-17T00:36:50Z",
       "commits4w": 114,
       "lines4w": 28329
-    },
-    {
-      "repo": "rhanka/sentropic",
-      "lastActivityAt": "2026-05-16T22:43:41Z",
-      "commits4w": 217,
-      "lines4w": 35208
     }
   ]
 }
