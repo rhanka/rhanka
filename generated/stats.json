@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T01:30:15.452Z",
+  "generatedAt": "2026-05-18T07:45:58.746Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 55
+      "count": 57
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 8906,
-      "deletions": 1264,
-      "net": 7642
+      "additions": 9011,
+      "deletions": 1321,
+      "net": 7690
     }
   ],
   "weeklyLinesRaw": [
@@ -900,29 +900,29 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 96081,
-      "deletions": 57845,
-      "net": 38236
+      "additions": 96194,
+      "deletions": 57905,
+      "net": 38289
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-18T01:35:25Z",
+      "commits4w": 101,
+      "lines4w": 14678
+    },
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-18T01:35:21Z",
+      "commits4w": 278,
+      "lines4w": 80162
+    },
     {
       "repo": "rhanka/mcp-wave",
       "lastActivityAt": "2026-05-18T01:27:52Z",
       "commits4w": 94,
       "lines4w": 15012
-    },
-    {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-18T01:25:15Z",
-      "commits4w": 100,
-      "lines4w": 14561
-    },
-    {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-18T00:49:06Z",
-      "commits4w": 277,
-      "lines4w": 80117
     },
     {
       "repo": "rhanka/graphify",
