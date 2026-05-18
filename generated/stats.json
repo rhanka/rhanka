@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T20:16:52.291Z",
+  "generatedAt": "2026-05-18T23:28:05.109Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 96
+      "count": 108
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 12464,
-      "deletions": 2511,
-      "net": 9953
+      "additions": 14421,
+      "deletions": 2599,
+      "net": 11822
     }
   ],
   "weeklyLinesRaw": [
@@ -900,17 +900,23 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 106363,
-      "deletions": 61405,
-      "net": 44958
+      "additions": 108620,
+      "deletions": 61721,
+      "net": 46899
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-18T20:09:42Z",
-      "commits4w": 302,
-      "lines4w": 81584
+      "lastActivityAt": "2026-05-18T23:27:02Z",
+      "commits4w": 312,
+      "lines4w": 82485
+    },
+    {
+      "repo": "rhanka/mcp-wave",
+      "lastActivityAt": "2026-05-18T21:09:52Z",
+      "commits4w": 99,
+      "lines4w": 16748
     },
     {
       "repo": "rhanka/sent-tech-design-system",
@@ -923,12 +929,6 @@
       "lastActivityAt": "2026-05-18T14:05:05Z",
       "commits4w": 27,
       "lines4w": 6996
-    },
-    {
-      "repo": "rhanka/mcp-wave",
-      "lastActivityAt": "2026-05-18T13:20:23Z",
-      "commits4w": 97,
-      "lines4w": 15604
     },
     {
       "repo": "rhanka/public-domaine-mystery-sagas-pack",
