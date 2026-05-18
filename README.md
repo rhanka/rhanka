@@ -12,10 +12,10 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/surch | 2026-05-18 | 302 | 81584 |
+| rhanka/surch | 2026-05-18 | 312 | 82485 |
+| rhanka/mcp-wave | 2026-05-18 | 99 | 16748 |
 | rhanka/sent-tech-design-system | 2026-05-18 | 106 | 16815 |
 | rhanka/rhanka | 2026-05-18 | 27 | 6996 |
-| rhanka/mcp-wave | 2026-05-18 | 97 | 15604 |
 | rhanka/public-domaine-mystery-sagas-pack | 2026-05-18 | 11 | 1441 |
 
 </details>
