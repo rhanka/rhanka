@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T07:45:58.746Z",
+  "generatedAt": "2026-05-18T13:03:24.236Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -270,11 +270,11 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 959
+      "count": 962
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 57
+      "count": 70
     }
   ],
   "weeklyLines": [
@@ -580,15 +580,15 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 151351,
+      "additions": 151874,
       "deletions": 18885,
-      "net": 132466
+      "net": 132989
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 9011,
-      "deletions": 1321,
-      "net": 7690
+      "additions": 10191,
+      "deletions": 1542,
+      "net": 8649
     }
   ],
   "weeklyLinesRaw": [
@@ -894,47 +894,47 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 403788,
+      "additions": 404381,
       "deletions": 190051,
-      "net": 213737
+      "net": 214330
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 96194,
-      "deletions": 57905,
-      "net": 38289
+      "additions": 102483,
+      "deletions": 59770,
+      "net": 42713
     }
   ],
   "topReposLast4Weeks": [
     {
+      "repo": "rhanka/public-domaine-mystery-sagas-pack",
+      "lastActivityAt": "2026-05-18T13:02:16Z",
+      "commits4w": 11,
+      "lines4w": 1441
+    },
+    {
+      "repo": "rhanka/graphify",
+      "lastActivityAt": "2026-05-18T12:56:26Z",
+      "commits4w": 208,
+      "lines4w": 20727
+    },
+    {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-18T01:35:25Z",
-      "commits4w": 101,
-      "lines4w": 14678
+      "lastActivityAt": "2026-05-18T12:50:05Z",
+      "commits4w": 103,
+      "lines4w": 15038
     },
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-18T01:35:21Z",
-      "commits4w": 278,
-      "lines4w": 80162
+      "lastActivityAt": "2026-05-18T12:44:20Z",
+      "commits4w": 283,
+      "lines4w": 80723
     },
     {
       "repo": "rhanka/mcp-wave",
       "lastActivityAt": "2026-05-18T01:27:52Z",
       "commits4w": 94,
       "lines4w": 15012
-    },
-    {
-      "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-17T23:40:27Z",
-      "commits4w": 205,
-      "lines4w": 20641
-    },
-    {
-      "repo": "rhanka/spa-transpose-cv",
-      "lastActivityAt": "2026-05-17T23:20:28Z",
-      "commits4w": 130,
-      "lines4w": 29461
     }
   ]
 }
