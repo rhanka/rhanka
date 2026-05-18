@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-18T13:03:24.236Z",
+  "generatedAt": "2026-05-18T14:02:41.184Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 70
+      "count": 83
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 10191,
-      "deletions": 1542,
-      "net": 8649
+      "additions": 11901,
+      "deletions": 2406,
+      "net": 9495
     }
   ],
   "weeklyLinesRaw": [
@@ -900,12 +900,30 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 102483,
-      "deletions": 59770,
-      "net": 42713
+      "additions": 104464,
+      "deletions": 60684,
+      "net": 43780
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-18T14:01:56Z",
+      "commits4w": 291,
+      "lines4w": 81211
+    },
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-18T13:59:34Z",
+      "commits4w": 105,
+      "lines4w": 16532
+    },
+    {
+      "repo": "rhanka/mcp-wave",
+      "lastActivityAt": "2026-05-18T13:20:23Z",
+      "commits4w": 97,
+      "lines4w": 15604
+    },
     {
       "repo": "rhanka/public-domaine-mystery-sagas-pack",
       "lastActivityAt": "2026-05-18T13:02:16Z",
@@ -917,24 +935,6 @@
       "lastActivityAt": "2026-05-18T12:56:26Z",
       "commits4w": 208,
       "lines4w": 20727
-    },
-    {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-18T12:50:05Z",
-      "commits4w": 103,
-      "lines4w": 15038
-    },
-    {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-18T12:44:20Z",
-      "commits4w": 283,
-      "lines4w": 80723
-    },
-    {
-      "repo": "rhanka/mcp-wave",
-      "lastActivityAt": "2026-05-18T01:27:52Z",
-      "commits4w": 94,
-      "lines4w": 15012
     }
   ]
 }
