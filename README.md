@@ -12,8 +12,8 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/surch | 2026-05-19 | 329 | 84023 |
-| rhanka/graphify | 2026-05-19 | 209 | 20836 |
+| rhanka/surch | 2026-05-20 | 341 | 86217 |
+| rhanka/graphify | 2026-05-20 | 215 | 21317 |
 | rhanka/openerp | 2026-05-19 | 152 | 15994 |
 | rhanka/mcp-wave | 2026-05-19 | 102 | 16748 |
 | rhanka/sent-tech-design-system | 2026-05-18 | 106 | 16815 |

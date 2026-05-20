@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T18:42:41.651Z",
+  "generatedAt": "2026-05-20T07:32:43.927Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 132
+      "count": 150
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 16713,
-      "deletions": 2988,
-      "net": 13725
+      "additions": 18870,
+      "deletions": 3506,
+      "net": 15364
     }
   ],
   "weeklyLinesRaw": [
@@ -900,23 +900,23 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 112532,
-      "deletions": 62278,
-      "net": 50254
+      "additions": 122536,
+      "deletions": 69260,
+      "net": 53276
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-19T18:31:24Z",
-      "commits4w": 329,
-      "lines4w": 84023
+      "lastActivityAt": "2026-05-20T04:32:49Z",
+      "commits4w": 341,
+      "lines4w": 86217
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-19T10:36:01Z",
-      "commits4w": 209,
-      "lines4w": 20836
+      "lastActivityAt": "2026-05-20T04:15:08Z",
+      "commits4w": 215,
+      "lines4w": 21317
     },
     {
       "repo": "rhanka/openerp",
