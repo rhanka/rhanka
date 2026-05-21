@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-21T02:49:27.512Z",
+  "generatedAt": "2026-05-21T07:37:12.199Z",
   "window": {
     "start": "2025-05-25T00:00:00.000Z",
     "end": "2026-05-23T23:59:59.999Z",
@@ -274,7 +274,7 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 196
+      "count": 223
     }
   ],
   "weeklyLines": [
@@ -586,9 +586,9 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 24746,
-      "deletions": 3796,
-      "net": 20950
+      "additions": 26585,
+      "deletions": 4023,
+      "net": 22562
     }
   ],
   "weeklyLinesRaw": [
@@ -900,41 +900,41 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 173510,
-      "deletions": 98145,
-      "net": 75365
+      "additions": 177085,
+      "deletions": 98525,
+      "net": 78560
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-21T02:49:22Z",
-      "commits4w": 227,
-      "lines4w": 24878
-    },
-    {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-21T02:45:58Z",
-      "commits4w": 364,
-      "lines4w": 87527
+      "lastActivityAt": "2026-05-21T03:38:46Z",
+      "commits4w": 368,
+      "lines4w": 88093
     },
     {
-      "repo": "rhanka/public-domaine-mystery-sagas-pack",
-      "lastActivityAt": "2026-05-21T01:50:04Z",
-      "commits4w": 20,
-      "lines4w": 2736
+      "repo": "rhanka/sentropic",
+      "lastActivityAt": "2026-05-21T03:29:05Z",
+      "commits4w": 224,
+      "lines4w": 35342
+    },
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-21T03:10:11Z",
+      "commits4w": 109,
+      "lines4w": 16840
     },
     {
       "repo": "rhanka/mcp-wave",
-      "lastActivityAt": "2026-05-20T10:42:59Z",
-      "commits4w": 104,
+      "lastActivityAt": "2026-05-21T03:05:30Z",
+      "commits4w": 105,
       "lines4w": 16748
     },
     {
-      "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-05-19T10:15:08Z",
-      "commits4w": 152,
-      "lines4w": 15994
+      "repo": "rhanka/opendb",
+      "lastActivityAt": "2026-05-21T03:01:35Z",
+      "commits4w": 141,
+      "lines4w": 33536
     }
   ]
 }
