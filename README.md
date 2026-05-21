@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/graphify | 2026-05-21 | 227 | 24878 |
-| rhanka/surch | 2026-05-21 | 364 | 87527 |
-| rhanka/public-domaine-mystery-sagas-pack | 2026-05-21 | 20 | 2736 |
-| rhanka/mcp-wave | 2026-05-20 | 104 | 16748 |
-| rhanka/openerp | 2026-05-19 | 152 | 15994 |
+| rhanka/surch | 2026-05-21 | 368 | 88093 |
+| rhanka/sentropic | 2026-05-21 | 224 | 35342 |
+| rhanka/sent-tech-design-system | 2026-05-21 | 109 | 16840 |
+| rhanka/mcp-wave | 2026-05-21 | 105 | 16748 |
+| rhanka/opendb | 2026-05-21 | 141 | 33536 |
 
 </details>
 <!-- github-profile-stats:end -->
