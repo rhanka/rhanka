@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
+| rhanka/graphify | 2026-05-22 | 231 | 25145 |
 | rhanka/surch | 2026-05-21 | 368 | 88093 |
 | rhanka/sentropic | 2026-05-21 | 224 | 35342 |
 | rhanka/sent-tech-design-system | 2026-05-21 | 109 | 16840 |
 | rhanka/mcp-wave | 2026-05-21 | 105 | 16748 |
-| rhanka/opendb | 2026-05-21 | 141 | 33536 |
 
 </details>
 <!-- github-profile-stats:end -->
