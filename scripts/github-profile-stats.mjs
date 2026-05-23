@@ -166,8 +166,18 @@ function buildIdentitySets(config) {
 }
 
 function commitMatchesTrackedIdentity(entry, identitySets) {
+  const sourceAuthor = normalizeIdentity(entry.sourceAuthor);
+  if (sourceAuthor && identitySets.logins.has(sourceAuthor)) {
+    return true;
+  }
+
   const login = normalizeIdentity(entry.author?.login);
   if (login && identitySets.logins.has(login)) {
+    return true;
+  }
+
+  const committerLogin = normalizeIdentity(entry.committer?.login);
+  if (committerLogin && identitySets.logins.has(committerLogin)) {
     return true;
   }
 
@@ -179,6 +189,17 @@ function commitMatchesTrackedIdentity(entry, identitySets) {
 
   const commitAuthorEmail = normalizeIdentity(commitAuthor?.email);
   if (commitAuthorEmail && identitySets.emails.has(commitAuthorEmail)) {
+    return true;
+  }
+
+  const commitCommitter = entry.commit?.committer;
+  const commitCommitterName = normalizeIdentity(commitCommitter?.name);
+  if (commitCommitterName && identitySets.logins.has(commitCommitterName)) {
+    return true;
+  }
+
+  const commitCommitterEmail = normalizeIdentity(commitCommitter?.email);
+  if (commitCommitterEmail && identitySets.emails.has(commitCommitterEmail)) {
     return true;
   }
 
@@ -227,44 +248,59 @@ async function listCommitsForRepo({
   owner,
   repo,
   branch,
+  authors = [],
   since,
   until,
   token,
   commitMatches = () => true
 }) {
   const commits = [];
+  const authorList = [...new Set(authors.filter(Boolean))];
+  const effectiveAuthors = authorList.length > 0 ? authorList : [undefined];
+  const byAuthorCommits = await Promise.all(
+    effectiveAuthors.map(async (entryAuthor) => {
+      const authorCommits = [];
 
-  for (let page = 1; ; page += 1) {
-    const entries = await githubRest(
-      buildListCommitsPath({
-        owner,
-        repo,
-        branch,
-        since,
-        until,
-        page
-      }),
-      token
-    );
+      for (let page = 1; ; page += 1) {
+        const entries = await githubRest(
+          buildListCommitsPath({
+            owner,
+            repo,
+            branch,
+            author: entryAuthor,
+            since,
+            until,
+            page
+          }),
+          token
+        );
 
-    if (entries.length === 0) {
-      break;
-    }
+        if (entries.length === 0) {
+          break;
+        }
 
-    for (const entry of entries) {
-      if (!commitMatches(entry)) {
-        continue;
+        for (const entry of entries) {
+          if (!commitMatches(entry)) {
+            continue;
+          }
+
+          authorCommits.push(toCollectedCommit(`${owner}/${repo}`, entry, entryAuthor));
+        }
+
+        if (entries.length < 100) {
+          break;
+        }
       }
 
-      commits.push(toCollectedCommit(`${owner}/${repo}`, entry));
-    }
+      return authorCommits;
+    })
+  );
 
-    if (entries.length < 100) {
-      break;
-    }
+  for (const byAuthor of byAuthorCommits) {
+    commits.push(...byAuthor);
   }
 
-  return commits;
+  return dedupeCommitsBySha(commits);
 }
 
 export function mergeDiscoveredRepoEntries(discoveredRepoEntries) {
@@ -366,7 +402,23 @@ export async function buildLiveStats(config, token, {
       candidateRepo
     }) => {
       try {
-        return await listCommitsForRepoImpl({
+        const byAuthor = await listCommitsForRepoImpl({
+          owner,
+          repo,
+          since: window.start,
+          until: window.end,
+          token,
+          authors: [...identitySets.logins],
+          commitMatches(entry) {
+            return commitMatchesTrackedIdentity(entry, identitySets);
+          }
+        });
+
+        if (identitySets.emails.size === 0 || byAuthor.length > 0 || identitySets.logins.length === 0) {
+          return byAuthor;
+        }
+
+        return listCommitsForRepoImpl({
           owner,
           repo,
           since: window.start,
