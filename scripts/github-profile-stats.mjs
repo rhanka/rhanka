@@ -218,6 +218,12 @@ function toAggregatedCommit(commit, fallback, { excludePath = () => false } = {}
   };
 }
 
+function isMergeCommitEntry(entry) {
+  const commitParents = Array.isArray(entry.commit?.parents) ? entry.commit.parents : [];
+  const topLevelParents = Array.isArray(entry.parents) ? entry.parents : [];
+  return commitParents.length > 1 || topLevelParents.length > 1;
+}
+
 async function listCommitsForRepo({
   owner,
   repo,
@@ -225,41 +231,52 @@ async function listCommitsForRepo({
   since,
   until,
   token,
-  commitMatches = () => true
+  commitMatches = () => true,
+  authors = []
 }) {
-  const commits = [];
+  const authorList = [...new Set(authors.filter(Boolean))];
+  const effectiveAuthors = authorList.length > 0 ? authorList : [undefined];
 
-  for (let page = 1; ; page += 1) {
-    const entries = await githubRest(
-      buildListCommitsPath({
-        owner,
-        repo,
-        branch,
-        since,
-        until,
-        page
-      }),
-      token
-    );
+  const byAuthorCommits = await Promise.all(
+    effectiveAuthors.map(async (author) => {
+      const commits = [];
 
-    if (entries.length === 0) {
-      break;
-    }
+      for (let page = 1; ; page += 1) {
+        const entries = await githubRest(
+          buildListCommitsPath({
+            owner,
+            repo,
+            branch,
+            author,
+            since,
+            until,
+            page
+          }),
+          token
+        );
 
-    for (const entry of entries) {
-      if (!commitMatches(entry)) {
-        continue;
+        if (entries.length === 0) {
+          break;
+        }
+
+        for (const entry of entries) {
+          if (!commitMatches(entry)) {
+            continue;
+          }
+
+          commits.push(toCollectedCommit(`${owner}/${repo}`, entry));
+        }
+
+        if (entries.length < 100) {
+          break;
+        }
       }
 
-      commits.push(toCollectedCommit(`${owner}/${repo}`, entry));
-    }
+      return commits;
+    })
+  );
 
-    if (entries.length < 100) {
-      break;
-    }
-  }
-
-  return commits;
+  return dedupeCommitsBySha(byAuthorCommits.flat());
 }
 
 export function mergeDiscoveredRepoEntries(discoveredRepoEntries) {
@@ -361,7 +378,23 @@ export async function buildLiveStats(config, token, {
       candidateRepo
     }) => {
       try {
-        return await listCommitsForRepoImpl({
+        const byAuthor = await listCommitsForRepoImpl({
+          owner,
+          repo,
+          since: window.start,
+          until: window.end,
+          token,
+          authors: [...identitySets.logins],
+          commitMatches(entry) {
+            return commitMatchesTrackedIdentity(entry, identitySets);
+          }
+        });
+
+        if (identitySets.emails.size === 0 || byAuthor.length > 0 || identitySets.logins.length === 0) {
+          return byAuthor;
+        }
+
+        return listCommitsForRepoImpl({
           owner,
           repo,
           since: window.start,
@@ -390,6 +423,12 @@ export async function buildLiveStats(config, token, {
       hydrateCommitsConcurrency,
       dedupeCommitsBySha(collectedCommits),
       async (commit) => {
+        if (isMergeCommitEntry(commit)) {
+          return toAggregatedCommit(commit, commit, {
+            excludePath: excludeLinePath
+          });
+        }
+
         const { owner, name } = splitRepoName(commit.repo);
         const cacheKey = buildCommitCacheKey(commit.repo, commit.sha);
         const cachedEntry = commitDetailsCache?.entries?.[cacheKey];
