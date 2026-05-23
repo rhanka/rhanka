@@ -1,14 +1,9 @@
 name: Profile Stats
-# Push-triggered workflow edits let maintainers refresh stats without local API auth.
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '17 6 * * *'
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/profile-stats.yml'
 
 permissions:
   contents: write
@@ -21,15 +16,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Update checkout to latest main
-        run: |
-          git fetch origin main
-          git checkout -B main origin/main
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+
+      - name: Restore commit details cache
+        uses: actions/cache@v4
+        with:
+          path: .cache/github-profile-stats
+          key: github-profile-stats-commit-cache-v1-${{ runner.os }}-${{ hashFiles('scripts/github-profile-stats.mjs', 'src/**/*', 'config/stats.config.json') }}
+          restore-keys: |
+            github-profile-stats-commit-cache-v1-${{ runner.os }}-
 
       - name: Run tests
         run: node --test
@@ -46,5 +44,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md generated
           git diff --cached --quiet || git commit -m "chore: refresh profile stats"
-          git pull --rebase origin main
           git push

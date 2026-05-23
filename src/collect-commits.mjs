@@ -43,8 +43,14 @@ export function buildListCommitsPath({
   page
 }) {
   const params = new URLSearchParams();
-  params.set('sha', branch);
-  params.set('author', author);
+  if (branch) {
+    params.set('sha', branch);
+  }
+
+  if (author) {
+    params.set('author', author);
+  }
+
   params.set('since', since);
   params.set('until', until);
   params.set('per_page', '100');

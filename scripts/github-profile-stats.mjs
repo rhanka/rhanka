@@ -23,6 +23,59 @@ const generatedDir = path.join(rootDir, 'generated');
 const statsPath = path.join(generatedDir, 'stats.json');
 const weeklyCommitsPath = path.join(generatedDir, 'weekly-commits.svg');
 const weeklyLinesPath = path.join(generatedDir, 'weekly-lines.svg');
+const cacheDir = path.join(rootDir, '.cache', 'github-profile-stats');
+const commitDetailsCachePath = path.join(cacheDir, 'commit-details-cache.json');
+const cacheSchemaVersion = 1;
+
+function createCommitCacheEnvelope(entries = {}) {
+  return {
+    schemaVersion: cacheSchemaVersion,
+    updatedAt: new Date().toISOString(),
+    entries
+  };
+}
+
+function buildCommitCacheKey(repo, sha) {
+  return `${repo}#${sha}`;
+}
+
+function sanitizeCommitDetail(detail) {
+  if (!detail || typeof detail !== 'object') {
+    return null;
+  }
+
+  return {
+    sha: detail.sha,
+    parents: detail.parents,
+    commit: detail.commit,
+    stats: detail.stats,
+    files: detail.files
+  };
+}
+
+async function loadCommitDetailsCache() {
+  try {
+    const raw = await readFile(commitDetailsCachePath, 'utf8');
+    const parsed = JSON.parse(raw);
+
+    if (parsed && parsed.schemaVersion === cacheSchemaVersion && parsed.entries) {
+      return parsed;
+    }
+
+    return createCommitCacheEnvelope();
+  } catch (error) {
+    if (error.code === 'ENOENT') {
+      return createCommitCacheEnvelope();
+    }
+
+    return createCommitCacheEnvelope();
+  }
+}
+
+async function saveCommitDetailsCache(cache) {
+  await mkdir(cacheDir, { recursive: true });
+  await writeFile(commitDetailsCachePath, `${JSON.stringify({ ...cache, updatedAt: new Date().toISOString() }, null, 2)}\n`);
+}
 
 function buildStats(config, { generatedAt, window, commits }) {
   const aggregates = aggregateStats({ weeks: window.weeks, commits });
@@ -102,6 +155,37 @@ function toLineCounts(stats = {}) {
   };
 }
 
+function normalizeIdentity(value) {
+  return typeof value === 'string' ? value.trim().toLowerCase() : '';
+}
+
+function buildIdentitySets(config) {
+  return {
+    logins: new Set(config.identities.logins.map(normalizeIdentity)),
+    emails: new Set(config.identities.emails.map(normalizeIdentity))
+  };
+}
+
+function commitMatchesTrackedIdentity(entry, identitySets) {
+  const login = normalizeIdentity(entry.author?.login);
+  if (login && identitySets.logins.has(login)) {
+    return true;
+  }
+
+  const commitAuthor = entry.commit?.author;
+  const commitAuthorName = normalizeIdentity(commitAuthor?.name);
+  if (commitAuthorName && identitySets.logins.has(commitAuthorName)) {
+    return true;
+  }
+
+  const commitAuthorEmail = normalizeIdentity(commitAuthor?.email);
+  if (commitAuthorEmail && identitySets.emails.has(commitAuthorEmail)) {
+    return true;
+  }
+
+  return false;
+}
+
 function toFilteredFileLineCounts(files, excludePath) {
   return files.reduce((total, file) => {
     if (excludePath(file.filename)) {
@@ -134,19 +218,14 @@ function toAggregatedCommit(commit, fallback, { excludePath = () => false } = {}
   };
 }
 
-async function fetchDefaultBranch(owner, repo, token) {
-  const repository = await githubRest(`/repos/${owner}/${repo}`, token);
-  return repository.default_branch;
-}
-
-async function listCommitsForAuthor({
+async function listCommitsForRepo({
   owner,
   repo,
   branch,
-  author,
   since,
   until,
-  token
+  token,
+  commitMatches = () => true
 }) {
   const commits = [];
 
@@ -156,7 +235,6 @@ async function listCommitsForAuthor({
         owner,
         repo,
         branch,
-        author,
         since,
         until,
         page
@@ -169,7 +247,11 @@ async function listCommitsForAuthor({
     }
 
     for (const entry of entries) {
-      commits.push(toCollectedCommit(`${owner}/${repo}`, entry, author));
+      if (!commitMatches(entry)) {
+        continue;
+      }
+
+      commits.push(toCollectedCommit(`${owner}/${repo}`, entry));
     }
 
     if (entries.length < 100) {
@@ -236,10 +318,11 @@ export async function buildLiveStats(config, token, {
   nowIso = new Date().toISOString(),
   warn = console.warn,
   discoverReposForLoginsImpl = discoverReposForLogins,
-  fetchDefaultBranchImpl = fetchDefaultBranch,
-  listCommitsForAuthorImpl = listCommitsForAuthor,
+  listCommitsForRepoImpl = listCommitsForRepo,
   fetchCommitDetailsImpl = fetchCommitDetails,
-  listAuthorsConcurrency = 4,
+  loadCommitDetailsCacheImpl = loadCommitDetailsCache,
+  saveCommitDetailsCacheImpl = saveCommitDetailsCache,
+  listReposConcurrency = 4,
   hydrateCommitsConcurrency = 10,
   mapWithConcurrencyImpl = mapWithConcurrency
 } = {}) {
@@ -253,73 +336,45 @@ export async function buildLiveStats(config, token, {
     token,
     warn
   });
-
-  if (discoveredRepoEntries.length === 0 && config.includeRepos.length === 0) {
-    throw new Error('No contributed repositories discovered; refusing to write empty stats');
-  }
-
-  const repoBranchByName = new Map(
-    discoveredRepoEntries.map(({ repo, defaultBranch }) => [repo, defaultBranch])
-  );
+  const identitySets = buildIdentitySets(config);
   const candidateRepos = mergeCandidateRepos({
     discoveredRepos: discoveredRepoEntries.map(({ repo }) => repo),
     includeRepos: config.includeRepos,
     excludeRepos: config.excludeRepos
   });
-  const authors = [...new Set([...config.identities.logins, ...config.identities.emails])];
-  const repoAuthorTasks = [];
+  const repoTasks = [];
 
   for (const candidateRepo of candidateRepos) {
     const { owner, name } = splitRepoName(candidateRepo);
-    let defaultBranch = repoBranchByName.get(candidateRepo) ?? null;
 
-    if (defaultBranch === null) {
-      try {
-        defaultBranch = await fetchDefaultBranchImpl(owner, name, token);
-      } catch (error) {
-        warn(
-          warningMessage(
-            `skipping repo "${candidateRepo}" while fetching default branch`,
-            error
-          )
-        );
-        continue;
-      }
-    }
-
-    for (const author of authors) {
-      repoAuthorTasks.push({
-        owner,
-        repo: name,
-        candidateRepo,
-        branch: defaultBranch,
-        author
-      });
-    }
+    repoTasks.push({
+      owner,
+      repo: name,
+      candidateRepo
+    });
   }
 
   const collectedCommits = (
-    await mapWithConcurrencyImpl(listAuthorsConcurrency, repoAuthorTasks, async ({
+    await mapWithConcurrencyImpl(listReposConcurrency, repoTasks, async ({
       owner,
       repo,
-      candidateRepo,
-      branch,
-      author
+      candidateRepo
     }) => {
       try {
-        return await listCommitsForAuthorImpl({
+        return await listCommitsForRepoImpl({
           owner,
           repo,
-          branch,
-          author,
           since: window.start,
           until: window.end,
-          token
+          token,
+          commitMatches(entry) {
+            return commitMatchesTrackedIdentity(entry, identitySets);
+          }
         });
       } catch (error) {
         warn(
           warningMessage(
-            `skipping author "${author}" for repo "${candidateRepo}" while listing commits`,
+            `skipping commits for repo "${candidateRepo}" while listing commits`,
             error
           )
         );
@@ -328,11 +383,7 @@ export async function buildLiveStats(config, token, {
     })
   ).flat();
 
-  if (collectedCommits.length === 0) {
-    throw new Error('No commits collected; refusing to write empty stats');
-  }
-
-  let skippedCommitDetailCount = 0;
+  const commitDetailsCache = await loadCommitDetailsCacheImpl();
 
   const hydratedCommits = (
     await mapWithConcurrencyImpl(
@@ -340,14 +391,30 @@ export async function buildLiveStats(config, token, {
       dedupeCommitsBySha(collectedCommits),
       async (commit) => {
         const { owner, name } = splitRepoName(commit.repo);
+        const cacheKey = buildCommitCacheKey(commit.repo, commit.sha);
+        const cachedEntry = commitDetailsCache?.entries?.[cacheKey];
+        let details = cachedEntry;
 
         try {
-          const details = await fetchCommitDetailsImpl(owner, name, commit.sha, token);
+          if (!details) {
+            details = sanitizeCommitDetail(
+              await fetchCommitDetailsImpl(owner, name, commit.sha, token)
+            );
+
+            if (details) {
+              commitDetailsCache.entries = commitDetailsCache.entries ?? {};
+              commitDetailsCache.entries[cacheKey] = details;
+            }
+          }
+
+          if (!details) {
+            return null;
+          }
+
           return toAggregatedCommit(toCollectedCommit(commit.repo, details), commit, {
             excludePath: excludeLinePath
           });
         } catch (error) {
-          skippedCommitDetailCount += 1;
           warn(
             warningMessage(
               `skipping commit "${commit.sha}" in repo "${commit.repo}" while fetching details`,
@@ -360,11 +427,7 @@ export async function buildLiveStats(config, token, {
     )
   ).filter((commit) => commit !== null);
 
-  if (skippedCommitDetailCount > 0) {
-    throw new Error(
-      `Unable to fetch details for ${skippedCommitDetailCount} commits; refusing to write partial stats`
-    );
-  }
+  await saveCommitDetailsCacheImpl(commitDetailsCache);
 
   return buildStats(config, {
     generatedAt,
