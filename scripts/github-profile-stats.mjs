@@ -27,6 +27,32 @@ const cacheDir = path.join(rootDir, '.cache', 'github-profile-stats');
 const commitDetailsCachePath = path.join(cacheDir, 'commit-details-cache.json');
 const cacheSchemaVersion = 1;
 
+function buildStats(config, { generatedAt, window, commits }) {
+  const aggregates = aggregateStats({ weeks: window.weeks, commits });
+
+  return {
+    generatedAt,
+    window,
+    identities: config.identities,
+    weeklyCommits: aggregates.weeklyCommits,
+    weeklyLines: aggregates.weeklyLines,
+    weeklyLinesRaw: aggregates.weeklyLinesRaw,
+    topReposLast4Weeks: aggregates.topReposLast4Weeks
+  };
+}
+
+function buildEmptyStats(config) {
+  const generatedAt = new Date().toISOString();
+  const window = buildRollingWindow(generatedAt, config.windowWeeks);
+
+  return buildStats(config, { generatedAt, window, commits: [] });
+}
+
+function warningMessage(message, error) {
+  const detail = error instanceof Error ? error.message : String(error);
+  return `[github-profile-stats] ${message}: ${detail}`;
+}
+
 function createCommitCacheEnvelope(entries = {}) {
   return {
     schemaVersion: cacheSchemaVersion,
@@ -77,32 +103,6 @@ async function saveCommitDetailsCache(cache) {
   await writeFile(commitDetailsCachePath, `${JSON.stringify({ ...cache, updatedAt: new Date().toISOString() }, null, 2)}\n`);
 }
 
-function buildStats(config, { generatedAt, window, commits }) {
-  const aggregates = aggregateStats({ weeks: window.weeks, commits });
-
-  return {
-    generatedAt,
-    window,
-    identities: config.identities,
-    weeklyCommits: aggregates.weeklyCommits,
-    weeklyLines: aggregates.weeklyLines,
-    weeklyLinesRaw: aggregates.weeklyLinesRaw,
-    topReposLast4Weeks: aggregates.topReposLast4Weeks
-  };
-}
-
-function buildEmptyStats(config) {
-  const generatedAt = new Date().toISOString();
-  const window = buildRollingWindow(generatedAt, config.windowWeeks);
-
-  return buildStats(config, { generatedAt, window, commits: [] });
-}
-
-function warningMessage(message, error) {
-  const detail = error instanceof Error ? error.message : String(error);
-  return `[github-profile-stats] ${message}: ${detail}`;
-}
-
 export async function mapWithConcurrency(limit, items, worker) {
   if (!Number.isInteger(limit) || limit < 1) {
     throw new RangeError(`Concurrency limit must be a positive integer, got ${limit}`);
@@ -120,7 +120,6 @@ export async function mapWithConcurrency(limit, items, worker) {
   }
 
   const workerCount = Math.min(limit, items.length);
-
   await Promise.all(Array.from({ length: workerCount }, () => runWorker()));
 
   return results;
@@ -231,52 +230,41 @@ async function listCommitsForRepo({
   since,
   until,
   token,
-  commitMatches = () => true,
-  authors = []
+  commitMatches = () => true
 }) {
-  const authorList = [...new Set(authors.filter(Boolean))];
-  const effectiveAuthors = authorList.length > 0 ? authorList : [undefined];
+  const commits = [];
 
-  const byAuthorCommits = await Promise.all(
-    effectiveAuthors.map(async (author) => {
-      const commits = [];
+  for (let page = 1; ; page += 1) {
+    const entries = await githubRest(
+      buildListCommitsPath({
+        owner,
+        repo,
+        branch,
+        since,
+        until,
+        page
+      }),
+      token
+    );
 
-      for (let page = 1; ; page += 1) {
-        const entries = await githubRest(
-          buildListCommitsPath({
-            owner,
-            repo,
-            branch,
-            author,
-            since,
-            until,
-            page
-          }),
-          token
-        );
+    if (entries.length === 0) {
+      break;
+    }
 
-        if (entries.length === 0) {
-          break;
-        }
-
-        for (const entry of entries) {
-          if (!commitMatches(entry)) {
-            continue;
-          }
-
-          commits.push(toCollectedCommit(`${owner}/${repo}`, entry));
-        }
-
-        if (entries.length < 100) {
-          break;
-        }
+    for (const entry of entries) {
+      if (!commitMatches(entry)) {
+        continue;
       }
 
-      return commits;
-    })
-  );
+      commits.push(toCollectedCommit(`${owner}/${repo}`, entry));
+    }
 
-  return dedupeCommitsBySha(byAuthorCommits.flat());
+    if (entries.length < 100) {
+      break;
+    }
+  }
+
+  return commits;
 }
 
 export function mergeDiscoveredRepoEntries(discoveredRepoEntries) {
@@ -339,7 +327,7 @@ export async function buildLiveStats(config, token, {
   fetchCommitDetailsImpl = fetchCommitDetails,
   loadCommitDetailsCacheImpl = loadCommitDetailsCache,
   saveCommitDetailsCacheImpl = saveCommitDetailsCache,
-  listReposConcurrency = 4,
+  listReposConcurrency = 2,
   hydrateCommitsConcurrency = 10,
   mapWithConcurrencyImpl = mapWithConcurrency
 } = {}) {
@@ -378,23 +366,7 @@ export async function buildLiveStats(config, token, {
       candidateRepo
     }) => {
       try {
-        const byAuthor = await listCommitsForRepoImpl({
-          owner,
-          repo,
-          since: window.start,
-          until: window.end,
-          token,
-          authors: [...identitySets.logins],
-          commitMatches(entry) {
-            return commitMatchesTrackedIdentity(entry, identitySets);
-          }
-        });
-
-        if (identitySets.emails.size === 0 || byAuthor.length > 0 || identitySets.logins.length === 0) {
-          return byAuthor;
-        }
-
-        return listCommitsForRepoImpl({
+        return await listCommitsForRepoImpl({
           owner,
           repo,
           since: window.start,
@@ -417,7 +389,6 @@ export async function buildLiveStats(config, token, {
   ).flat();
 
   const commitDetailsCache = await loadCommitDetailsCacheImpl();
-
   const hydratedCommits = (
     await mapWithConcurrencyImpl(
       hydrateCommitsConcurrency,

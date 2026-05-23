@@ -103,6 +103,19 @@ test('buildListCommitsPath omits optional empty filters', () => {
   );
 });
 
+test('buildListCommitsPath omits optional empty filters', () => {
+  assert.equal(
+    buildListCommitsPath({
+      owner: 'rhanka',
+      repo: 'graphify',
+      since: '2026-04-01T00:00:00.000Z',
+      until: '2026-04-30T23:59:59.999Z',
+      page: 1
+    }),
+    '/repos/rhanka/graphify/commits?since=2026-04-01T00%3A00%3A00.000Z&until=2026-04-30T23%3A59%3A59.999Z&per_page=100&page=1'
+  );
+});
+
 test('fetchCommitDetails requests the full REST commit payload for a sha', async () => {
   const commit = await fetchCommitDetails('rhanka', 'graphify', 'abc123', 'secret-token', async (url, init) => {
     assert.equal(url, 'https://api.github.com/repos/rhanka/graphify/commits/abc123');
