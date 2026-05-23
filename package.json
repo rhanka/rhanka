@@ -7,6 +7,7 @@
   },
   "scripts": {
     "test": "node --test",
-    "stats": "node scripts/github-profile-stats.mjs --write"
+    "stats": "node scripts/github-profile-stats.mjs --write",
+    "stats:dispatch": "gh workflow run profile-stats.yml"
   }
 }

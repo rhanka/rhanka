@@ -7,7 +7,24 @@ import {
   mapWithConcurrency,
   resolveGithubToken
 } from '../scripts/github-profile-stats.mjs';
-import { toCollectedCommit } from '../src/collect-commits.mjs';
+
+const commitCacheSchemaVersion = 1;
+
+function buildEmptyCommitCache() {
+  return {
+    schemaVersion: commitCacheSchemaVersion,
+    updatedAt: '2026-01-01T00:00:00.000Z',
+    entries: {}
+  };
+}
+
+function withNoCommitCache(overrides = {}) {
+  return {
+    loadCommitDetailsCacheImpl: async () => buildEmptyCommitCache(),
+    saveCommitDetailsCacheImpl: async () => {},
+    ...overrides
+  };
+}
 
 test('github-profile-stats write mode requires a GitHub token for live collection', async () => {
   await assert.rejects(
@@ -100,57 +117,12 @@ test('discoverReposForLogins warns when GitHub discovery returns 100 repos for a
   ]);
 });
 
-test('buildLiveStats rejects empty repository discovery without manual includes', async () => {
-  const config = {
-    identities: {
-      logins: ['rhanka'],
-      emails: []
-    },
-    includeRepos: [],
-    excludeRepos: [],
-    windowWeeks: 1
-  };
-
-  await assert.rejects(
-    () =>
-      buildLiveStats(config, 'secret-token', {
-        nowIso: '2026-04-30T12:00:00.000Z',
-        discoverReposForLoginsImpl: async () => []
-      }),
-    /No contributed repositories discovered; refusing to write empty stats/
-  );
-});
-
-test('buildLiveStats rejects empty commit collection', async () => {
-  const config = {
-    identities: {
-      logins: ['rhanka'],
-      emails: []
-    },
-    includeRepos: [],
-    excludeRepos: [],
-    windowWeeks: 1
-  };
-
-  await assert.rejects(
-    () =>
-      buildLiveStats(config, 'secret-token', {
-        nowIso: '2026-04-30T12:00:00.000Z',
-        discoverReposForLoginsImpl: async () => [
-          { repo: 'org/good', defaultBranch: 'main' }
-        ],
-        listCommitsForAuthorImpl: async () => []
-      }),
-    /No commits collected; refusing to write empty stats/
-  );
-});
-
-test('buildLiveStats warns and skips failing repos and identities, but rejects missing commit details', async () => {
+test('buildLiveStats warns and skips failing repos and failing commit details', async () => {
   const warnings = [];
   const config = {
     identities: {
-      logins: ['rhanka'],
-      emails: ['rhanka@example.com']
+      logins: ['rhanka', 'antoinefa'],
+      emails: ['rhanka@example.com', 'antoinefa@example.com']
     },
     includeRepos: ['org/included'],
     excludeRepos: ['org/excluded'],
@@ -158,101 +130,102 @@ test('buildLiveStats warns and skips failing repos and identities, but rejects m
   };
   const authoredAt = '2026-04-29T11:00:00.000Z';
 
-  await assert.rejects(
-    () =>
-      buildLiveStats(config, 'secret-token', {
-        nowIso: '2026-04-30T12:00:00.000Z',
-        warn: (message) => warnings.push(message),
-        discoverReposForLoginsImpl: async () => [
-          { repo: 'org/good', defaultBranch: 'main' },
-          { repo: 'org/no-branch', defaultBranch: null },
-          { repo: 'org/bad-list', defaultBranch: 'main' },
-          { repo: 'org/excluded', defaultBranch: 'main' }
-        ],
-        fetchDefaultBranchImpl: async (owner, repo) => {
-          if (`${owner}/${repo}` === 'org/no-branch') {
-            throw new Error('403 branch lookup denied');
-          }
+  const stats = await buildLiveStats(config, 'secret-token', {
+    nowIso: '2026-04-30T12:00:00.000Z',
+    warn: (message) => warnings.push(message),
+    ...withNoCommitCache(),
+    discoverReposForLoginsImpl: async () => [
+      { repo: 'org/good', defaultBranch: 'main' },
+      { repo: 'org/no-branch', defaultBranch: null },
+      { repo: 'org/bad-list', defaultBranch: 'main' },
+      { repo: 'org/excluded', defaultBranch: 'main' }
+    ],
+    listCommitsForRepoImpl: async ({ owner, repo, commitMatches }) => {
+      const fullRepo = `${owner}/${repo}`;
 
-          return 'main';
-        },
-        listCommitsForAuthorImpl: async ({ owner, repo, author }) => {
-          const fullRepo = `${owner}/${repo}`;
+      if (fullRepo === 'org/bad-list') {
+        throw new Error('502 listing failed for tracked identity set');
+      }
 
-          if (fullRepo === 'org/bad-list') {
-            throw new Error(`502 listing failed for ${author}`);
-          }
-
-          if (fullRepo === 'org/good') {
-            if (author === 'rhanka') {
-              return [
-                toCollectedCommit(fullRepo, {
-                  sha: 'ok-sha',
-                  commit: {
-                    author: {
-                      name: 'Rhanka',
-                      email: 'rhanka@example.com',
-                      date: authoredAt
-                    }
-                  }
-                }, author),
-                toCollectedCommit(fullRepo, {
-                  sha: 'bad-sha',
-                  commit: {
-                    author: {
-                      name: 'Rhanka',
-                      email: 'rhanka@example.com',
-                      date: authoredAt
-                    }
-                  }
-                }, author)
-              ];
-            }
-
-            return [
-              toCollectedCommit(fullRepo, {
-                sha: 'ok-sha',
-                commit: {
-                  author: {
-                    name: 'Rhanka',
-                    email: 'rhanka@example.com',
-                    date: authoredAt
-                  }
-                }
-              }, author)
-            ];
-          }
-
-          return [];
-        },
-        fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
-          if (sha === 'bad-sha') {
-            throw new Error('500 detail lookup failed');
-          }
-
-          return {
-            sha,
+      if (fullRepo === 'org/good') {
+        return [
+          {
+            sha: 'ok-sha',
+            repo: fullRepo,
+            author: {
+              login: 'rhanka'
+            },
             commit: {
               author: {
                 name: 'Rhanka',
                 email: 'rhanka@example.com',
                 date: authoredAt
               }
-            },
-            stats: {
-              additions: 4,
-              deletions: 1
             }
-          };
-        }
-      }),
-    /Unable to fetch details for 1 commits; refusing to write partial stats/
-  );
+          },
+          {
+            sha: 'other-sha',
+            repo: fullRepo,
+            commit: {
+              author: {
+                name: 'Other',
+                email: 'other@example.com',
+                date: authoredAt
+              }
+            }
+          },
+          {
+            sha: 'bad-sha',
+            repo: fullRepo,
+            author: {
+              login: 'rhanka'
+            },
+            commit: {
+              author: {
+                name: 'Rhanka',
+                email: 'rhanka@example.com',
+                date: authoredAt
+              }
+            }
+          }
+        ].filter((entry) => typeof commitMatches === 'function' ? commitMatches(entry) : true);
+      }
 
+      return [];
+    },
+    fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
+      if (sha === 'bad-sha') {
+        throw new Error('500 detail lookup failed');
+      }
+
+      return {
+        sha,
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        },
+        stats: {
+          additions: 4,
+          deletions: 1
+        }
+      };
+    }
+  });
+
+  assert.equal(stats.weeklyCommits.at(-1).count, 1);
+  assert.deepEqual(stats.topReposLast4Weeks, [
+    {
+      repo: 'org/good',
+      lastActivityAt: authoredAt,
+      commits4w: 1,
+      lines4w: 5
+    }
+  ]);
   assert.deepEqual([...warnings].sort(), [
-    '[github-profile-stats] skipping author "rhanka" for repo "org/bad-list" while listing commits: 502 listing failed for rhanka',
-    '[github-profile-stats] skipping author "rhanka@example.com" for repo "org/bad-list" while listing commits: 502 listing failed for rhanka@example.com',
-    '[github-profile-stats] skipping repo "org/no-branch" while fetching default branch: 403 branch lookup denied',
+    '[github-profile-stats] skipping commits for repo "org/bad-list" while listing commits: 502 listing failed for tracked identity set',
     '[github-profile-stats] skipping commit "bad-sha" in repo "org/good" while fetching details: 500 detail lookup failed'
   ].sort());
 });
@@ -271,12 +244,14 @@ test('buildLiveStats keeps merge commits in weekly counts but excludes their dif
 
   const stats = await buildLiveStats(config, 'secret-token', {
     nowIso: '2026-04-30T12:00:00.000Z',
+    ...withNoCommitCache(),
     discoverReposForLoginsImpl: async () => [
       { repo: 'org/good', defaultBranch: 'main' }
     ],
-    listCommitsForAuthorImpl: async ({ owner, repo }) => [
-      toCollectedCommit(`${owner}/${repo}`, {
+    listCommitsForRepoImpl: async ({ owner, repo, commitMatches }) => [
+      {
         sha: 'merge-sha',
+        repo: `${owner}/${repo}`,
         commit: {
           author: {
             name: 'Rhanka',
@@ -284,9 +259,10 @@ test('buildLiveStats keeps merge commits in weekly counts but excludes their dif
             date: authoredAt
           }
         }
-      }),
-      toCollectedCommit(`${owner}/${repo}`, {
+      },
+      {
         sha: 'normal-sha',
+        repo: `${owner}/${repo}`,
         commit: {
           author: {
             name: 'Rhanka',
@@ -294,8 +270,8 @@ test('buildLiveStats keeps merge commits in weekly counts but excludes their dif
             date: authoredAt
           }
         }
-      })
-    ],
+      }
+    ].filter((entry) => (commitMatches ? commitMatches(entry) : true)),
     fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
       if (sha === 'merge-sha') {
         return {
@@ -339,6 +315,82 @@ test('buildLiveStats keeps merge commits in weekly counts but excludes their dif
   assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 5);
 });
 
+test('buildLiveStats reuses commit details from cache and skips API fetch', async () => {
+  const authoredAt = '2026-04-29T11:00:00.000Z';
+  const cache = {
+    schemaVersion: commitCacheSchemaVersion,
+    updatedAt: '2026-04-30T12:00:00.000Z',
+    entries: {
+      'org/good#normal-sha': {
+        sha: 'normal-sha',
+        parents: [{ sha: 'base' }],
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        },
+        stats: {
+          additions: 42,
+          deletions: 2
+        },
+        files: [
+          { filename: 'src/main.ts', additions: 42, deletions: 2 }
+        ]
+      }
+    }
+  };
+  const warnings = [];
+  let fetchCallCount = 0;
+
+  const stats = await buildLiveStats({
+    identities: {
+      logins: ['rhanka'],
+      emails: []
+    },
+    includeRepos: [],
+    excludeRepos: [],
+    windowWeeks: 1
+  }, 'secret-token', {
+    nowIso: '2026-04-30T12:00:00.000Z',
+    warn: (message) => warnings.push(message),
+    ...withNoCommitCache({
+      loadCommitDetailsCacheImpl: async () => cache
+    }),
+    discoverReposForLoginsImpl: async () => [
+      { repo: 'org/good', defaultBranch: 'main' }
+    ],
+    listCommitsForRepoImpl: async () => [
+      {
+        sha: 'normal-sha',
+        repo: 'org/good',
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        }
+      }
+    ],
+    fetchCommitDetailsImpl: async () => {
+      fetchCallCount += 1;
+      return {};
+    }
+  });
+
+  assert.equal(fetchCallCount, 0);
+  assert.equal(stats.weeklyCommits.at(-1).count, 1);
+  assert.deepEqual(stats.weeklyLines.at(-1), {
+    weekStart: '2026-04-26T00:00:00.000Z',
+    additions: 42,
+    deletions: 2,
+    net: 40
+  });
+  assert.equal(warnings.length, 0);
+});
+
 test('buildLiveStats filters noisy file paths from line totals while preserving raw line totals', async () => {
   const authoredAt = '2026-04-29T11:00:00.000Z';
   const config = {
@@ -356,12 +408,14 @@ test('buildLiveStats filters noisy file paths from line totals while preserving 
 
   const stats = await buildLiveStats(config, 'secret-token', {
     nowIso: '2026-04-30T12:00:00.000Z',
+    ...withNoCommitCache(),
     discoverReposForLoginsImpl: async () => [
       { repo: 'org/good', defaultBranch: 'main' }
     ],
-    listCommitsForAuthorImpl: async ({ owner, repo }) => [
-      toCollectedCommit(`${owner}/${repo}`, {
+    listCommitsForRepoImpl: async ({ owner, repo, commitMatches }) => [
+      {
         sha: 'normal-sha',
+        repo: `${owner}/${repo}`,
         commit: {
           author: {
             name: 'Rhanka',
@@ -369,8 +423,8 @@ test('buildLiveStats filters noisy file paths from line totals while preserving 
             date: authoredAt
           }
         }
-      })
-    ],
+      }
+    ].filter((entry) => (commitMatches ? commitMatches(entry) : true)),
     fetchCommitDetailsImpl: async (_owner, _repo, sha) => ({
       sha,
       parents: [{ sha: 'base' }],

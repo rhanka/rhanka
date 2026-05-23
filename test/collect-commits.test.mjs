@@ -86,7 +86,20 @@ test('buildListCommitsPath builds the commits rest path with filters and paginat
       until: '2026-04-30T23:59:59.999Z',
       page: 3
     }),
-    '/repos/rhanka/graphify/commits?sha=main&author=graph-author&since=2026-04-01T00%3A00%3A00.000Z&until=2026-04-30T23%3A59%3A59.999Z&per_page=100&page=3'
+      '/repos/rhanka/graphify/commits?sha=main&author=graph-author&since=2026-04-01T00%3A00%3A00.000Z&until=2026-04-30T23%3A59%3A59.999Z&per_page=100&page=3'
+  );
+});
+
+test('buildListCommitsPath omits optional empty filters', () => {
+  assert.equal(
+    buildListCommitsPath({
+      owner: 'rhanka',
+      repo: 'graphify',
+      since: '2026-04-01T00:00:00.000Z',
+      until: '2026-04-30T23:59:59.999Z',
+      page: 1
+    }),
+    '/repos/rhanka/graphify/commits?since=2026-04-01T00%3A00%3A00.000Z&until=2026-04-30T23%3A59%3A59.999Z&per_page=100&page=1'
   );
 });
 
