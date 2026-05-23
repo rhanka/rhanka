@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/openerp | 2026-05-23 | 165 | 22835 |
+| rhanka/graphify | 2026-05-23 | 266 | 31445 |
+| rhanka/sentropic | 2026-05-23 | 438 | 91537 |
+| rhanka/surch | 2026-05-23 | 391 | 90216 |
+| rhanka/openerp | 2026-05-23 | 166 | 23340 |
 | matchID-project/matchID | 2026-05-23 | 74 | 3288 |
-| rhanka/surch | 2026-05-23 | 390 | 90216 |
-| rhanka/sentropic | 2026-05-23 | 430 | 91128 |
-| rhanka/rhanka | 2026-05-23 | 32 | 8391 |
 
 </details>
 <!-- github-profile-stats:end -->
