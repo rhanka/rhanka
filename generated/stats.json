@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-05-23T23:52:53.573Z",
+  "generatedAt": "2026-05-24T02:04:26.115Z",
   "window": {
-    "start": "2025-05-25T00:00:00.000Z",
-    "end": "2026-05-23T23:59:59.999Z",
+    "start": "2025-06-01T00:00:00.000Z",
+    "end": "2026-05-30T23:59:59.999Z",
     "weeks": [
-      "2025-05-25T00:00:00.000Z",
       "2025-06-01T00:00:00.000Z",
       "2025-06-08T00:00:00.000Z",
       "2025-06-15T00:00:00.000Z",
@@ -55,7 +54,8 @@
       "2026-04-26T00:00:00.000Z",
       "2026-05-03T00:00:00.000Z",
       "2026-05-10T00:00:00.000Z",
-      "2026-05-17T00:00:00.000Z"
+      "2026-05-17T00:00:00.000Z",
+      "2026-05-24T00:00:00.000Z"
     ]
   },
   "identities": {
@@ -69,10 +69,6 @@
     ]
   },
   "weeklyCommits": [
-    {
-      "weekStart": "2025-05-25T00:00:00.000Z",
-      "count": 18
-    },
     {
       "weekStart": "2025-06-01T00:00:00.000Z",
       "count": 24
@@ -276,15 +272,13 @@
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
       "count": 608
+    },
+    {
+      "weekStart": "2026-05-24T00:00:00.000Z",
+      "count": 0
     }
   ],
   "weeklyLines": [
-    {
-      "weekStart": "2025-05-25T00:00:00.000Z",
-      "additions": 2960,
-      "deletions": 117,
-      "net": 2843
-    },
     {
       "weekStart": "2025-06-01T00:00:00.000Z",
       "additions": 671,
@@ -590,15 +584,15 @@
       "additions": 90255,
       "deletions": 27975,
       "net": 62280
+    },
+    {
+      "weekStart": "2026-05-24T00:00:00.000Z",
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     }
   ],
   "weeklyLinesRaw": [
-    {
-      "weekStart": "2025-05-25T00:00:00.000Z",
-      "additions": 3549,
-      "deletions": 134,
-      "net": 3415
-    },
     {
       "weekStart": "2025-06-01T00:00:00.000Z",
       "additions": 3038,
@@ -904,26 +898,32 @@
       "additions": 318863,
       "deletions": 173678,
       "net": 145185
+    },
+    {
+      "weekStart": "2026-05-24T00:00:00.000Z",
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-05-23T23:34:04Z",
-      "commits4w": 266,
-      "lines4w": 31445
+      "commits4w": 255,
+      "lines4w": 30586
     },
     {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-05-23T23:23:35Z",
-      "commits4w": 438,
-      "lines4w": 91537
+      "commits4w": 416,
+      "lines4w": 90496
     },
     {
       "repo": "rhanka/surch",
       "lastActivityAt": "2026-05-23T22:30:04Z",
-      "commits4w": 391,
-      "lines4w": 90216
+      "commits4w": 362,
+      "lines4w": 86363
     },
     {
       "repo": "rhanka/openerp",
@@ -934,8 +934,8 @@
     {
       "repo": "matchID-project/matchID",
       "lastActivityAt": "2026-05-23T21:10:35Z",
-      "commits4w": 74,
-      "lines4w": 3288
+      "commits4w": 44,
+      "lines4w": 2625
     }
   ]
 }
