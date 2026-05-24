@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T15:32:01.341Z",
+  "generatedAt": "2026-05-24T16:02:02.321Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 49
+      "count": 50
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 15390,
-      "deletions": 554,
-      "net": 14836
+      "additions": 15787,
+      "deletions": 623,
+      "net": 15164
     }
   ],
   "weeklyLinesRaw": [
@@ -901,12 +901,18 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 39878,
-      "deletions": 19011,
-      "net": 20867
+      "additions": 40632,
+      "deletions": 19091,
+      "net": 21541
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-24T15:40:15Z",
+      "commits4w": 371,
+      "lines4w": 88113
+    },
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-05-24T15:09:05Z",
@@ -918,12 +924,6 @@
       "lastActivityAt": "2026-05-24T15:03:17Z",
       "commits4w": 162,
       "lines4w": 29006
-    },
-    {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-24T14:55:16Z",
-      "commits4w": 370,
-      "lines4w": 87647
     },
     {
       "repo": "rhanka/mcp-hono",
