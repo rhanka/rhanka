@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-24T21:17:22.888Z",
+  "generatedAt": "2026-05-24T21:53:07.170Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 88
+      "count": 104
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 20329,
-      "deletions": 2144,
-      "net": 18185
+      "additions": 22344,
+      "deletions": 2261,
+      "net": 20083
     }
   ],
   "weeklyLinesRaw": [
@@ -901,41 +901,41 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 48205,
-      "deletions": 21982,
-      "net": 26223
+      "additions": 56017,
+      "deletions": 27526,
+      "net": 28491
     }
   ],
   "topReposLast4Weeks": [
     {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-24T21:49:46Z",
+      "commits4w": 375,
+      "lines4w": 89551
+    },
+    {
+      "repo": "rhanka/h2a",
+      "lastActivityAt": "2026-05-24T21:33:17Z",
+      "commits4w": 111,
+      "lines4w": 19268
+    },
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-05-24T21:29:04Z",
+      "commits4w": 164,
+      "lines4w": 29527
+    },
+    {
       "repo": "rhanka/sentropic",
-      "lastActivityAt": "2026-05-24T21:12:41Z",
-      "commits4w": 482,
+      "lastActivityAt": "2026-05-24T21:27:50Z",
+      "commits4w": 484,
       "lines4w": 100452
     },
     {
       "repo": "rhanka/mcp-hono",
-      "lastActivityAt": "2026-05-24T20:55:06Z",
-      "commits4w": 3,
-      "lines4w": 3952
-    },
-    {
-      "repo": "rhanka/remote",
-      "lastActivityAt": "2026-05-24T20:42:29Z",
-      "commits4w": 82,
-      "lines4w": 12302
-    },
-    {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-24T20:36:16Z",
-      "commits4w": 372,
-      "lines4w": 88113
-    },
-    {
-      "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-05-24T20:32:57Z",
-      "commits4w": 108,
-      "lines4w": 19174
+      "lastActivityAt": "2026-05-24T21:26:28Z",
+      "commits4w": 5,
+      "lines4w": 3965
     }
   ]
 }
