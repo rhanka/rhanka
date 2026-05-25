@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
+| rhanka/surch | 2026-05-25 | 378 | 89917 |
+| rhanka/mcp-hono | 2026-05-25 | 13 | 4513 |
 | rhanka/graphify | 2026-05-25 | 295 | 35363 |
 | rhanka/remote | 2026-05-25 | 87 | 13183 |
 | rhanka/openerp | 2026-05-25 | 170 | 25277 |
-| rhanka/agent-stats | 2026-05-25 | 16 | 5976 |
-| rhanka/mcp-hono | 2026-05-25 | 11 | 4426 |
 
 </details>
 <!-- github-profile-stats:end -->
