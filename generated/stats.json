@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T00:16:47.495Z",
+  "generatedAt": "2026-05-25T02:05:28.450Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 115
+      "count": 126
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 23710,
-      "deletions": 2299,
-      "net": 21411
+      "additions": 26615,
+      "deletions": 2345,
+      "net": 24270
     }
   ],
   "weeklyLinesRaw": [
@@ -901,41 +901,41 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 100083,
-      "deletions": 50327,
-      "net": 49756
+      "additions": 150420,
+      "deletions": 96580,
+      "net": 53840
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/mcp-hono",
-      "lastActivityAt": "2026-05-25T00:05:30Z",
-      "commits4w": 9,
-      "lines4w": 4410
+      "repo": "rhanka/openerp",
+      "lastActivityAt": "2026-05-25T01:51:13Z",
+      "commits4w": 170,
+      "lines4w": 25277
     },
     {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-24T22:11:33Z",
-      "commits4w": 376,
-      "lines4w": 89837
+      "repo": "rhanka/agent-stats",
+      "lastActivityAt": "2026-05-25T01:47:09Z",
+      "commits4w": 16,
+      "lines4w": 5976
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-24T22:10:01Z",
-      "commits4w": 289,
-      "lines4w": 34023
+      "lastActivityAt": "2026-05-25T01:31:43Z",
+      "commits4w": 293,
+      "lines4w": 35336
     },
     {
-      "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-05-24T21:33:17Z",
-      "commits4w": 111,
-      "lines4w": 19268
+      "repo": "rhanka/remote",
+      "lastActivityAt": "2026-05-25T01:26:02Z",
+      "commits4w": 86,
+      "lines4w": 12799
     },
     {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-24T21:29:04Z",
-      "commits4w": 164,
-      "lines4w": 29527
+      "repo": "rhanka/mcp-hono",
+      "lastActivityAt": "2026-05-25T01:15:23Z",
+      "commits4w": 11,
+      "lines4w": 4426
     }
   ]
 }
