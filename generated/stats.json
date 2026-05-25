@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T07:56:06.472Z",
+  "generatedAt": "2026-05-25T10:59:32.733Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 133
+      "count": 149
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 27166,
-      "deletions": 2372,
-      "net": 24794
+      "additions": 29340,
+      "deletions": 2520,
+      "net": 26820
     }
   ],
   "weeklyLinesRaw": [
@@ -901,41 +901,41 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 193972,
-      "deletions": 139385,
-      "net": 54587
+      "additions": 196733,
+      "deletions": 139588,
+      "net": 57145
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-25T03:57:36Z",
-      "commits4w": 378,
-      "lines4w": 89917
+      "lastActivityAt": "2026-05-25T10:57:03Z",
+      "commits4w": 388,
+      "lines4w": 91644
+    },
+    {
+      "repo": "rhanka/h2a",
+      "lastActivityAt": "2026-05-25T10:33:37Z",
+      "commits4w": 114,
+      "lines4w": 19582
     },
     {
       "repo": "rhanka/mcp-hono",
-      "lastActivityAt": "2026-05-25T03:41:04Z",
-      "commits4w": 13,
-      "lines4w": 4513
+      "lastActivityAt": "2026-05-25T10:16:55Z",
+      "commits4w": 15,
+      "lines4w": 4762
+    },
+    {
+      "repo": "matchID-project/matchID",
+      "lastActivityAt": "2026-05-25T10:11:14Z",
+      "commits4w": 45,
+      "lines4w": 2657
     },
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-05-25T02:34:19Z",
       "commits4w": 295,
       "lines4w": 35363
-    },
-    {
-      "repo": "rhanka/remote",
-      "lastActivityAt": "2026-05-25T02:07:16Z",
-      "commits4w": 87,
-      "lines4w": 13183
-    },
-    {
-      "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-05-25T01:51:13Z",
-      "commits4w": 170,
-      "lines4w": 25277
     }
   ]
 }
