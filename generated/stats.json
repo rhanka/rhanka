@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T14:14:04.792Z",
+  "generatedAt": "2026-05-25T16:58:43.873Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 189
+      "count": 206
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 35320,
-      "deletions": 3921,
-      "net": 31399
+      "additions": 41500,
+      "deletions": 4020,
+      "net": 37480
     }
   ],
   "weeklyLinesRaw": [
@@ -901,41 +901,41 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 203904,
-      "deletions": 141553,
-      "net": 62351
+      "additions": 211101,
+      "deletions": 141706,
+      "net": 69395
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-05-25T14:13:57Z",
-      "commits4w": 171,
-      "lines4w": 26033
-    },
-    {
       "repo": "rhanka/mcp-wave",
-      "lastActivityAt": "2026-05-25T14:06:15Z",
-      "commits4w": 125,
+      "lastActivityAt": "2026-05-25T16:55:07Z",
+      "commits4w": 126,
       "lines4w": 20632
     },
     {
-      "repo": "rhanka/agent-stats",
-      "lastActivityAt": "2026-05-25T14:06:01Z",
-      "commits4w": 1,
-      "lines4w": 399
+      "repo": "rhanka/openerp",
+      "lastActivityAt": "2026-05-25T16:37:09Z",
+      "commits4w": 174,
+      "lines4w": 29257
+    },
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-25T16:07:33Z",
+      "commits4w": 393,
+      "lines4w": 92481
+    },
+    {
+      "repo": "rhanka/remote",
+      "lastActivityAt": "2026-05-25T16:00:57Z",
+      "commits4w": 89,
+      "lines4w": 14662
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-05-25T14:02:12Z",
-      "commits4w": 117,
-      "lines4w": 20022
-    },
-    {
-      "repo": "matchID-project/matchID",
-      "lastActivityAt": "2026-05-25T13:13:36Z",
-      "commits4w": 51,
-      "lines4w": 2789
+      "lastActivityAt": "2026-05-25T14:41:22Z",
+      "commits4w": 124,
+      "lines4w": 20763
     }
   ]
 }
