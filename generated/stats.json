@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T02:50:21.889Z",
+  "generatedAt": "2026-05-25T04:06:43.006Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 129
+      "count": 133
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 27008,
-      "deletions": 2363,
-      "net": 24645
+      "additions": 27166,
+      "deletions": 2372,
+      "net": 24794
     }
   ],
   "weeklyLinesRaw": [
@@ -901,12 +901,24 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 193775,
-      "deletions": 139355,
-      "net": 54420
+      "additions": 193972,
+      "deletions": 139385,
+      "net": 54587
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-25T03:57:36Z",
+      "commits4w": 378,
+      "lines4w": 89917
+    },
+    {
+      "repo": "rhanka/mcp-hono",
+      "lastActivityAt": "2026-05-25T03:41:04Z",
+      "commits4w": 13,
+      "lines4w": 4513
+    },
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-05-25T02:34:19Z",
@@ -924,18 +936,6 @@
       "lastActivityAt": "2026-05-25T01:51:13Z",
       "commits4w": 170,
       "lines4w": 25277
-    },
-    {
-      "repo": "rhanka/agent-stats",
-      "lastActivityAt": "2026-05-25T01:47:09Z",
-      "commits4w": 16,
-      "lines4w": 5976
-    },
-    {
-      "repo": "rhanka/mcp-hono",
-      "lastActivityAt": "2026-05-25T01:15:23Z",
-      "commits4w": 11,
-      "lines4w": 4426
     }
   ]
 }
