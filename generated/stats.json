@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T02:05:28.450Z",
+  "generatedAt": "2026-05-25T02:50:21.889Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 126
+      "count": 129
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 26615,
-      "deletions": 2345,
-      "net": 24270
+      "additions": 27008,
+      "deletions": 2363,
+      "net": 24645
     }
   ],
   "weeklyLinesRaw": [
@@ -901,12 +901,24 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 150420,
-      "deletions": 96580,
-      "net": 53840
+      "additions": 193775,
+      "deletions": 139355,
+      "net": 54420
     }
   ],
   "topReposLast4Weeks": [
+    {
+      "repo": "rhanka/graphify",
+      "lastActivityAt": "2026-05-25T02:34:19Z",
+      "commits4w": 295,
+      "lines4w": 35363
+    },
+    {
+      "repo": "rhanka/remote",
+      "lastActivityAt": "2026-05-25T02:07:16Z",
+      "commits4w": 87,
+      "lines4w": 13183
+    },
     {
       "repo": "rhanka/openerp",
       "lastActivityAt": "2026-05-25T01:51:13Z",
@@ -918,18 +930,6 @@
       "lastActivityAt": "2026-05-25T01:47:09Z",
       "commits4w": 16,
       "lines4w": 5976
-    },
-    {
-      "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-25T01:31:43Z",
-      "commits4w": 293,
-      "lines4w": 35336
-    },
-    {
-      "repo": "rhanka/remote",
-      "lastActivityAt": "2026-05-25T01:26:02Z",
-      "commits4w": 86,
-      "lines4w": 12799
     },
     {
       "repo": "rhanka/mcp-hono",
