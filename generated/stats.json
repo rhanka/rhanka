@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T10:59:32.733Z",
+  "generatedAt": "2026-05-25T14:14:04.792Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 744
+      "count": 729
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 149
+      "count": 189
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 114657,
-      "deletions": 29672,
-      "net": 84985
+      "additions": 108732,
+      "deletions": 29621,
+      "net": 79111
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 29340,
-      "deletions": 2520,
-      "net": 26820
+      "additions": 35320,
+      "deletions": 3921,
+      "net": 31399
     }
   ],
   "weeklyLinesRaw": [
@@ -895,47 +895,47 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 349769,
-      "deletions": 176600,
-      "net": 173169
+      "additions": 335989,
+      "deletions": 176102,
+      "net": 159887
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 196733,
-      "deletions": 139588,
-      "net": 57145
+      "additions": 203904,
+      "deletions": 141553,
+      "net": 62351
     }
   ],
   "topReposLast4Weeks": [
     {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-25T10:57:03Z",
-      "commits4w": 388,
-      "lines4w": 91644
+      "repo": "rhanka/openerp",
+      "lastActivityAt": "2026-05-25T14:13:57Z",
+      "commits4w": 171,
+      "lines4w": 26033
+    },
+    {
+      "repo": "rhanka/mcp-wave",
+      "lastActivityAt": "2026-05-25T14:06:15Z",
+      "commits4w": 125,
+      "lines4w": 20632
+    },
+    {
+      "repo": "rhanka/agent-stats",
+      "lastActivityAt": "2026-05-25T14:06:01Z",
+      "commits4w": 1,
+      "lines4w": 399
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-05-25T10:33:37Z",
-      "commits4w": 114,
-      "lines4w": 19582
-    },
-    {
-      "repo": "rhanka/mcp-hono",
-      "lastActivityAt": "2026-05-25T10:16:55Z",
-      "commits4w": 15,
-      "lines4w": 4762
+      "lastActivityAt": "2026-05-25T14:02:12Z",
+      "commits4w": 117,
+      "lines4w": 20022
     },
     {
       "repo": "matchID-project/matchID",
-      "lastActivityAt": "2026-05-25T10:11:14Z",
-      "commits4w": 45,
-      "lines4w": 2657
-    },
-    {
-      "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-05-25T02:34:19Z",
-      "commits4w": 295,
-      "lines4w": 35363
+      "lastActivityAt": "2026-05-25T13:13:36Z",
+      "commits4w": 51,
+      "lines4w": 2789
     }
   ]
 }

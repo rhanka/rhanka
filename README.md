@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/surch | 2026-05-25 | 388 | 91644 |
-| rhanka/h2a | 2026-05-25 | 114 | 19582 |
-| rhanka/mcp-hono | 2026-05-25 | 15 | 4762 |
-| matchID-project/matchID | 2026-05-25 | 45 | 2657 |
-| rhanka/graphify | 2026-05-25 | 295 | 35363 |
+| rhanka/openerp | 2026-05-25 | 171 | 26033 |
+| rhanka/mcp-wave | 2026-05-25 | 125 | 20632 |
+| rhanka/agent-stats | 2026-05-25 | 1 | 399 |
+| rhanka/h2a | 2026-05-25 | 117 | 20022 |
+| matchID-project/matchID | 2026-05-25 | 51 | 2789 |
 
 </details>
 <!-- github-profile-stats:end -->
