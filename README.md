@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
+| rhanka/mcp-hono | 2026-05-25 | 9 | 4410 |
 | rhanka/surch | 2026-05-24 | 376 | 89837 |
 | rhanka/graphify | 2026-05-24 | 289 | 34023 |
 | rhanka/h2a | 2026-05-24 | 111 | 19268 |
 | rhanka/sent-tech-design-system | 2026-05-24 | 164 | 29527 |
-| rhanka/sentropic | 2026-05-24 | 484 | 100452 |
 
 </details>
 <!-- github-profile-stats:end -->
