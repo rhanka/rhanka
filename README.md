@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/h2a | 2026-05-26 | 153 | 23919 |
-| rhanka/sent-tech-design-system | 2026-05-26 | 170 | 33411 |
-| rhanka/surch | 2026-05-26 | 426 | 95496 |
-| rhanka/mcp-wave | 2026-05-26 | 131 | 21481 |
-| rhanka/graphify | 2026-05-26 | 299 | 35363 |
+| rhanka/openerp | 2026-05-26 | 183 | 49447 |
+| rhanka/surch | 2026-05-26 | 437 | 96528 |
+| rhanka/graphify | 2026-05-26 | 307 | 35579 |
+| rhanka/sent-tech-design-system | 2026-05-26 | 177 | 34194 |
+| rhanka/remote | 2026-05-26 | 91 | 14728 |
 
 </details>
 <!-- github-profile-stats:end -->
