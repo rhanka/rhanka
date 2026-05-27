@@ -12,10 +12,10 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/agent-stats | 2026-05-27 | 26 | 1847 |
-| rhanka/sent-tech-design-system | 2026-05-27 | 197 | 35663 |
+| rhanka/agent-stats | 2026-05-27 | 27 | 1857 |
 | rhanka/remote | 2026-05-27 | 101 | 16008 |
 | rhanka/h2a | 2026-05-27 | 174 | 25058 |
+| rhanka/sent-tech-design-system | 2026-05-27 | 194 | 35520 |
 | rhanka/surch | 2026-05-27 | 452 | 97069 |
 
 </details>
