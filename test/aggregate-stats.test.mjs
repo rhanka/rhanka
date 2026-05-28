@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { aggregateStats } from '../src/aggregate-stats.mjs';
 
-test('aggregateStats aligns weekly series and ranks repos by last activity in the last 4 weeks', () => {
+test('aggregateStats aligns weekly series and ranks repos by lines changed in the last 4 weeks', () => {
   const weeks = [
     '2026-04-05T00:00:00.000Z',
     '2026-04-12T00:00:00.000Z',
@@ -52,16 +52,59 @@ test('aggregateStats aligns weekly series and ranks repos by last activity in th
 
   assert.deepEqual(summary.topReposLast4Weeks, [
     {
-      repo: 'rhanka/rhanka',
-      lastActivityAt: '2026-04-27T09:00:00.000Z',
-      commits4w: 1,
-      lines4w: 8
-    },
-    {
       repo: 'rhanka/graphify',
       lastActivityAt: '2026-04-22T08:00:00.000Z',
       commits4w: 2,
       lines4w: 17
+    },
+    {
+      repo: 'rhanka/rhanka',
+      lastActivityAt: '2026-04-27T09:00:00.000Z',
+      commits4w: 1,
+      lines4w: 8
+    }
+  ]);
+});
+
+test('aggregateStats ranks a higher-volume repo above a more recently active one', () => {
+  const weeks = [
+    '2026-04-05T00:00:00.000Z',
+    '2026-04-12T00:00:00.000Z',
+    '2026-04-19T00:00:00.000Z',
+    '2026-04-26T00:00:00.000Z'
+  ];
+
+  const commits = [
+    {
+      repo: 'rhanka/big',
+      weekStart: '2026-04-19T00:00:00.000Z',
+      authoredAt: '2026-04-20T10:00:00.000Z',
+      additions: 200,
+      deletions: 30
+    },
+    {
+      repo: 'rhanka/fresh',
+      weekStart: '2026-04-26T00:00:00.000Z',
+      authoredAt: '2026-04-27T09:00:00.000Z',
+      additions: 1,
+      deletions: 0
+    }
+  ];
+
+  const summary = aggregateStats({ weeks, commits });
+
+  assert.deepEqual(summary.topReposLast4Weeks, [
+    {
+      repo: 'rhanka/big',
+      lastActivityAt: '2026-04-20T10:00:00.000Z',
+      commits4w: 1,
+      lines4w: 230
+    },
+    {
+      repo: 'rhanka/fresh',
+      lastActivityAt: '2026-04-27T09:00:00.000Z',
+      commits4w: 1,
+      lines4w: 1
     }
   ]);
 });
