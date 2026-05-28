@@ -87,19 +87,27 @@ export function aggregateStats({ weeks = [], commits = [] } = {}) {
 
   const topReposLast4Weeks = [...repoStats.values()]
     .sort((left, right) => {
-      if (left.lastActivityAt === right.lastActivityAt) {
-        return left.repo.localeCompare(right.repo);
+      if (right.lines4w !== left.lines4w) {
+        return right.lines4w - left.lines4w;
       }
 
-      if (left.lastActivityAt === null) {
-        return 1;
+      if (right.commits4w !== left.commits4w) {
+        return right.commits4w - left.commits4w;
       }
 
-      if (right.lastActivityAt === null) {
-        return -1;
+      if (left.lastActivityAt !== right.lastActivityAt) {
+        if (left.lastActivityAt === null) {
+          return 1;
+        }
+
+        if (right.lastActivityAt === null) {
+          return -1;
+        }
+
+        return right.lastActivityAt.localeCompare(left.lastActivityAt);
       }
 
-      return right.lastActivityAt.localeCompare(left.lastActivityAt);
+      return left.repo.localeCompare(right.repo);
     })
     .slice(0, 5);
 
