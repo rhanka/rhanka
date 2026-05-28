@@ -12,11 +12,11 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/h2a | 2026-05-28 | 219 | 29150 |
+| rhanka/h2a | 2026-05-28 | 220 | 29203 |
+| rhanka/surch | 2026-05-28 | 460 | 97412 |
+| matchID-project/matchID | 2026-05-28 | 47 | 2953 |
+| rhanka/agent-stats | 2026-05-28 | 37 | 3090 |
 | rhanka/remote | 2026-05-28 | 124 | 18572 |
-| matchID-project/matchID | 2026-05-28 | 45 | 2925 |
-| rhanka/sent-tech-design-system | 2026-05-28 | 230 | 41687 |
-| rhanka/surch | 2026-05-28 | 458 | 97354 |
 
 </details>
 <!-- github-profile-stats:end -->
