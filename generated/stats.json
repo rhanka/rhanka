@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-28T20:58:02.769Z",
+  "generatedAt": "2026-05-28T21:27:31.585Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 567
+      "count": 573
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 92922,
-      "deletions": 7512,
-      "net": 85410
+      "additions": 93017,
+      "deletions": 7556,
+      "net": 85461
     }
   ],
   "weeklyLinesRaw": [
@@ -901,41 +901,41 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 281630,
-      "deletions": 155977,
-      "net": 125653
+      "additions": 282087,
+      "deletions": 156022,
+      "net": 126065
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-05-28T20:55:24Z",
-      "commits4w": 219,
-      "lines4w": 29150
+      "lastActivityAt": "2026-05-28T21:21:08Z",
+      "commits4w": 220,
+      "lines4w": 29203
+    },
+    {
+      "repo": "rhanka/surch",
+      "lastActivityAt": "2026-05-28T21:16:01Z",
+      "commits4w": 460,
+      "lines4w": 97412
+    },
+    {
+      "repo": "matchID-project/matchID",
+      "lastActivityAt": "2026-05-28T21:03:33Z",
+      "commits4w": 47,
+      "lines4w": 2953
+    },
+    {
+      "repo": "rhanka/agent-stats",
+      "lastActivityAt": "2026-05-28T21:03:33Z",
+      "commits4w": 37,
+      "lines4w": 3090
     },
     {
       "repo": "rhanka/remote",
       "lastActivityAt": "2026-05-28T20:38:37Z",
       "commits4w": 124,
       "lines4w": 18572
-    },
-    {
-      "repo": "matchID-project/matchID",
-      "lastActivityAt": "2026-05-28T20:11:30Z",
-      "commits4w": 45,
-      "lines4w": 2925
-    },
-    {
-      "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-28T18:42:17Z",
-      "commits4w": 230,
-      "lines4w": 41687
-    },
-    {
-      "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-28T15:27:40Z",
-      "commits4w": 458,
-      "lines4w": 97354
     }
   ]
 }
