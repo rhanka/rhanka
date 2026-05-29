@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T03:50:52.345Z",
+  "generatedAt": "2026-05-29T04:12:09.012Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 637
+      "count": 645
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 103104,
-      "deletions": 8080,
-      "net": 95024
+      "additions": 103126,
+      "deletions": 8207,
+      "net": 94919
     }
   ],
   "weeklyLinesRaw": [
@@ -901,22 +901,22 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 299906,
-      "deletions": 156895,
-      "net": 143011
+      "additions": 300285,
+      "deletions": 157049,
+      "net": 143236
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sentropic",
-      "lastActivityAt": "2026-05-29T00:44:47Z",
-      "commits4w": 536,
-      "lines4w": 102271
+      "lastActivityAt": "2026-05-29T04:00:51Z",
+      "commits4w": 542,
+      "lines4w": 102420
     },
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-29T03:22:43Z",
-      "commits4w": 472,
+      "lastActivityAt": "2026-05-29T03:52:43Z",
+      "commits4w": 473,
       "lines4w": 98168
     },
     {
