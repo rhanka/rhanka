@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T22:41:30.154Z",
+  "generatedAt": "2026-05-30T23:12:15.330Z",
   "window": {
     "start": "2025-06-01T00:00:00.000Z",
     "end": "2026-05-30T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 728
+      "count": 729
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 743
+      "count": 761
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 108478,
-      "deletions": 29578,
-      "net": 78900
+      "additions": 108732,
+      "deletions": 29621,
+      "net": 79111
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 121766,
-      "deletions": 9089,
-      "net": 112677
+      "additions": 122981,
+      "deletions": 9263,
+      "net": 113718
     }
   ],
   "weeklyLinesRaw": [
@@ -895,15 +895,15 @@
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 335625,
-      "deletions": 176041,
-      "net": 159584
+      "additions": 335989,
+      "deletions": 176102,
+      "net": 159887
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 336811,
-      "deletions": 162367,
-      "net": 174444
+      "additions": 338136,
+      "deletions": 162549,
+      "net": 175587
     }
   ],
   "topReposLast4Weeks": [
@@ -915,9 +915,9 @@
     },
     {
       "repo": "rhanka/surch",
-      "lastActivityAt": "2026-05-30T22:13:31Z",
-      "commits4w": 484,
-      "lines4w": 98580
+      "lastActivityAt": "2026-05-30T22:51:47Z",
+      "commits4w": 487,
+      "lines4w": 98691
     },
     {
       "repo": "rhanka/openerp",
@@ -927,9 +927,9 @@
     },
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-30T13:37:25Z",
-      "commits4w": 257,
-      "lines4w": 50334
+      "lastActivityAt": "2026-05-30T23:09:02Z",
+      "commits4w": 258,
+      "lines4w": 50948
     },
     {
       "repo": "rhanka/graphify",
