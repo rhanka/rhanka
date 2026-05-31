@@ -1,0 +1,24 @@
+name: Profile Stats Dispatch
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7,37 * * * *'
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: profile-stats-dispatch
+  cancel-in-progress: false
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dispatch profile stats workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run profile-stats.yml --ref main
