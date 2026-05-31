@@ -21,4 +21,4 @@ jobs:
       - name: Dispatch profile stats workflow
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh workflow run profile-stats.yml --ref main
+        run: gh workflow run profile-stats.yml --repo rhanka/rhanka --ref main
