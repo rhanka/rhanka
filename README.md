@@ -15,7 +15,7 @@
 | rhanka/sentropic | 2026-05-31 | 684 | 119796 |
 | rhanka/openerp | 2026-05-31 | 145 | 73384 |
 | rhanka/surch | 2026-05-31 | 444 | 67682 |
-| rhanka/sent-tech-design-system | 2026-05-31 | 341 | 62463 |
+| rhanka/sent-tech-design-system | 2026-05-31 | 344 | 63134 |
 | rhanka/h2a | 2026-05-31 | 335 | 40964 |
 
 </details>
