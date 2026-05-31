@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T13:41:20.789Z",
+  "generatedAt": "2026-05-31T14:11:23.783Z",
   "window": {
     "start": "2025-06-08T00:00:00.000Z",
     "end": "2026-06-06T23:59:59.999Z",
@@ -263,7 +263,7 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 1060
+      "count": 1068
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 101
+      "count": 105
     }
   ],
   "weeklyLines": [
@@ -569,9 +569,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 165983,
-      "deletions": 19873,
-      "net": 146110
+      "additions": 167024,
+      "deletions": 19892,
+      "net": 147132
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 20722,
-      "deletions": 1896,
-      "net": 18826
+      "additions": 20927,
+      "deletions": 1900,
+      "net": 19027
     }
   ],
   "weeklyLinesRaw": [
@@ -883,9 +883,9 @@
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 438666,
-      "deletions": 198539,
-      "net": 240127
+      "additions": 440184,
+      "deletions": 198558,
+      "net": 241626
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 25390,
-      "deletions": 3886,
-      "net": 21504
+      "additions": 25620,
+      "deletions": 3910,
+      "net": 21710
     }
   ],
   "topReposLast4Weeks": [
@@ -927,9 +927,9 @@
     },
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-05-31T13:28:44Z",
-      "commits4w": 239,
-      "lines4w": 46989
+      "lastActivityAt": "2026-05-31T13:43:00Z",
+      "commits4w": 240,
+      "lines4w": 47165
     },
     {
       "repo": "rhanka/h2a",
