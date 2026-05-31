@@ -94,7 +94,7 @@ function scaledDeltaHeight(value, maxValueForScale, maxHeight) {
     return 0;
   }
 
-  return Math.max(1, Math.round(Math.sqrt(value / maxValueForScale) * maxHeight));
+  return Math.max(1, Math.round((value / maxValueForScale) * maxHeight));
 }
 
 export function renderWeeklyCommitsSvg(series) {
@@ -154,13 +154,13 @@ export function renderWeeklyLinesSvg(series) {
     1,
     ...series.map((week) => Math.max(week.additions ?? 0, week.deletions ?? 0))
   );
-  const quarterMagnitude = Math.ceil(maxMagnitude / 4);
+  const halfMagnitude = Math.ceil(maxMagnitude / 2);
   const monthTicks = buildMonthTicks(series, CHART.plotX, CHART.pitch, CHART.monthLabelY);
   const yTicks = [
     { y: topY, label: formatSignedCompactNumber(maxMagnitude) },
-    { y: positiveMidY, label: formatSignedCompactNumber(quarterMagnitude) },
+    { y: positiveMidY, label: formatSignedCompactNumber(halfMagnitude) },
     { y: zeroY, label: '0', emphasis: true },
-    { y: negativeMidY, label: formatSignedCompactNumber(-quarterMagnitude) },
+    { y: negativeMidY, label: formatSignedCompactNumber(-halfMagnitude) },
     { y: baselineY, label: formatSignedCompactNumber(-maxMagnitude) }
   ];
   const rects = [];
@@ -193,7 +193,7 @@ export function renderWeeklyLinesSvg(series) {
   return [
     ...renderFrame({
       title: 'Weekly line deltas',
-      subtitle: 'Additions and deletions per week, compressed scale'
+      subtitle: 'Additions and deletions per week, linear scale'
     }),
     ...renderGridLines({ yTicks }),
     `<line x1="${CHART.plotX}" y1="${zeroY}" x2="${CHART.plotRight}" y2="${zeroY}" stroke="${GITHUB_COLORS.zero}" stroke-width="1"/>`,
