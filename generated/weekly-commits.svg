@@ -154,11 +154,11 @@
 <rect x="701" y="100" width="7" height="80" rx="2" fill="#0969da">
 <title>2026-05-17: 729 commits</title>
 </rect>
-<rect x="714" y="96" width="7" height="84" rx="2" fill="#0969da">
-<title>2026-05-24: 769 commits</title>
+<rect x="714" y="91" width="7" height="89" rx="2" fill="#0969da">
+<title>2026-05-24: 814 commits</title>
 </rect>
-<rect x="727" y="179" width="7" height="1" rx="2" fill="#0969da">
-<title>2026-05-31: 4 commits</title>
+<rect x="727" y="176" width="7" height="4" rx="2" fill="#0969da">
+<title>2026-05-31: 34 commits</title>
 </rect>
 <text x="67.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jun</text>
 <text x="119.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jul</text>
