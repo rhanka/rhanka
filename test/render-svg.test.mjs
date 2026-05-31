@@ -61,19 +61,21 @@ test('renderWeeklyLinesSvg renders axes, month labels and legend for a long week
   assert.match(svg, /<text x="746" y="\d+" fill="#57606a" font-size="10" text-anchor="start">\+10<\/text>/);
   assert.match(svg, /stroke="#eef2f6"/);
   assert.match(svg, />\+10</);
-  assert.match(svg, />\+3</);
-  assert.doesNotMatch(svg, />\+5</);
+  assert.match(svg, />\+5</);
+  assert.doesNotMatch(svg, />\+3</);
   assert.match(svg, />0</);
-  assert.match(svg, />-3</);
-  assert.doesNotMatch(svg, />-5</);
+  assert.match(svg, />-5</);
+  assert.doesNotMatch(svg, />-3</);
   assert.match(svg, />-10</);
-  assert.match(svg, />Additions and deletions per week, compressed scale</);
+  assert.match(svg, />Additions and deletions per week, linear scale</);
   assert.match(svg, />May</);
   assert.match(svg, />Apr</);
   assert.match(svg, />Additions</);
   assert.match(svg, />Deletions</);
-  assert.match(svg, /<rect x="64" y="\d+" width="7" height="\d+" rx="2" fill="#1a7f37">/);
-  assert.match(svg, /<rect x="64" y="116" width="7" height="\d+" rx="2" fill="#cf222e">/);
+  // Linear scale: a +2 bar against a max of 10 must be exactly 2/10 of the
+  // 60px positive area (=12px), not the sqrt-compressed 27px.
+  assert.match(svg, /<rect x="64" y="104" width="7" height="12" rx="2" fill="#1a7f37">/);
+  assert.match(svg, /<rect x="64" y="116" width="7" height="6" rx="2" fill="#cf222e">/);
   assert.match(svg, /<title>2025-05-04: \+2 \/ -1 lines<\/title>/);
   assert.match(svg, /<title>2026-04-26: \+10 \/ -4 lines<\/title>/);
   assert.doesNotMatch(svg, /<rect x="77" y="[0-9]+" width="7" height="[1-9]\d*" rx="2" fill="#1a7f37">/);
