@@ -12,7 +12,7 @@
 
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
-| rhanka/sentropic | 2026-05-31 | 687 | 119799 |
+| rhanka/sentropic | 2026-06-01 | 690 | 119851 |
 | rhanka/openerp | 2026-05-31 | 145 | 73384 |
 | rhanka/surch | 2026-06-01 | 446 | 67793 |
 | rhanka/sent-tech-design-system | 2026-06-01 | 349 | 64627 |
