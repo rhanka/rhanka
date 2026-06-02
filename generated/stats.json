@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T12:11:24.231Z",
+  "generatedAt": "2026-06-02T12:41:22.967Z",
   "window": {
     "start": "2025-06-08T00:00:00.000Z",
     "end": "2026-06-06T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 524
+      "count": 526
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 67725,
-      "deletions": 5562,
-      "net": 62163
+      "additions": 67863,
+      "deletions": 5566,
+      "net": 62297
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 207386,
-      "deletions": 103577,
-      "net": 103809
+      "additions": 210006,
+      "deletions": 122867,
+      "net": 87139
     }
   ],
   "topReposLast4Weeks": [
@@ -921,9 +921,9 @@
     },
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-02T10:23:05Z",
-      "commits4w": 464,
-      "lines4w": 71149
+      "lastActivityAt": "2026-06-02T12:35:45Z",
+      "commits4w": 465,
+      "lines4w": 71280
     },
     {
       "repo": "rhanka/surch",
