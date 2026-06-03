@@ -14,9 +14,9 @@
 | --- | --- | --- | --- |
 | rhanka/sentropic | 2026-06-03 | 924 | 151159 |
 | rhanka/sent-tech-design-system | 2026-06-03 | 495 | 100177 |
-| rhanka/openerp | 2026-06-03 | 151 | 75584 |
 | rhanka/surch | 2026-06-03 | 473 | 69261 |
 | rhanka/h2a | 2026-06-03 | 379 | 46593 |
+| rhanka/spa-transpose-cv | 2026-05-24 | 141 | 34064 |
 
 </details>
 <!-- github-profile-stats:end -->
