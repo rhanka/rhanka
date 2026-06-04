@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-04T11:37:42.545Z",
+  "generatedAt": "2026-06-04T13:26:06.284Z",
   "window": {
     "start": "2025-06-08T00:00:00.000Z",
     "end": "2026-06-06T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 953
+      "count": 958
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 133102,
-      "deletions": 10448,
-      "net": 122654
+      "additions": 135261,
+      "deletions": 12333,
+      "net": 122928
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 435945,
-      "deletions": 146741,
-      "net": 289204
+      "additions": 438104,
+      "deletions": 148626,
+      "net": 289478
     }
   ],
   "topReposLast4Weeks": [
@@ -915,9 +915,9 @@
     },
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-04T11:22:29Z",
-      "commits4w": 507,
-      "lines4w": 102108
+      "lastActivityAt": "2026-06-04T13:06:57Z",
+      "commits4w": 511,
+      "lines4w": 106077
     },
     {
       "repo": "rhanka/openerp",
