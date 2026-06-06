@@ -3,9 +3,11 @@ import assert from 'node:assert/strict';
 import {
   buildLiveStats,
   discoverReposForLogins,
+  findStatsRegression,
   main,
   mapWithConcurrency,
-  resolveGithubToken
+  resolveGithubToken,
+  totalWindowCommits
 } from '../scripts/github-profile-stats.mjs';
 
 const commitCacheSchemaVersion = 1;
@@ -462,4 +464,44 @@ test('buildLiveStats filters noisy file paths from line totals while preserving 
     net: 99
   });
   assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 12);
+});
+
+function statsWithWeeklyCounts(counts) {
+  return {
+    weeklyCommits: counts.map((count, index) => ({
+      weekStart: `2026-01-${String(index + 1).padStart(2, '0')}T00:00:00.000Z`,
+      count
+    }))
+  };
+}
+
+test('totalWindowCommits sums the weekly commit counts', () => {
+  assert.equal(totalWindowCommits(statsWithWeeklyCounts([10, 0, 5])), 15);
+  assert.equal(totalWindowCommits({}), 0);
+  assert.equal(totalWindowCommits(null), 0);
+});
+
+test('findStatsRegression flags a fully zeroed collection', () => {
+  const next = statsWithWeeklyCounts([0, 0, 0]);
+  const previous = statsWithWeeklyCounts([100, 200, 300]);
+  assert.match(findStatsRegression(next, previous), /0 commits/);
+});
+
+test('findStatsRegression flags zero even without a previous baseline', () => {
+  assert.match(findStatsRegression(statsWithWeeklyCounts([0, 0]), null), /0 commits/);
+});
+
+test('findStatsRegression flags a severe collapse versus the previous run', () => {
+  const next = statsWithWeeklyCounts([777]);
+  const previous = statsWithWeeklyCounts([7313]);
+  assert.match(findStatsRegression(next, previous), /collapsed from 7313 to 777/);
+});
+
+test('findStatsRegression accepts a healthy run and normal fluctuations', () => {
+  const previous = statsWithWeeklyCounts([7000, 300]);
+  assert.equal(findStatsRegression(statsWithWeeklyCounts([7000, 320]), previous), null);
+  // First-ever run with no baseline but real data is fine.
+  assert.equal(findStatsRegression(statsWithWeeklyCounts([5000]), null), null);
+  // Recovering from a previously-empty publish must not be blocked.
+  assert.equal(findStatsRegression(statsWithWeeklyCounts([5000]), statsWithWeeklyCounts([0])), null);
 });
