@@ -515,6 +515,42 @@ function buildReadmeBlock(stats) {
   ].join('\n');
 }
 
+export function totalWindowCommits(stats) {
+  return (stats?.weeklyCommits ?? []).reduce(
+    (sum, week) => sum + (week?.count ?? 0),
+    0
+  );
+}
+
+// Guard against publishing a collection that silently failed (e.g. every repo
+// skipped on a rate-limit 403). Returns a reason string when the freshly built
+// stats look broken relative to what is already published, otherwise null.
+export function findStatsRegression(nextStats, previousStats, {
+  minRetainedRatio = 0.5
+} = {}) {
+  const nextTotal = totalWindowCommits(nextStats);
+
+  if (nextTotal === 0) {
+    return 'collected 0 commits across the window (likely a rate-limit or token failure)';
+  }
+
+  const previousTotal = totalWindowCommits(previousStats);
+
+  if (previousTotal > 0 && nextTotal < previousTotal * minRetainedRatio) {
+    return `window commit total collapsed from ${previousTotal} to ${nextTotal} (kept < ${Math.round(minRetainedRatio * 100)}% of the previous run)`;
+  }
+
+  return null;
+}
+
+async function readPreviousStats() {
+  try {
+    return JSON.parse(await readFile(statsPath, 'utf8'));
+  } catch {
+    return null;
+  }
+}
+
 export async function main({
   argv = process.argv.slice(2),
   env = process.env
@@ -533,6 +569,13 @@ export async function main({
   if (!writeMode) {
     console.log(JSON.stringify(stats, null, 2));
     return;
+  }
+
+  const regression = findStatsRegression(stats, await readPreviousStats());
+  if (regression) {
+    throw new Error(
+      `[github-profile-stats] refusing to overwrite published stats: ${regression}`
+    );
   }
 
   await mkdir(generatedDir, { recursive: true });
