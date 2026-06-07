@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T14:04:47.107Z",
+  "generatedAt": "2026-06-07T14:19:39.325Z",
   "window": {
     "start": "2025-06-15T00:00:00.000Z",
     "end": "2026-06-13T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 1276
+      "count": 1287
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 43
+      "count": 45
     }
   ],
   "weeklyLines": [
@@ -581,9 +581,9 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 267130,
-      "deletions": 20359,
-      "net": 246771
+      "additions": 270161,
+      "deletions": 21568,
+      "net": 248593
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
@@ -895,29 +895,29 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 645553,
-      "deletions": 160049,
-      "net": 485504
+      "additions": 648665,
+      "deletions": 161262,
+      "net": 487403
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 108371,
-      "deletions": 72923,
+      "additions": 108383,
+      "deletions": 72935,
       "net": 35448
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-07T13:37:47Z",
-      "commits4w": 513,
+      "lastActivityAt": "2026-06-07T14:19:19Z",
+      "commits4w": 514,
       "lines4w": 192177
     },
     {
       "repo": "rhanka/sentropic",
-      "lastActivityAt": "2026-06-06T21:07:31Z",
-      "commits4w": 974,
-      "lines4w": 147780
+      "lastActivityAt": "2026-06-07T14:09:24Z",
+      "commits4w": 986,
+      "lines4w": 152020
     },
     {
       "repo": "rhanka/openerp",
