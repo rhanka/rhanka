@@ -41,5 +41,16 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md generated
-          git diff --cached --quiet || git commit -m "chore: refresh profile stats"
-          git push
+          git diff --cached --quiet && echo "no changes to publish" && exit 0
+          git commit -m "chore: refresh profile stats"
+          # Concurrent runs can advance main between checkout and push; rebase and
+          # retry so a lost push race doesn't fail the run.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "push rejected (attempt $attempt), rebasing onto origin/main"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+          done
+          echo "::error::failed to push after 5 attempts"
+          exit 1
