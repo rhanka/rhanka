@@ -40,17 +40,20 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md generated
-          git diff --cached --quiet && echo "no changes to publish" && exit 0
-          git commit -m "chore: refresh profile stats"
-          # Concurrent runs can advance main between checkout and push; rebase and
-          # retry so a lost push race doesn't fail the run.
+          # Concurrent runs publish the same regenerated files, so a rebase would
+          # just conflict. On a lost push race, fast-forward our branch pointer to
+          # the latest main (keeping our fresh artifacts in the working tree) and
+          # replay them on top — no merge, no conflict.
           for attempt in 1 2 3 4 5; do
+            git add README.md generated
+            git diff --cached --quiet && { echo "no changes to publish"; exit 0; }
+            git commit -m "chore: refresh profile stats"
             if git push; then
               exit 0
             fi
-            echo "push rejected (attempt $attempt), rebasing onto origin/main"
-            git pull --rebase origin "${GITHUB_REF_NAME}"
+            echo "push rejected (attempt $attempt), replaying artifacts onto latest ${GITHUB_REF_NAME}"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --mixed "origin/${GITHUB_REF_NAME}"
           done
           echo "::error::failed to push after 5 attempts"
           exit 1
