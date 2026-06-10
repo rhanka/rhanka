@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T22:20:20.926Z",
+  "generatedAt": "2026-06-10T22:34:43.749Z",
   "window": {
     "start": "2025-06-15T00:00:00.000Z",
     "end": "2026-06-13T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 567
+      "count": 571
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 108424,
-      "deletions": 11955,
-      "net": 96469
+      "additions": 112298,
+      "deletions": 11959,
+      "net": 100339
     }
   ],
   "weeklyLinesRaw": [
@@ -901,17 +901,17 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 640353,
-      "deletions": 320814,
-      "net": 319539
+      "additions": 644250,
+      "deletions": 320841,
+      "net": 323409
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-10T21:55:59Z",
-      "commits4w": 587,
-      "lines4w": 232932
+      "lastActivityAt": "2026-06-10T22:27:25Z",
+      "commits4w": 588,
+      "lines4w": 234537
     },
     {
       "repo": "rhanka/sentropic",
@@ -927,9 +927,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-06-10T19:29:20Z",
-      "commits4w": 474,
-      "lines4w": 56925
+      "lastActivityAt": "2026-06-10T22:29:23Z",
+      "commits4w": 476,
+      "lines4w": 57340
     },
     {
       "repo": "rhanka/graphify",
