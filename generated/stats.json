@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T15:14:56.334Z",
+  "generatedAt": "2026-06-13T15:36:17.014Z",
   "window": {
     "start": "2025-06-15T00:00:00.000Z",
     "end": "2026-06-13T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 946
+      "count": 969
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 217922,
-      "deletions": 17783,
-      "net": 200139
+      "additions": 221562,
+      "deletions": 17856,
+      "net": 203706
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 912917,
-      "deletions": 409717,
-      "net": 503200
+      "additions": 916985,
+      "deletions": 409914,
+      "net": 507071
     }
   ],
   "topReposLast4Weeks": [
@@ -921,9 +921,9 @@
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-06-13T14:44:50Z",
-      "commits4w": 423,
-      "lines4w": 69784
+      "lastActivityAt": "2026-06-13T15:34:18Z",
+      "commits4w": 446,
+      "lines4w": 73497
     },
     {
       "repo": "rhanka/openerp",
