@@ -16,7 +16,7 @@
 | rhanka/sentropic | 2026-06-13 | 1213 | 166771 |
 | rhanka/graphify | 2026-06-13 | 421 | 69778 |
 | rhanka/openerp | 2026-06-07 | 62 | 64642 |
-| rhanka/h2a | 2026-06-11 | 480 | 57734 |
+| rhanka/dataviz | 2026-06-13 | 149 | 59470 |
 
 </details>
 <!-- github-profile-stats:end -->
