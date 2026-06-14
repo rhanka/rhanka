@@ -15,7 +15,7 @@
 | rhanka/sent-tech-design-system | 2026-06-14 | 621 | 323266 |
 | rhanka/sentropic | 2026-06-14 | 991 | 109190 |
 | rhanka/dataviz | 2026-06-14 | 190 | 74468 |
-| rhanka/graphify | 2026-06-14 | 404 | 63559 |
+| rhanka/graphify | 2026-06-14 | 409 | 64189 |
 | rhanka/openerp | 2026-06-07 | 44 | 54981 |
 
 </details>
