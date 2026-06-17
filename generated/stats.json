@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T19:26:33.965Z",
+  "generatedAt": "2026-06-17T20:25:41.684Z",
   "window": {
     "start": "2025-06-22T00:00:00.000Z",
     "end": "2026-06-20T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 454
+      "count": 457
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 194588,
-      "deletions": 14645,
-      "net": 179943
+      "additions": 194607,
+      "deletions": 14646,
+      "net": 179961
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 421504,
-      "deletions": 129940,
-      "net": 291564
+      "additions": 421615,
+      "deletions": 129946,
+      "net": 291669
     }
   ],
   "topReposLast4Weeks": [
@@ -915,9 +915,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-06-17T18:59:02Z",
-      "commits4w": 773,
-      "lines4w": 143353
+      "lastActivityAt": "2026-06-17T20:21:39Z",
+      "commits4w": 776,
+      "lines4w": 143373
     },
     {
       "repo": "rhanka/sentropic",
