@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T12:42:04.754Z",
+  "generatedAt": "2026-06-18T14:12:21.618Z",
   "window": {
     "start": "2025-06-22T00:00:00.000Z",
     "end": "2026-06-20T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 491
+      "count": 496
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 199510,
-      "deletions": 14838,
-      "net": 184672
+      "additions": 202154,
+      "deletions": 14874,
+      "net": 187280
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 428268,
-      "deletions": 130482,
-      "net": 297786
+      "additions": 431823,
+      "deletions": 130550,
+      "net": 301273
     }
   ],
   "topReposLast4Weeks": [
@@ -927,15 +927,15 @@
     },
     {
       "repo": "rhanka/dataviz",
-      "lastActivityAt": "2026-06-18T01:56:49Z",
-      "commits4w": 218,
-      "lines4w": 82291
+      "lastActivityAt": "2026-06-18T14:09:40Z",
+      "commits4w": 219,
+      "lines4w": 82420
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-06-15T17:21:16Z",
-      "commits4w": 440,
-      "lines4w": 69772
+      "lastActivityAt": "2026-06-18T13:56:33Z",
+      "commits4w": 441,
+      "lines4w": 71924
     }
   ]
 }
