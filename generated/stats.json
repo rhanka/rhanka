@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-18T21:29:38.656Z",
+  "generatedAt": "2026-06-18T22:23:29.173Z",
   "window": {
     "start": "2025-06-22T00:00:00.000Z",
     "end": "2026-06-20T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 512
+      "count": 525
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 210815,
-      "deletions": 15630,
-      "net": 195185
+      "additions": 219327,
+      "deletions": 16327,
+      "net": 203000
     }
   ],
   "weeklyLinesRaw": [
@@ -901,23 +901,23 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1263651,
-      "deletions": 302570,
-      "net": 961081
+      "additions": 1272393,
+      "deletions": 303378,
+      "net": 969015
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-18T18:26:45Z",
-      "commits4w": 670,
-      "lines4w": 415323
+      "lastActivityAt": "2026-06-18T22:00:06Z",
+      "commits4w": 671,
+      "lines4w": 419603
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-06-18T01:20:28Z",
-      "commits4w": 798,
-      "lines4w": 145682
+      "lastActivityAt": "2026-06-18T22:07:00Z",
+      "commits4w": 804,
+      "lines4w": 149630
     },
     {
       "repo": "rhanka/sentropic",
@@ -927,8 +927,8 @@
     },
     {
       "repo": "rhanka/dataviz",
-      "lastActivityAt": "2026-06-18T18:09:05Z",
-      "commits4w": 220,
+      "lastActivityAt": "2026-06-18T22:03:21Z",
+      "commits4w": 221,
       "lines4w": 83810
     },
     {
