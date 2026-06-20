@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T12:51:10.845Z",
+  "generatedAt": "2026-06-20T13:04:49.545Z",
   "window": {
     "start": "2025-06-22T00:00:00.000Z",
     "end": "2026-06-20T23:59:59.999Z",
@@ -71,7 +71,7 @@
   "weeklyCommits": [
     {
       "weekStart": "2025-06-22T00:00:00.000Z",
-      "count": 3
+      "count": 0
     },
     {
       "weekStart": "2025-06-29T00:00:00.000Z",
@@ -83,11 +83,11 @@
     },
     {
       "weekStart": "2025-07-13T00:00:00.000Z",
-      "count": 2
+      "count": 0
     },
     {
       "weekStart": "2025-07-20T00:00:00.000Z",
-      "count": 2
+      "count": 0
     },
     {
       "weekStart": "2025-07-27T00:00:00.000Z",
@@ -103,23 +103,23 @@
     },
     {
       "weekStart": "2025-08-17T00:00:00.000Z",
-      "count": 103
+      "count": 97
     },
     {
       "weekStart": "2025-08-24T00:00:00.000Z",
-      "count": 16
+      "count": 0
     },
     {
       "weekStart": "2025-08-31T00:00:00.000Z",
-      "count": 1
+      "count": 0
     },
     {
       "weekStart": "2025-09-07T00:00:00.000Z",
-      "count": 10
+      "count": 0
     },
     {
       "weekStart": "2025-09-14T00:00:00.000Z",
-      "count": 1
+      "count": 0
     },
     {
       "weekStart": "2025-09-21T00:00:00.000Z",
@@ -167,11 +167,11 @@
     },
     {
       "weekStart": "2025-12-07T00:00:00.000Z",
-      "count": 32
+      "count": 29
     },
     {
       "weekStart": "2025-12-14T00:00:00.000Z",
-      "count": 46
+      "count": 45
     },
     {
       "weekStart": "2025-12-21T00:00:00.000Z",
@@ -179,7 +179,7 @@
     },
     {
       "weekStart": "2025-12-28T00:00:00.000Z",
-      "count": 92
+      "count": 83
     },
     {
       "weekStart": "2026-01-04T00:00:00.000Z",
@@ -187,23 +187,23 @@
     },
     {
       "weekStart": "2026-01-11T00:00:00.000Z",
-      "count": 106
+      "count": 99
     },
     {
       "weekStart": "2026-01-18T00:00:00.000Z",
-      "count": 44
+      "count": 42
     },
     {
       "weekStart": "2026-01-25T00:00:00.000Z",
-      "count": 73
+      "count": 72
     },
     {
       "weekStart": "2026-02-01T00:00:00.000Z",
-      "count": 89
+      "count": 87
     },
     {
       "weekStart": "2026-02-08T00:00:00.000Z",
-      "count": 110
+      "count": 105
     },
     {
       "weekStart": "2026-02-15T00:00:00.000Z",
@@ -235,55 +235,55 @@
     },
     {
       "weekStart": "2026-04-05T00:00:00.000Z",
-      "count": 115
+      "count": 93
     },
     {
       "weekStart": "2026-04-12T00:00:00.000Z",
-      "count": 274
+      "count": 154
     },
     {
       "weekStart": "2026-04-19T00:00:00.000Z",
-      "count": 313
+      "count": 191
     },
     {
       "weekStart": "2026-04-26T00:00:00.000Z",
-      "count": 95
+      "count": 63
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "count": 329
+      "count": 293
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 1068
+      "count": 1053
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 729
+      "count": 728
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 928
+      "count": 1117
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 1292
+      "count": 1349
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 833
+      "count": 1353
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 398
+      "count": 667
     }
   ],
   "weeklyLines": [
     {
       "weekStart": "2025-06-22T00:00:00.000Z",
-      "additions": 10,
-      "deletions": 2,
-      "net": 8
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-06-29T00:00:00.000Z",
@@ -299,8 +299,8 @@
     },
     {
       "weekStart": "2025-07-13T00:00:00.000Z",
-      "additions": 1,
-      "deletions": 1,
+      "additions": 0,
+      "deletions": 0,
       "net": 0
     },
     {
@@ -329,33 +329,33 @@
     },
     {
       "weekStart": "2025-08-17T00:00:00.000Z",
-      "additions": 4421,
-      "deletions": 1472,
-      "net": 2949
+      "additions": 4404,
+      "deletions": 1462,
+      "net": 2942
     },
     {
       "weekStart": "2025-08-24T00:00:00.000Z",
-      "additions": 182,
-      "deletions": 327,
-      "net": -145
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-08-31T00:00:00.000Z",
-      "additions": 81,
-      "deletions": 70,
-      "net": 11
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-09-07T00:00:00.000Z",
-      "additions": 284,
-      "deletions": 343,
-      "net": -59
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-09-14T00:00:00.000Z",
-      "additions": 68,
-      "deletions": 95,
-      "net": -27
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-09-21T00:00:00.000Z",
@@ -425,9 +425,9 @@
     },
     {
       "weekStart": "2025-12-07T00:00:00.000Z",
-      "additions": 2210,
-      "deletions": 622,
-      "net": 1588
+      "additions": 2191,
+      "deletions": 619,
+      "net": 1572
     },
     {
       "weekStart": "2025-12-14T00:00:00.000Z",
@@ -443,9 +443,9 @@
     },
     {
       "weekStart": "2025-12-28T00:00:00.000Z",
-      "additions": 6126,
-      "deletions": 1993,
-      "net": 4133
+      "additions": 6108,
+      "deletions": 1985,
+      "net": 4123
     },
     {
       "weekStart": "2026-01-04T00:00:00.000Z",
@@ -455,33 +455,33 @@
     },
     {
       "weekStart": "2026-01-11T00:00:00.000Z",
-      "additions": 6420,
-      "deletions": 1143,
-      "net": 5277
+      "additions": 6407,
+      "deletions": 1140,
+      "net": 5267
     },
     {
       "weekStart": "2026-01-18T00:00:00.000Z",
-      "additions": 3890,
+      "additions": 3882,
       "deletions": 1868,
-      "net": 2022
+      "net": 2014
     },
     {
       "weekStart": "2026-01-25T00:00:00.000Z",
-      "additions": 6846,
-      "deletions": 1045,
+      "additions": 6845,
+      "deletions": 1044,
       "net": 5801
     },
     {
       "weekStart": "2026-02-01T00:00:00.000Z",
-      "additions": 8354,
-      "deletions": 2159,
-      "net": 6195
+      "additions": 8316,
+      "deletions": 2143,
+      "net": 6173
     },
     {
       "weekStart": "2026-02-08T00:00:00.000Z",
-      "additions": 10055,
-      "deletions": 3523,
-      "net": 6532
+      "additions": 10047,
+      "deletions": 3516,
+      "net": 6531
     },
     {
       "weekStart": "2026-02-15T00:00:00.000Z",
@@ -527,77 +527,77 @@
     },
     {
       "weekStart": "2026-04-05T00:00:00.000Z",
-      "additions": 18059,
-      "deletions": 1680,
-      "net": 16379
+      "additions": 17868,
+      "deletions": 1622,
+      "net": 16246
     },
     {
       "weekStart": "2026-04-12T00:00:00.000Z",
-      "additions": 79945,
-      "deletions": 20831,
-      "net": 59114
+      "additions": 77821,
+      "deletions": 20072,
+      "net": 57749
     },
     {
       "weekStart": "2026-04-19T00:00:00.000Z",
-      "additions": 37838,
-      "deletions": 2750,
-      "net": 35088
+      "additions": 34905,
+      "deletions": 1299,
+      "net": 33606
     },
     {
       "weekStart": "2026-04-26T00:00:00.000Z",
-      "additions": 6143,
-      "deletions": 789,
-      "net": 5354
+      "additions": 5697,
+      "deletions": 556,
+      "net": 5141
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 59022,
-      "deletions": 8179,
-      "net": 50843
+      "additions": 57715,
+      "deletions": 7541,
+      "net": 50174
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 167024,
-      "deletions": 19892,
-      "net": 147132
+      "additions": 165792,
+      "deletions": 19681,
+      "net": 146111
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 108732,
-      "deletions": 29621,
-      "net": 79111
+      "additions": 108478,
+      "deletions": 29578,
+      "net": 78900
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 140311,
-      "deletions": 11783,
-      "net": 128528
+      "additions": 154736,
+      "deletions": 14318,
+      "net": 140418
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 263412,
-      "deletions": 20305,
-      "net": 243107
+      "additions": 281223,
+      "deletions": 23952,
+      "net": 257271
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 170766,
-      "deletions": 18618,
-      "net": 152148
+      "additions": 316987,
+      "deletions": 25059,
+      "net": 291928
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 184879,
-      "deletions": 7205,
-      "net": 177674
+      "additions": 258086,
+      "deletions": 20852,
+      "net": 237234
     }
   ],
   "weeklyLinesRaw": [
     {
       "weekStart": "2025-06-22T00:00:00.000Z",
-      "additions": 10,
-      "deletions": 2,
-      "net": 8
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-06-29T00:00:00.000Z",
@@ -613,8 +613,8 @@
     },
     {
       "weekStart": "2025-07-13T00:00:00.000Z",
-      "additions": 1,
-      "deletions": 1,
+      "additions": 0,
+      "deletions": 0,
       "net": 0
     },
     {
@@ -643,33 +643,33 @@
     },
     {
       "weekStart": "2025-08-17T00:00:00.000Z",
-      "additions": 23353,
-      "deletions": 7898,
-      "net": 15455
+      "additions": 21991,
+      "deletions": 7285,
+      "net": 14706
     },
     {
       "weekStart": "2025-08-24T00:00:00.000Z",
-      "additions": 289,
-      "deletions": 328,
-      "net": -39
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-08-31T00:00:00.000Z",
-      "additions": 81,
-      "deletions": 70,
-      "net": 11
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-09-07T00:00:00.000Z",
-      "additions": 284,
-      "deletions": 343,
-      "net": -59
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-09-14T00:00:00.000Z",
-      "additions": 68,
-      "deletions": 95,
-      "net": -27
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     },
     {
       "weekStart": "2025-09-21T00:00:00.000Z",
@@ -739,9 +739,9 @@
     },
     {
       "weekStart": "2025-12-07T00:00:00.000Z",
-      "additions": 5585,
-      "deletions": 1056,
-      "net": 4529
+      "additions": 5566,
+      "deletions": 1053,
+      "net": 4513
     },
     {
       "weekStart": "2025-12-14T00:00:00.000Z",
@@ -757,9 +757,9 @@
     },
     {
       "weekStart": "2025-12-28T00:00:00.000Z",
-      "additions": 9133,
-      "deletions": 3204,
-      "net": 5929
+      "additions": 9113,
+      "deletions": 3194,
+      "net": 5919
     },
     {
       "weekStart": "2026-01-04T00:00:00.000Z",
@@ -769,33 +769,33 @@
     },
     {
       "weekStart": "2026-01-11T00:00:00.000Z",
-      "additions": 9652,
-      "deletions": 3974,
-      "net": 5678
+      "additions": 9389,
+      "deletions": 3712,
+      "net": 5677
     },
     {
       "weekStart": "2026-01-18T00:00:00.000Z",
-      "additions": 4335,
+      "additions": 4327,
       "deletions": 2301,
-      "net": 2034
+      "net": 2026
     },
     {
       "weekStart": "2026-01-25T00:00:00.000Z",
-      "additions": 11349,
-      "deletions": 3796,
+      "additions": 11348,
+      "deletions": 3795,
       "net": 7553
     },
     {
       "weekStart": "2026-02-01T00:00:00.000Z",
-      "additions": 13474,
-      "deletions": 5303,
-      "net": 8171
+      "additions": 13436,
+      "deletions": 5287,
+      "net": 8149
     },
     {
       "weekStart": "2026-02-08T00:00:00.000Z",
-      "additions": 15039,
-      "deletions": 5875,
-      "net": 9164
+      "additions": 15031,
+      "deletions": 5868,
+      "net": 9163
     },
     {
       "weekStart": "2026-02-15T00:00:00.000Z",
@@ -841,77 +841,83 @@
     },
     {
       "weekStart": "2026-04-05T00:00:00.000Z",
-      "additions": 38789,
-      "deletions": 4132,
-      "net": 34657
+      "additions": 37406,
+      "deletions": 3751,
+      "net": 33655
     },
     {
       "weekStart": "2026-04-12T00:00:00.000Z",
-      "additions": 110531,
-      "deletions": 39633,
-      "net": 70898
+      "additions": 105975,
+      "deletions": 37115,
+      "net": 68860
     },
     {
       "weekStart": "2026-04-19T00:00:00.000Z",
-      "additions": 403631,
-      "deletions": 159712,
-      "net": 243919
+      "additions": 392414,
+      "deletions": 154265,
+      "net": 238149
     },
     {
       "weekStart": "2026-04-26T00:00:00.000Z",
-      "additions": 21342,
-      "deletions": 14691,
-      "net": 6651
+      "additions": 20862,
+      "deletions": 14455,
+      "net": 6407
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "additions": 576442,
-      "deletions": 153461,
-      "net": 422981
+      "additions": 490847,
+      "deletions": 152425,
+      "net": 338422
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "additions": 440184,
-      "deletions": 198558,
-      "net": 241626
+      "additions": 438474,
+      "deletions": 198346,
+      "net": 240128
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "additions": 335989,
-      "deletions": 176102,
-      "net": 159887
+      "additions": 335625,
+      "deletions": 176041,
+      "net": 159584
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 360599,
-      "deletions": 165498,
-      "net": 195101
+      "additions": 398284,
+      "deletions": 169158,
+      "net": 229126
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 577270,
-      "deletions": 158766,
-      "net": 418504
+      "additions": 663711,
+      "deletions": 163844,
+      "net": 499867
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 191527,
-      "deletions": 23277,
-      "net": 168250
+      "additions": 1044975,
+      "deletions": 418150,
+      "net": 626825
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 290986,
-      "deletions": 15595,
-      "net": 275391
+      "additions": 1635564,
+      "deletions": 787013,
+      "net": 848551
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-20T02:04:18Z",
-      "commits4w": 706,
-      "lines4w": 441307
+      "lastActivityAt": "2026-06-20T13:03:09Z",
+      "commits4w": 708,
+      "lines4w": 441505
+    },
+    {
+      "repo": "rhanka/radar-immobilier",
+      "lastActivityAt": "2026-06-19T15:42:48Z",
+      "commits4w": 828,
+      "lines4w": 153210
     },
     {
       "repo": "rhanka/sentropic",
@@ -926,16 +932,10 @@
       "lines4w": 83810
     },
     {
-      "repo": "rhanka/openerp",
-      "lastActivityAt": "2026-06-03T10:12:17Z",
-      "commits4w": 43,
-      "lines4w": 54644
-    },
-    {
-      "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-06-10T19:28:03Z",
-      "commits4w": 337,
-      "lines4w": 30710
+      "repo": "rhanka/graphify",
+      "lastActivityAt": "2026-06-20T00:45:25Z",
+      "commits4w": 447,
+      "lines4w": 78640
     }
   ]
 }
