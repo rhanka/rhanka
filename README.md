@@ -13,10 +13,10 @@
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
 | rhanka/sent-tech-design-system | 2026-06-20 | 706 | 441307 |
-| rhanka/radar-immobilier | 2026-06-19 | 828 | 153210 |
 | rhanka/sentropic | 2026-06-19 | 1056 | 116670 |
 | rhanka/dataviz | 2026-06-18 | 221 | 83810 |
-| rhanka/graphify | 2026-06-20 | 447 | 78640 |
+| rhanka/openerp | 2026-06-03 | 43 | 54644 |
+| rhanka/h2a | 2026-06-10 | 337 | 30710 |
 
 </details>
 <!-- github-profile-stats:end -->
