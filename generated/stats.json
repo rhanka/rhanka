@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T00:43:31.129Z",
+  "generatedAt": "2026-06-20T01:18:27.484Z",
   "window": {
     "start": "2025-06-22T00:00:00.000Z",
     "end": "2026-06-20T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 1380
+      "count": 1391
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 650
+      "count": 653
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 318886,
-      "deletions": 25831,
-      "net": 293055
+      "additions": 320163,
+      "deletions": 26387,
+      "net": 293776
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 250986,
-      "deletions": 18053,
-      "net": 232933
+      "additions": 252978,
+      "deletions": 20517,
+      "net": 232461
     }
   ],
   "weeklyLinesRaw": [
@@ -895,23 +895,23 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 1047309,
-      "deletions": 418997,
-      "net": 628312
+      "additions": 1048771,
+      "deletions": 419564,
+      "net": 629207
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1628241,
-      "deletions": 783968,
-      "net": 844273
+      "additions": 1630397,
+      "deletions": 786637,
+      "net": 843760
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-19T22:18:12Z",
-      "commits4w": 691,
-      "lines4w": 434795
+      "lastActivityAt": "2026-06-20T01:15:58Z",
+      "commits4w": 693,
+      "lines4w": 436041
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -933,9 +933,9 @@
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-06-19T21:24:56Z",
-      "commits4w": 446,
-      "lines4w": 75430
+      "lastActivityAt": "2026-06-20T00:45:25Z",
+      "commits4w": 447,
+      "lines4w": 78640
     }
   ]
 }
