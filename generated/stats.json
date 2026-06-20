@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T13:13:32.873Z",
+  "generatedAt": "2026-06-20T14:54:39.424Z",
   "window": {
     "start": "2025-06-22T00:00:00.000Z",
     "end": "2026-06-20T23:59:59.999Z",
@@ -267,15 +267,15 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 1306
+      "count": 1370
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 1319
+      "count": 1391
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 667
+      "count": 670
     }
   ],
   "weeklyLines": [
@@ -575,21 +575,21 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 265680,
-      "deletions": 20430,
-      "net": 245250
+      "additions": 282061,
+      "deletions": 24113,
+      "net": 257948
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 315652,
-      "deletions": 24641,
-      "net": 291011
+      "additions": 320163,
+      "deletions": 26387,
+      "net": 293776
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 258085,
+      "additions": 258115,
       "deletions": 20852,
-      "net": 237233
+      "net": 237263
     }
   ],
   "weeklyLinesRaw": [
@@ -889,21 +889,21 @@
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 645420,
-      "deletions": 159900,
-      "net": 485520
+      "additions": 664615,
+      "deletions": 164049,
+      "net": 500566
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 1040208,
-      "deletions": 417056,
-      "net": 623152
+      "additions": 1048771,
+      "deletions": 419564,
+      "net": 629207
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1635463,
-      "deletions": 787008,
-      "net": 848455
+      "additions": 1635593,
+      "deletions": 787013,
+      "net": 848580
     }
   ],
   "topReposLast4Weeks": [
@@ -922,8 +922,8 @@
     {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-06-19T03:01:40Z",
-      "commits4w": 936,
-      "lines4w": 92696
+      "commits4w": 1056,
+      "lines4w": 116670
     },
     {
       "repo": "rhanka/dataviz",
