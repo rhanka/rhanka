@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T22:11:53.111Z",
+  "generatedAt": "2026-06-20T22:34:49.565Z",
   "window": {
     "start": "2025-06-22T00:00:00.000Z",
     "end": "2026-06-20T23:59:59.999Z",
@@ -263,19 +263,19 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 1124
+      "count": 953
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 1370
+      "count": 1356
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 1391
+      "count": 1146
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 678
+      "count": 488
     }
   ],
   "weeklyLines": [
@@ -569,27 +569,27 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 154882,
-      "deletions": 14336,
-      "net": 140546
+      "additions": 142337,
+      "deletions": 12792,
+      "net": 129545
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 282061,
-      "deletions": 24113,
-      "net": 257948
+      "additions": 281068,
+      "deletions": 24025,
+      "net": 257043
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 320163,
-      "deletions": 26387,
-      "net": 293776
+      "additions": 216274,
+      "deletions": 23260,
+      "net": 193014
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 258728,
-      "deletions": 21020,
-      "net": 237708
+      "additions": 95824,
+      "deletions": 14671,
+      "net": 81153
     }
   ],
   "weeklyLinesRaw": [
@@ -883,41 +883,41 @@
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "additions": 398430,
-      "deletions": 169176,
-      "net": 229254
+      "additions": 363126,
+      "deletions": 166516,
+      "net": 196610
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "additions": 664615,
-      "deletions": 164049,
-      "net": 500566
+      "additions": 663622,
+      "deletions": 163961,
+      "net": 499661
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 1048771,
-      "deletions": 419564,
-      "net": 629207
+      "additions": 940467,
+      "deletions": 415327,
+      "net": 525140
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1636224,
-      "deletions": 787199,
-      "net": 849025
+      "additions": 1390554,
+      "deletions": 779424,
+      "net": 611130
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-20T21:50:17Z",
-      "commits4w": 716,
-      "lines4w": 442286
+      "lastActivityAt": "2026-06-11T11:20:19Z",
+      "commits4w": 502,
+      "lines4w": 204476
     },
     {
       "repo": "rhanka/radar-immobilier",
       "lastActivityAt": "2026-06-19T15:42:48Z",
-      "commits4w": 828,
-      "lines4w": 153210
+      "commits4w": 657,
+      "lines4w": 139121
     },
     {
       "repo": "rhanka/sentropic",
