@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T17:41:16.978Z",
+  "generatedAt": "2026-06-21T18:44:01.376Z",
   "window": {
     "start": "2025-06-29T00:00:00.000Z",
     "end": "2026-06-27T23:59:59.999Z",
@@ -271,7 +271,7 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 758
+      "count": 759
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
@@ -581,9 +581,9 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 290887,
-      "deletions": 23177,
-      "net": 267710
+      "additions": 295044,
+      "deletions": 23783,
+      "net": 271261
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
@@ -895,9 +895,9 @@
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1675419,
-      "deletions": 789682,
-      "net": 885737
+      "additions": 1679576,
+      "deletions": 790288,
+      "net": 889288
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
@@ -910,8 +910,8 @@
     {
       "repo": "rhanka/sent-tech-design-system",
       "lastActivityAt": "2026-06-21T13:48:50Z",
-      "commits4w": 698,
-      "lines4w": 442084
+      "commits4w": 699,
+      "lines4w": 446847
     },
     {
       "repo": "rhanka/radar-immobilier",
