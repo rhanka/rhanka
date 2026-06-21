@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-06-20T23:01:46.942Z",
+  "generatedAt": "2026-06-21T00:02:53.487Z",
   "window": {
-    "start": "2025-06-22T00:00:00.000Z",
-    "end": "2026-06-20T23:59:59.999Z",
+    "start": "2025-06-29T00:00:00.000Z",
+    "end": "2026-06-27T23:59:59.999Z",
     "weeks": [
-      "2025-06-22T00:00:00.000Z",
       "2025-06-29T00:00:00.000Z",
       "2025-07-06T00:00:00.000Z",
       "2025-07-13T00:00:00.000Z",
@@ -55,7 +54,8 @@
       "2026-05-24T00:00:00.000Z",
       "2026-05-31T00:00:00.000Z",
       "2026-06-07T00:00:00.000Z",
-      "2026-06-14T00:00:00.000Z"
+      "2026-06-14T00:00:00.000Z",
+      "2026-06-21T00:00:00.000Z"
     ]
   },
   "identities": {
@@ -69,10 +69,6 @@
     ]
   },
   "weeklyCommits": [
-    {
-      "weekStart": "2025-06-22T00:00:00.000Z",
-      "count": 3
-    },
     {
       "weekStart": "2025-06-29T00:00:00.000Z",
       "count": 30
@@ -276,15 +272,13 @@
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
       "count": 688
+    },
+    {
+      "weekStart": "2026-06-21T00:00:00.000Z",
+      "count": 0
     }
   ],
   "weeklyLines": [
-    {
-      "weekStart": "2025-06-22T00:00:00.000Z",
-      "additions": 10,
-      "deletions": 2,
-      "net": 8
-    },
     {
       "weekStart": "2025-06-29T00:00:00.000Z",
       "additions": 996,
@@ -590,15 +584,15 @@
       "additions": 260206,
       "deletions": 21153,
       "net": 239053
+    },
+    {
+      "weekStart": "2026-06-21T00:00:00.000Z",
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     }
   ],
   "weeklyLinesRaw": [
-    {
-      "weekStart": "2025-06-22T00:00:00.000Z",
-      "additions": 10,
-      "deletions": 2,
-      "net": 8
-    },
     {
       "weekStart": "2025-06-29T00:00:00.000Z",
       "additions": 1002,
@@ -904,26 +898,32 @@
       "additions": 1637727,
       "deletions": 787357,
       "net": 850370
+    },
+    {
+      "weekStart": "2026-06-21T00:00:00.000Z",
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
       "lastActivityAt": "2026-06-20T22:58:20Z",
-      "commits4w": 724,
-      "lines4w": 442946
+      "commits4w": 622,
+      "lines4w": 412443
     },
     {
       "repo": "rhanka/radar-immobilier",
       "lastActivityAt": "2026-06-20T22:57:36Z",
-      "commits4w": 830,
-      "lines4w": 154161
+      "commits4w": 613,
+      "lines4w": 137037
     },
     {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-06-19T03:01:40Z",
-      "commits4w": 1056,
-      "lines4w": 116670
+      "commits4w": 826,
+      "lines4w": 93900
     },
     {
       "repo": "rhanka/dataviz",
@@ -934,8 +934,8 @@
     {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-06-20T00:45:25Z",
-      "commits4w": 447,
-      "lines4w": 78640
+      "commits4w": 370,
+      "lines4w": 71596
     }
   ]
 }
