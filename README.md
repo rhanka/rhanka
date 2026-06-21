@@ -13,7 +13,7 @@
 | Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
 | --- | --- | --- | --- |
 | rhanka/sent-tech-design-system | 2026-06-21 | 699 | 446847 |
-| rhanka/radar-immobilier | 2026-06-21 | 638 | 139456 |
+| rhanka/radar-immobilier | 2026-06-21 | 640 | 139582 |
 | rhanka/sentropic | 2026-06-19 | 826 | 93900 |
 | rhanka/dataviz | 2026-06-18 | 221 | 83810 |
 | rhanka/graphify | 2026-06-21 | 373 | 72781 |
