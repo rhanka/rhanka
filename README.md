@@ -14,8 +14,8 @@
 | --- | --- | --- | --- |
 | rhanka/sent-tech-design-system | 2026-06-22 | 753 | 467857 |
 | rhanka/radar-immobilier | 2026-06-22 | 728 | 148117 |
-| rhanka/sentropic | 2026-06-22 | 896 | 99507 |
 | rhanka/dataviz | 2026-06-21 | 224 | 83819 |
+| rhanka/sentropic | 2026-06-22 | 823 | 78878 |
 | rhanka/graphify | 2026-06-22 | 376 | 75294 |
 
 </details>
