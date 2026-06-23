@@ -15,8 +15,8 @@
 | rhanka/sent-tech-design-system | 2026-06-22 | 760 | 472736 |
 | rhanka/radar-immobilier | 2026-06-22 | 733 | 148416 |
 | rhanka/sentropic | 2026-06-23 | 920 | 104236 |
-| rhanka/remote | 2026-06-19 | 296 | 44955 |
-| rhanka/openerp | 2026-06-07 | 10 | 13952 |
+| rhanka/dataviz | 2026-06-22 | 228 | 84259 |
+| rhanka/graphify | 2026-06-23 | 380 | 79679 |
 
 </details>
 <!-- github-profile-stats:end -->
