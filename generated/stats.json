@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T16:23:46.849Z",
+  "generatedAt": "2026-06-26T16:36:45.545Z",
   "window": {
     "start": "2025-06-29T00:00:00.000Z",
     "end": "2026-06-27T23:59:59.999Z",
@@ -267,15 +267,15 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 1386
+      "count": 1391
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 721
+      "count": 775
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "count": 415
+      "count": 485
     }
   ],
   "weeklyLines": [
@@ -575,21 +575,21 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 319941,
-      "deletions": 26384,
-      "net": 293557
+      "additions": 320163,
+      "deletions": 26387,
+      "net": 293776
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 290105,
-      "deletions": 22473,
-      "net": 267632
+      "additions": 296272,
+      "deletions": 23812,
+      "net": 272460
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "additions": 67225,
-      "deletions": 7365,
-      "net": 59860
+      "additions": 76739,
+      "deletions": 8127,
+      "net": 68612
     }
   ],
   "weeklyLinesRaw": [
@@ -889,21 +889,21 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 1048436,
-      "deletions": 419468,
-      "net": 628968
+      "additions": 1048771,
+      "deletions": 419564,
+      "net": 629207
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1666598,
-      "deletions": 782903,
-      "net": 883695
+      "additions": 1681946,
+      "deletions": 790671,
+      "net": 891275
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "additions": 106518,
-      "deletions": 14823,
-      "net": 91695
+      "additions": 119124,
+      "deletions": 16472,
+      "net": 102652
     }
   ],
   "topReposLast4Weeks": [
@@ -920,16 +920,16 @@
       "lines4w": 154979
     },
     {
+      "repo": "rhanka/sentropic",
+      "lastActivityAt": "2026-06-26T03:04:21Z",
+      "commits4w": 968,
+      "lines4w": 106261
+    },
+    {
       "repo": "rhanka/graphify",
       "lastActivityAt": "2026-06-26T10:08:24Z",
       "commits4w": 397,
       "lines4w": 90394
-    },
-    {
-      "repo": "rhanka/sentropic",
-      "lastActivityAt": "2026-06-26T03:04:21Z",
-      "commits4w": 839,
-      "lines4w": 88254
     },
     {
       "repo": "rhanka/dataviz",
