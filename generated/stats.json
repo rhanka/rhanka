@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T16:03:30.796Z",
+  "generatedAt": "2026-06-27T17:00:25.060Z",
   "window": {
     "start": "2025-06-29T00:00:00.000Z",
     "end": "2026-06-27T23:59:59.999Z",
@@ -267,15 +267,15 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 1376
+      "count": 1391
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 774
+      "count": 775
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "count": 529
+      "count": 533
     }
   ],
   "weeklyLines": [
@@ -575,9 +575,9 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 318485,
-      "deletions": 25734,
-      "net": 292751
+      "additions": 320163,
+      "deletions": 26387,
+      "net": 293776
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "additions": 93441,
-      "deletions": 8724,
-      "net": 84717
+      "additions": 96658,
+      "deletions": 8769,
+      "net": 87889
     }
   ],
   "weeklyLinesRaw": [
@@ -889,29 +889,29 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 1046279,
-      "deletions": 418900,
-      "net": 627379
+      "additions": 1048771,
+      "deletions": 419564,
+      "net": 629207
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1681872,
+      "additions": 1681946,
       "deletions": 790671,
-      "net": 891201
+      "net": 891275
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "additions": 156825,
-      "deletions": 20847,
-      "net": 135978
+      "additions": 160780,
+      "deletions": 20901,
+      "net": 139879
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-27T16:02:17Z",
-      "commits4w": 802,
-      "lines4w": 487117
+      "lastActivityAt": "2026-06-27T16:10:32Z",
+      "commits4w": 803,
+      "lines4w": 487157
     },
     {
       "repo": "rhanka/radar-immobilier",
