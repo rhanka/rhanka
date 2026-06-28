@@ -20,11 +20,13 @@ jobs:
           node-version: '20'
 
       - name: Restore commit details cache
-        uses: actions/cache@v4
+        id: commit-details-cache
+        uses: actions/cache/restore@v4
         with:
           path: .cache/github-profile-stats
-          key: github-profile-stats-commit-cache-v1-${{ runner.os }}-${{ hashFiles('scripts/github-profile-stats.mjs', 'src/**/*', 'config/stats.config.json') }}
+          key: github-profile-stats-commit-cache-v1-${{ runner.os }}-${{ hashFiles('scripts/github-profile-stats.mjs', 'src/**/*', 'config/stats.config.json') }}-${{ github.run_id }}
           restore-keys: |
+            github-profile-stats-commit-cache-v1-${{ runner.os }}-${{ hashFiles('scripts/github-profile-stats.mjs', 'src/**/*', 'config/stats.config.json') }}-
             github-profile-stats-commit-cache-v1-${{ runner.os }}-
 
       - name: Run tests
@@ -34,7 +36,17 @@ jobs:
         env:
           PROFILE_STATS_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Hydrate commit details progressively so newly reintroduced repos warm
+          # the persistent cache over several runs instead of bursting the API.
+          PROFILE_STATS_HYDRATE_LIMIT: 800
         run: node scripts/github-profile-stats.mjs --write
+
+      - name: Save warmed commit details cache
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: .cache/github-profile-stats
+          key: github-profile-stats-commit-cache-v1-${{ runner.os }}-${{ hashFiles('scripts/github-profile-stats.mjs', 'src/**/*', 'config/stats.config.json') }}-${{ github.run_id }}
 
       - name: Commit refreshed artifacts
         run: |

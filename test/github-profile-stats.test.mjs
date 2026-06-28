@@ -318,6 +318,75 @@ test('buildLiveStats keeps merge commits in weekly counts but excludes their dif
   assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 5);
 });
 
+test('buildLiveStats respects a per-run hydration limit for uncached commit details', async () => {
+  const authoredAt = '2026-04-29T11:00:00.000Z';
+  const warnings = [];
+  const fetchedShas = [];
+  const savedCaches = [];
+
+  const stats = await buildLiveStats({
+    identities: {
+      logins: ['rhanka'],
+      emails: []
+    },
+    includeRepos: [],
+    excludeRepos: [],
+    windowWeeks: 1
+  }, 'secret-token', {
+    nowIso: '2026-04-30T12:00:00.000Z',
+    warn: (message) => warnings.push(message),
+    hydrateLimit: 2,
+    loadCommitDetailsCacheImpl: async () => buildEmptyCommitCache(),
+    saveCommitDetailsCacheImpl: async (cache) => savedCaches.push(cache),
+    discoverReposForLoginsImpl: async () => [
+      { repo: 'org/good', defaultBranch: 'main' }
+    ],
+    listCommitsForRepoImpl: async ({ commitMatches }) => [
+      'one-sha',
+      'two-sha',
+      'three-sha'
+    ].map((sha) => ({
+      sha,
+      repo: 'org/good',
+      commit: {
+        author: {
+          name: 'Rhanka',
+          email: 'rhanka@example.com',
+          date: authoredAt
+        }
+      }
+    })).filter((entry) => (commitMatches ? commitMatches(entry) : true)),
+    fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
+      fetchedShas.push(sha);
+      return {
+        sha,
+        parents: [{ sha: 'base' }],
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        },
+        stats: {
+          additions: 10,
+          deletions: 1
+        }
+      };
+    }
+  });
+
+  assert.deepEqual(fetchedShas, ['one-sha', 'two-sha']);
+  assert.equal(stats.weeklyCommits.at(-1).count, 2);
+  assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 22);
+  assert.match(warnings.at(0), /skipped hydration for 1 uncached commits/);
+  assert.deepEqual(Object.keys(savedCaches.at(0).entries).sort(), [
+    'org/good#one-sha',
+    'org/good#two-sha'
+  ]);
+});
+
+
 test('buildLiveStats reuses commit details from cache and skips API fetch', async () => {
   const authoredAt = '2026-04-29T11:00:00.000Z';
   const cache = {
