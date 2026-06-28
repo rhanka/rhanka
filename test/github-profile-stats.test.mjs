@@ -387,6 +387,65 @@ test('buildLiveStats respects a per-run hydration limit for uncached commit deta
 });
 
 
+test('buildLiveStats prioritizes required coverage repos when hydrating uncached commit details', async () => {
+  const authoredAt = '2026-04-29T11:00:00.000Z';
+  const fetchedShas = [];
+
+  const stats = await buildLiveStats({
+    identities: {
+      logins: ['rhanka'],
+      emails: []
+    },
+    includeRepos: ['rhanka/sent-tech-design-system'],
+    excludeRepos: [],
+    windowWeeks: 1
+  }, 'secret-token', {
+    nowIso: '2026-04-30T12:00:00.000Z',
+    hydrateLimit: 1,
+    warn: () => {},
+    loadCommitDetailsCacheImpl: async () => buildEmptyCommitCache(),
+    saveCommitDetailsCacheImpl: async () => {},
+    discoverReposForLoginsImpl: async () => [
+      { repo: 'org/noisy', defaultBranch: 'main' }
+    ],
+    listCommitsForRepoImpl: async ({ owner, repo, commitMatches }) => [
+      {
+        sha: `${owner}-${repo}-sha`,
+        repo: `${owner}/${repo}`,
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        }
+      }
+    ].filter((entry) => (commitMatches ? commitMatches(entry) : true)),
+    fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
+      fetchedShas.push(sha);
+      return {
+        sha,
+        parents: [{ sha: 'base' }],
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        },
+        stats: {
+          additions: 20,
+          deletions: 2
+        }
+      };
+    }
+  });
+
+  assert.deepEqual(fetchedShas, ['rhanka-sent-tech-design-system-sha']);
+  assert.equal(stats.topReposLast4Weeks.at(0).repo, 'rhanka/sent-tech-design-system');
+});
+
+
 test('buildLiveStats reuses commit details from cache and skips API fetch', async () => {
   const authoredAt = '2026-04-29T11:00:00.000Z';
   const cache = {
