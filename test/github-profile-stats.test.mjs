@@ -219,12 +219,12 @@ test('buildLiveStats warns and skips failing repos and failing commit details', 
   });
 
   assert.equal(stats.weeklyCommits.at(-1).count, 1);
-  assert.deepEqual(stats.topReposLast4Weeks, [
+  assert.deepEqual(stats.topReposLast5Weeks, [
     {
       repo: 'org/good',
       lastActivityAt: authoredAt,
-      commits4w: 1,
-      lines4w: 5
+      commits5w: 1,
+      lines5w: 5
     }
   ]);
   assert.deepEqual([...warnings].sort(), [
@@ -315,7 +315,7 @@ test('buildLiveStats keeps merge commits in weekly counts but excludes their dif
   assert.equal(stats.weeklyCommits.at(-1).count, 2);
   assert.equal(stats.weeklyLines.at(-1).additions, 4);
   assert.equal(stats.weeklyLines.at(-1).deletions, 1);
-  assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 5);
+  assert.equal(stats.topReposLast5Weeks.at(0).lines5w, 5);
 });
 
 test('buildLiveStats respects a per-run hydration limit for uncached commit details', async () => {
@@ -378,7 +378,7 @@ test('buildLiveStats respects a per-run hydration limit for uncached commit deta
 
   assert.deepEqual(fetchedShas, ['one-sha', 'two-sha']);
   assert.equal(stats.weeklyCommits.at(-1).count, 2);
-  assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 22);
+  assert.equal(stats.topReposLast5Weeks.at(0).lines5w, 22);
   assert.match(warnings.at(0), /skipped hydration for 1 uncached commits/);
   assert.deepEqual(Object.keys(savedCaches.at(0).entries).sort(), [
     'org/good#one-sha',
@@ -442,7 +442,7 @@ test('buildLiveStats prioritizes required coverage repos when hydrating uncached
   });
 
   assert.deepEqual(fetchedShas, ['rhanka-sent-tech-design-system-sha']);
-  assert.equal(stats.topReposLast4Weeks.at(0).repo, 'rhanka/sent-tech-design-system');
+  assert.equal(stats.topReposLast5Weeks.at(0).repo, 'rhanka/sent-tech-design-system');
 });
 
 
@@ -592,7 +592,7 @@ test('buildLiveStats filters noisy file paths from line totals while preserving 
     deletions: 16,
     net: 99
   });
-  assert.equal(stats.topReposLast4Weeks.at(0).lines4w, 12);
+  assert.equal(stats.topReposLast5Weeks.at(0).lines5w, 12);
 });
 
 function statsWithWeeklyCounts(counts) {
@@ -614,8 +614,8 @@ test('totalWindowCommits sums the weekly commit counts', () => {
 test('findRequiredRepoCoverageFailure requires sentinel high-volume repos', () => {
   assert.match(
     findRequiredRepoCoverageFailure({
-      topReposLast4Weeks: [
-        { repo: 'rhanka/sent-tech-design-system', lines4w: 116391 }
+      topReposLast5Weeks: [
+        { repo: 'rhanka/sent-tech-design-system', lines5w: 116391 }
       ]
     }),
     /sent-tech-design-system/
@@ -623,9 +623,9 @@ test('findRequiredRepoCoverageFailure requires sentinel high-volume repos', () =
 
   assert.match(
     findRequiredRepoCoverageFailure({
-      topReposLast4Weeks: [
-        { repo: 'rhanka/sent-tech-design-system', lines4w: 512235 },
-        { repo: 'rhanka/graphify', lines4w: 91282 }
+      topReposLast5Weeks: [
+        { repo: 'rhanka/sent-tech-design-system', lines5w: 512235 },
+        { repo: 'rhanka/graphify', lines5w: 91282 }
       ]
     }),
     /sentropic/
@@ -633,9 +633,9 @@ test('findRequiredRepoCoverageFailure requires sentinel high-volume repos', () =
 
   assert.equal(
     findRequiredRepoCoverageFailure({
-      topReposLast4Weeks: [
-        { repo: 'rhanka/sent-tech-design-system', lines4w: 512235 },
-        { repo: 'rhanka/sentropic', lines4w: 106261 }
+      topReposLast5Weeks: [
+        { repo: 'rhanka/sent-tech-design-system', lines5w: 512235 },
+        { repo: 'rhanka/sentropic', lines5w: 106261 }
       ]
     }),
     null

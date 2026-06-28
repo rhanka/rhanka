@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { aggregateStats } from '../src/aggregate-stats.mjs';
 
-test('aggregateStats aligns weekly series and ranks repos by lines changed in the last 4 weeks', () => {
+test('aggregateStats aligns weekly series and ranks repos by lines changed in the last 5 weeks', () => {
   const weeks = [
     '2026-04-05T00:00:00.000Z',
     '2026-04-12T00:00:00.000Z',
@@ -50,18 +50,18 @@ test('aggregateStats aligns weekly series and ranks repos by lines changed in th
     { weekStart: '2026-04-26T00:00:00.000Z', additions: 3, deletions: 5, net: -2 }
   ]);
 
-  assert.deepEqual(summary.topReposLast4Weeks, [
+  assert.deepEqual(summary.topReposLast5Weeks, [
     {
       repo: 'rhanka/graphify',
       lastActivityAt: '2026-04-22T08:00:00.000Z',
-      commits4w: 2,
-      lines4w: 17
+      commits5w: 2,
+      lines5w: 17
     },
     {
       repo: 'rhanka/rhanka',
       lastActivityAt: '2026-04-27T09:00:00.000Z',
-      commits4w: 1,
-      lines4w: 8
+      commits5w: 1,
+      lines5w: 8
     }
   ]);
 });
@@ -93,24 +93,25 @@ test('aggregateStats ranks a higher-volume repo above a more recently active one
 
   const summary = aggregateStats({ weeks, commits });
 
-  assert.deepEqual(summary.topReposLast4Weeks, [
+  assert.deepEqual(summary.topReposLast5Weeks, [
     {
       repo: 'rhanka/big',
       lastActivityAt: '2026-04-20T10:00:00.000Z',
-      commits4w: 1,
-      lines4w: 230
+      commits5w: 1,
+      lines5w: 230
     },
     {
       repo: 'rhanka/fresh',
       lastActivityAt: '2026-04-27T09:00:00.000Z',
-      commits4w: 1,
-      lines4w: 1
+      commits5w: 1,
+      lines5w: 1
     }
   ]);
 });
 
-test('aggregateStats ignores commits outside the four-week window', () => {
+test('aggregateStats ignores commits outside the five-week window', () => {
   const weeks = [
+    '2026-03-22T00:00:00.000Z',
     '2026-03-29T00:00:00.000Z',
     '2026-04-05T00:00:00.000Z',
     '2026-04-12T00:00:00.000Z',
@@ -130,20 +131,20 @@ test('aggregateStats ignores commits outside the four-week window', () => {
       },
       {
         repo: 'rhanka/graphify',
-        weekStart: '2026-03-29T00:00:00.000Z',
-        authoredAt: '2026-03-30T09:00:00.000Z',
+        weekStart: '2026-03-22T00:00:00.000Z',
+        authoredAt: '2026-03-23T09:00:00.000Z',
         additions: 100,
         deletions: 100
       }
     ]
   });
 
-  assert.deepEqual(summary.topReposLast4Weeks, [
+  assert.deepEqual(summary.topReposLast5Weeks, [
     {
       repo: 'rhanka/graphify',
       lastActivityAt: '2026-04-27T09:00:00.000Z',
-      commits4w: 1,
-      lines4w: 8
+      commits5w: 1,
+      lines5w: 8
     }
   ]);
 });
@@ -171,12 +172,12 @@ test('aggregateStats reads commit.stats when root line counts are absent', () =>
     { weekStart: '2026-04-26T00:00:00.000Z', additions: 7, deletions: 4, net: 3 }
   ]);
 
-  assert.deepEqual(summary.topReposLast4Weeks, [
+  assert.deepEqual(summary.topReposLast5Weeks, [
     {
       repo: 'rhanka/graphify',
       lastActivityAt: '2026-04-27T09:00:00.000Z',
-      commits4w: 1,
-      lines4w: 11
+      commits5w: 1,
+      lines5w: 11
     }
   ]);
 });
@@ -207,12 +208,12 @@ test('aggregateStats prefers root line counts over commit.stats', () => {
     { weekStart: '2026-04-26T00:00:00.000Z', additions: 70, deletions: 40, net: 30 }
   ]);
 
-  assert.deepEqual(summary.topReposLast4Weeks, [
+  assert.deepEqual(summary.topReposLast5Weeks, [
     {
       repo: 'rhanka/graphify',
       lastActivityAt: '2026-04-27T09:00:00.000Z',
-      commits4w: 1,
-      lines4w: 8
+      commits5w: 1,
+      lines5w: 8
     }
   ]);
 });

@@ -105,19 +105,19 @@ test('renderTopReposTable renders the expected boxed table', () => {
       {
         repo: 'rhanka/graphify',
         lastActivityAt: '2026-04-27T09:00:00.000Z',
-        commits4w: 3,
-        lines4w: 42
+        commits5w: 3,
+        lines5w: 42
       },
       {
         repo: 'rhanka/rhanka',
         lastActivityAt: '2026-04-26T10:15:00.000Z',
-        commits4w: 1,
-        lines4w: 8
+        commits5w: 1,
+        lines5w: 8
       }
     ]),
     [
       '┌───┬─────────────────┬───────────┬────────────┬───────────────────┐',
-      '│ # │ Repo            │ Lignes 4s │ Commits 4s │ Dernière activité │',
+      '│ # │ Repo            │ Lignes 5s │ Commits 5s │ Dernière activité │',
       '├───┼─────────────────┼───────────┼────────────┼───────────────────┤',
       '│ 1 │ rhanka/graphify │        42 │          3 │ 27 avril 09:00    │',
       '│ 2 │ rhanka/rhanka   │         8 │          1 │ 26 avril 10:15    │',
@@ -129,7 +129,7 @@ test('renderTopReposTable renders the expected boxed table', () => {
 test('renderTopReposTable renders a fallback when there are no repos', () => {
   assert.equal(
     renderTopReposTable([]),
-    '_Aucune activité sur les 4 dernières semaines._'
+    '_Aucune activité sur les 5 dernières semaines._'
   );
 });
 
