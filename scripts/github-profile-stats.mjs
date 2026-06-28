@@ -13,7 +13,7 @@ import { discoverRepos, mergeCandidateRepos } from '../src/discover-repos.mjs';
 import { githubRest } from '../src/github-api.mjs';
 import { buildRollingWindow } from '../src/time.mjs';
 import { renderWeeklyCommitsSvg, renderWeeklyLinesSvg } from '../src/render-svg.mjs';
-import { renderTopReposTable, replaceStatsBlock } from '../src/update-readme.mjs';
+import { renderTopReposTable, renderWeeklySummaryTable, replaceStatsBlock } from '../src/update-readme.mjs';
 import { createPathExcluder } from '../src/path-filter.mjs';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -502,17 +502,37 @@ function buildReadmeBlock(stats) {
   return [
     '## GitHub activity',
     '',
-    '<img src="generated/weekly-commits.svg" alt="Weekly commits" width="100%">',
+    '```text',
+    '📊 2 dernières semaines',
     '',
-    '<img src="generated/weekly-lines.svg" alt="Weekly line deltas" width="100%">',
+    renderWeeklySummaryTable(stats.weeklyCommits, stats.weeklyLines, 2),
     '',
-    '<details>',
-    '<summary>Top 5 recent repos</summary>',
+    '🏆 Top 5 repos (4 sem glissantes) — par lignes modifiées',
     '',
     renderTopReposTable(stats.topReposLast4Weeks),
-    '',
-    '</details>'
+    '```'
   ].join('\n');
+}
+
+
+export function findRequiredRepoCoverageFailure(stats, {
+  minSentTechLines = 460000,
+  minSentropicLines = 95000
+} = {}) {
+  const rows = Array.isArray(stats?.topReposLast4Weeks) ? stats.topReposLast4Weeks : [];
+  const byRepo = new Map(rows.map((row) => [row.repo, row]));
+  const sentTechLines = byRepo.get('rhanka/sent-tech-design-system')?.lines4w ?? 0;
+  const sentropicLines = byRepo.get('rhanka/sentropic')?.lines4w ?? 0;
+
+  if (sentTechLines < minSentTechLines) {
+    return `rhanka/sent-tech-design-system has only ${sentTechLines} lines over 4w; expected at least ${minSentTechLines}`;
+  }
+
+  if (sentropicLines < minSentropicLines) {
+    return `rhanka/sentropic has only ${sentropicLines} lines over 4w; expected at least ${minSentropicLines}`;
+  }
+
+  return null;
 }
 
 export function totalWindowCommits(stats) {
@@ -569,6 +589,13 @@ export async function main({
   if (!writeMode) {
     console.log(JSON.stringify(stats, null, 2));
     return;
+  }
+
+  const coverageFailure = findRequiredRepoCoverageFailure(stats);
+  if (coverageFailure) {
+    throw new Error(
+      `[github-profile-stats] refusing to overwrite published stats: incomplete required repo coverage: ${coverageFailure}`
+    );
   }
 
   const regression = findStatsRegression(stats, await readPreviousStats());
