@@ -27,6 +27,10 @@ const cacheDir = path.join(rootDir, '.cache', 'github-profile-stats');
 const commitDetailsCachePath = path.join(cacheDir, 'commit-details-cache.json');
 const cacheSchemaVersion = 1;
 const defaultHydrationLimitPerRun = 800;
+const requiredCoverageRepos = [
+  'rhanka/sent-tech-design-system',
+  'rhanka/sentropic'
+];
 
 function buildStats(config, { generatedAt, window, commits }) {
   const aggregates = aggregateStats({ weeks: window.weeks, commits });
@@ -465,7 +469,18 @@ export async function buildLiveStats(config, token, {
   ).flat();
 
   const commitDetailsCache = await loadCommitDetailsCacheImpl();
-  const uniqueCommits = dedupeCommitsBySha(collectedCommits);
+  const uniqueCommits = dedupeCommitsBySha(collectedCommits).sort((left, right) => {
+    const leftRequiredIndex = requiredCoverageRepos.indexOf(left.repo);
+    const rightRequiredIndex = requiredCoverageRepos.indexOf(right.repo);
+    const leftRequiredRank = leftRequiredIndex === -1 ? Number.POSITIVE_INFINITY : leftRequiredIndex;
+    const rightRequiredRank = rightRequiredIndex === -1 ? Number.POSITIVE_INFINITY : rightRequiredIndex;
+
+    if (leftRequiredRank !== rightRequiredRank) {
+      return leftRequiredRank - rightRequiredRank;
+    }
+
+    return (right.authoredAt ?? '').localeCompare(left.authoredAt ?? '');
+  });
   let remainingHydrations = hydrateLimit;
   const commitsWithHydrationPlan = uniqueCommits.map((commit) => {
     if (isMergeCommitEntry(commit)) {
