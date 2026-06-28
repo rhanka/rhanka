@@ -3,7 +3,7 @@
     "logins": ["rhanka", "antoinefa"],
     "emails": ["fabien.antoine@m4x.org", "fabien.antoine@gmail.com"]
   },
-  "includeRepos": ["rhanka/sentropic", "rhanka/sent-tech-design-system"],
+  "includeRepos": ["rhanka/sent-tech-design-system", "rhanka/sentropic"],
   "excludeRepos": [],
   "windowWeeks": 52,
   "lineFilters": {
