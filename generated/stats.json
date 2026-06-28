@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T01:31:14.206Z",
+  "generatedAt": "2026-06-28T13:38:48.156Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 2
+      "count": 12
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 367,
-      "deletions": 34,
-      "net": 333
+      "additions": 1461,
+      "deletions": 203,
+      "net": 1258
     }
   ],
   "weeklyLinesRaw": [
@@ -901,41 +901,73 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 768,
-      "deletions": 35,
-      "net": 733
+      "additions": 1902,
+      "deletions": 220,
+      "net": 1682
+    }
+  ],
+  "topReposLast5Weeks": [
+    {
+      "repo": "rhanka/sent-tech-design-system",
+      "lastActivityAt": "2026-06-28T02:35:39Z",
+      "commits5w": 821,
+      "lines5w": 512348
+    },
+    {
+      "repo": "rhanka/radar-immobilier",
+      "lastActivityAt": "2026-06-26T10:12:58Z",
+      "commits5w": 762,
+      "lines5w": 154979
+    },
+    {
+      "repo": "rhanka/sentropic",
+      "lastActivityAt": "2026-06-28T12:12:05Z",
+      "commits5w": 969,
+      "lines5w": 106261
+    },
+    {
+      "repo": "rhanka/graphify",
+      "lastActivityAt": "2026-06-28T02:47:08Z",
+      "commits5w": 407,
+      "lines5w": 92355
+    },
+    {
+      "repo": "rhanka/dataviz",
+      "lastActivityAt": "2026-06-27T14:11:40Z",
+      "commits5w": 232,
+      "lines5w": 84360
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-27T23:57:53Z",
-      "commits4w": 471,
-      "lines4w": 360439
+      "lastActivityAt": "2026-06-28T02:35:39Z",
+      "commits5w": 821,
+      "lines5w": 512348
     },
     {
       "repo": "rhanka/radar-immobilier",
       "lastActivityAt": "2026-06-26T10:12:58Z",
-      "commits4w": 704,
-      "lines4w": 142543
+      "commits5w": 762,
+      "lines5w": 154979
+    },
+    {
+      "repo": "rhanka/sentropic",
+      "lastActivityAt": "2026-06-28T12:12:05Z",
+      "commits5w": 969,
+      "lines5w": 106261
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-06-28T01:11:44Z",
-      "commits4w": 318,
-      "lines4w": 76390
+      "lastActivityAt": "2026-06-28T02:47:08Z",
+      "commits5w": 407,
+      "lines5w": 92355
     },
     {
       "repo": "rhanka/dataviz",
       "lastActivityAt": "2026-06-27T14:11:40Z",
-      "commits4w": 176,
-      "lines4w": 69386
-    },
-    {
-      "repo": "rhanka/remote",
-      "lastActivityAt": "2026-06-26T19:39:17Z",
-      "commits4w": 321,
-      "lines4w": 52659
+      "commits5w": 232,
+      "lines5w": 84360
     }
   ]
 }
