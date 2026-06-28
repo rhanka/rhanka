@@ -26,6 +26,7 @@ const weeklyLinesPath = path.join(generatedDir, 'weekly-lines.svg');
 const cacheDir = path.join(rootDir, '.cache', 'github-profile-stats');
 const commitDetailsCachePath = path.join(cacheDir, 'commit-details-cache.json');
 const cacheSchemaVersion = 1;
+const defaultHydrationLimitPerRun = 800;
 
 function buildStats(config, { generatedAt, window, commits }) {
   const aggregates = aggregateStats({ weeks: window.weeks, commits });
@@ -65,7 +66,7 @@ function buildCommitCacheKey(repo, sha) {
   return `${repo}#${sha}`;
 }
 
-function sanitizeCommitDetail(detail) {
+function sanitizeCommitDetail(detail, fetchedAt = new Date().toISOString()) {
   if (!detail || typeof detail !== 'object') {
     return null;
   }
@@ -75,7 +76,8 @@ function sanitizeCommitDetail(detail) {
     parents: detail.parents,
     commit: detail.commit,
     stats: detail.stats,
-    files: detail.files
+    files: detail.files,
+    fetchedAt
   };
 }
 
@@ -216,6 +218,27 @@ function toFilteredFileLineCounts(files, excludePath) {
     total.deletions += file.deletions ?? 0;
     return total;
   }, { additions: 0, deletions: 0 });
+}
+
+function hasHydratableCommitDetails(detail) {
+  return Boolean(
+    detail &&
+    typeof detail === 'object' &&
+    detail.stats
+  );
+}
+
+function parseHydrationLimit(value, fallback = defaultHydrationLimitPerRun) {
+  if (value === undefined || value === null || value === '') {
+    return fallback;
+  }
+
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new RangeError(`Hydration limit must be a non-negative integer, got ${value}`);
+  }
+
+  return parsed;
 }
 
 function toAggregatedCommit(commit, fallback, { excludePath = () => false } = {}) {
@@ -365,6 +388,7 @@ export async function buildLiveStats(config, token, {
   saveCommitDetailsCacheImpl = saveCommitDetailsCache,
   listReposConcurrency = 2,
   hydrateCommitsConcurrency = 10,
+  hydrateLimit = defaultHydrationLimitPerRun,
   mapWithConcurrencyImpl = mapWithConcurrency
 } = {}) {
   const generatedAt = nowIso;
@@ -441,24 +465,64 @@ export async function buildLiveStats(config, token, {
   ).flat();
 
   const commitDetailsCache = await loadCommitDetailsCacheImpl();
+  const uniqueCommits = dedupeCommitsBySha(collectedCommits);
+  let remainingHydrations = hydrateLimit;
+  const commitsWithHydrationPlan = uniqueCommits.map((commit) => {
+    if (isMergeCommitEntry(commit)) {
+      return {
+        commit,
+        cacheKey: null,
+        cachedEntry: null,
+        shouldFetch: false
+      };
+    }
+
+    const cacheKey = buildCommitCacheKey(commit.repo, commit.sha);
+    const cachedEntry = commitDetailsCache?.entries?.[cacheKey] ?? null;
+    const shouldFetch = !hasHydratableCommitDetails(cachedEntry) && remainingHydrations > 0;
+
+    if (shouldFetch) {
+      remainingHydrations -= 1;
+    }
+
+    return {
+      commit,
+      cacheKey,
+      cachedEntry,
+      shouldFetch
+    };
+  });
+
+  const skippedHydrationCount = commitsWithHydrationPlan.filter(
+    ({ cacheKey, cachedEntry, shouldFetch }) => cacheKey && !hasHydratableCommitDetails(cachedEntry) && !shouldFetch
+  ).length;
+
+  if (skippedHydrationCount > 0) {
+    warn(
+      `[github-profile-stats] skipped hydration for ${skippedHydrationCount} uncached commits after reaching PROFILE_STATS_HYDRATE_LIMIT=${hydrateLimit}; they will be retried on a later run`
+    );
+  }
+
   const hydratedCommits = (
     await mapWithConcurrencyImpl(
       hydrateCommitsConcurrency,
-      dedupeCommitsBySha(collectedCommits),
-      async (commit) => {
+      commitsWithHydrationPlan,
+      async ({ commit, cacheKey, cachedEntry, shouldFetch }) => {
         if (isMergeCommitEntry(commit)) {
           return toAggregatedCommit(commit, commit, {
             excludePath: excludeLinePath
           });
         }
 
-        const { owner, name } = splitRepoName(commit.repo);
-        const cacheKey = buildCommitCacheKey(commit.repo, commit.sha);
-        const cachedEntry = commitDetailsCache?.entries?.[cacheKey];
         let details = cachedEntry;
 
         try {
-          if (!details) {
+          if (!hasHydratableCommitDetails(details)) {
+            if (!shouldFetch) {
+              return null;
+            }
+
+            const { owner, name } = splitRepoName(commit.repo);
             details = sanitizeCommitDetail(
               await fetchCommitDetailsImpl(owner, name, commit.sha, token)
             );
@@ -469,7 +533,7 @@ export async function buildLiveStats(config, token, {
             }
           }
 
-          if (!details) {
+          if (!hasHydratableCommitDetails(details)) {
             return null;
           }
 
@@ -584,7 +648,11 @@ export async function main({
 
   const rawConfig = JSON.parse(await readFile(configPath, 'utf8'));
   const config = normalizeConfig(rawConfig);
-  const stats = token ? await buildLiveStats(config, token) : buildEmptyStats(config);
+  const stats = token
+    ? await buildLiveStats(config, token, {
+      hydrateLimit: parseHydrationLimit(env.PROFILE_STATS_HYDRATE_LIMIT)
+    })
+    : buildEmptyStats(config);
 
   if (!writeMode) {
     console.log(JSON.stringify(stats, null, 2));
