@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   buildLiveStats,
   discoverReposForLogins,
+  findRequiredRepoCoverageFailure,
   findStatsRegression,
   main,
   mapWithConcurrency,
@@ -479,6 +480,38 @@ test('totalWindowCommits sums the weekly commit counts', () => {
   assert.equal(totalWindowCommits(statsWithWeeklyCounts([10, 0, 5])), 15);
   assert.equal(totalWindowCommits({}), 0);
   assert.equal(totalWindowCommits(null), 0);
+});
+
+
+test('findRequiredRepoCoverageFailure requires sentinel high-volume repos', () => {
+  assert.match(
+    findRequiredRepoCoverageFailure({
+      topReposLast4Weeks: [
+        { repo: 'rhanka/sent-tech-design-system', lines4w: 116391 }
+      ]
+    }),
+    /sent-tech-design-system/
+  );
+
+  assert.match(
+    findRequiredRepoCoverageFailure({
+      topReposLast4Weeks: [
+        { repo: 'rhanka/sent-tech-design-system', lines4w: 512235 },
+        { repo: 'rhanka/graphify', lines4w: 91282 }
+      ]
+    }),
+    /sentropic/
+  );
+
+  assert.equal(
+    findRequiredRepoCoverageFailure({
+      topReposLast4Weeks: [
+        { repo: 'rhanka/sent-tech-design-system', lines4w: 512235 },
+        { repo: 'rhanka/sentropic', lines4w: 106261 }
+      ]
+    }),
+    null
+  );
 });
 
 test('findStatsRegression flags a fully zeroed collection', () => {

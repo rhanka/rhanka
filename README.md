@@ -3,20 +3,33 @@
 <!-- github-profile-stats:start -->
 ## GitHub activity
 
-<img src="generated/weekly-commits.svg" alt="Weekly commits" width="100%">
+```text
+📊 2 dernières semaines (dernier workflow_dispatch: 2026-06-16T09:08:35Z)
 
-<img src="generated/weekly-lines.svg" alt="Weekly line deltas" width="100%">
+┌─────────┬───────────┬────────────────────┬──────────┐
+│ Semaine │  Commits  │    Lignes (+/−)    │   Net    │
+├─────────┼───────────┼────────────────────┼──────────┤
+│ 7 juin  │   1 391   │ +320 163 / −26 387  │ +293 776 │
+├─────────┼───────────┼────────────────────┼──────────┤
+│ 14 juin │     373 ↓↓ │ +180 393 / −13 068 │ +167 325 │
+└─────────┴───────────┴────────────────────┴──────────┘
 
-<details>
-<summary>Top 5 recent repos</summary>
+🏆 Top 5 repos (4 sem glissantes) — par lignes modifiées
 
-| Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |
-| --- | --- | --- | --- |
-| rhanka/sent-tech-design-system | 2026-06-27 | 471 | 360439 |
-| rhanka/radar-immobilier | 2026-06-26 | 704 | 142543 |
-| rhanka/graphify | 2026-06-28 | 318 | 76390 |
-| rhanka/dataviz | 2026-06-27 | 176 | 69386 |
-| rhanka/remote | 2026-06-26 | 321 | 52659 |
-
-</details>
+┌───┬────────────────────────────────┬───────────┬────────────┬───────────────────┐
+│ # │ Repo                           │ Lignes 4s │ Commits 4s │ Dernière activité │
+├───┼────────────────────────────────┼───────────┼────────────┼───────────────────┤
+│ 1 │ rhanka/sent-tech-design-system │   405 323 │        658 │ 16 juin 02:01     │
+├───┼────────────────────────────────┼───────────┼────────────┼───────────────────┤
+│ 2 │ rhanka/radar-immobilier        │   138 439 │        751 │ 16 juin 02:29     │
+├───┼────────────────────────────────┼───────────┼────────────┼───────────────────┤
+│ 3 │ rhanka/sentropic               │   111 605 │      1 017 │ 16 juin 02:51     │
+├───┼────────────────────────────────┼───────────┼────────────┼───────────────────┤
+│ 4 │ rhanka/dataviz                 │    80 411 │        215 │ 16 juin 02:14     │
+├───┼────────────────────────────────┼───────────┼────────────┼───────────────────┤
+│ 5 │ rhanka/graphify                │    69 772 │        440 │ 15 juin 17:21     │
+└───┴────────────────────────────────┴───────────┴────────────┴───────────────────┘
+```
 <!-- github-profile-stats:end -->
+
+

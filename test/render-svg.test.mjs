@@ -5,6 +5,7 @@ import {
   renderWeeklyLinesSvg
 } from '../src/render-svg.mjs';
 import {
+  renderWeeklySummaryTable,
   renderTopReposTable,
   replaceStatsBlock
 } from '../src/update-readme.mjs';
@@ -98,7 +99,7 @@ test('renderWeeklyLinesSvg compacts large axis labels', () => {
   assert.doesNotMatch(svg, />-383836</);
 });
 
-test('renderTopReposTable renders the expected markdown table', () => {
+test('renderTopReposTable renders the expected boxed table', () => {
   assert.equal(
     renderTopReposTable([
       {
@@ -115,10 +116,12 @@ test('renderTopReposTable renders the expected markdown table', () => {
       }
     ]),
     [
-      '| Repo | Derniere activite | Commits (4 sem.) | Lignes modifiees (4 sem.) |',
-      '| --- | --- | --- | --- |',
-      '| rhanka/graphify | 2026-04-27 | 3 | 42 |',
-      '| rhanka/rhanka | 2026-04-26 | 1 | 8 |'
+      '┌───┬─────────────────┬───────────┬────────────┬───────────────────┐',
+      '│ # │ Repo            │ Lignes 4s │ Commits 4s │ Dernière activité │',
+      '├───┼─────────────────┼───────────┼────────────┼───────────────────┤',
+      '│ 1 │ rhanka/graphify │        42 │          3 │ 27 avril 09:00    │',
+      '│ 2 │ rhanka/rhanka   │         8 │          1 │ 26 avril 10:15    │',
+      '└───┴─────────────────┴───────────┴────────────┴───────────────────┘'
     ].join('\n')
   );
 });
@@ -126,7 +129,31 @@ test('renderTopReposTable renders the expected markdown table', () => {
 test('renderTopReposTable renders a fallback when there are no repos', () => {
   assert.equal(
     renderTopReposTable([]),
-    '_Aucune activite sur les 4 dernieres semaines._'
+    '_Aucune activité sur les 4 dernières semaines._'
+  );
+});
+
+test('renderWeeklySummaryTable renders boxed weekly aggregates', () => {
+  assert.equal(
+    renderWeeklySummaryTable(
+      [
+        { weekStart: '2026-06-07T00:00:00.000Z', count: 1391 },
+        { weekStart: '2026-06-14T00:00:00.000Z', count: 356 }
+      ],
+      [
+        { weekStart: '2026-06-07T00:00:00.000Z', additions: 320163, deletions: 26387, net: 293776 },
+        { weekStart: '2026-06-14T00:00:00.000Z', additions: 179579, deletions: 12206, net: 167373 }
+      ],
+      2
+    ),
+    [
+      '┌─────────┬─────────┬────────────────────┬──────────┐',
+      '│ Semaine │ Commits │       Lignes (+/−) │      Net │',
+      '├─────────┼─────────┼────────────────────┼──────────┤',
+      '│ 7 juin  │   1 391 │ +320 163 / −26 387 │ +293 776 │',
+      '│ 14 juin │  356 ↓↓ │ +179 579 / −12 206 │ +167 373 │',
+      '└─────────┴─────────┴────────────────────┴──────────┘'
+    ].join('\n')
   );
 });
 
