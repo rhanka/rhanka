@@ -141,16 +141,18 @@ export function renderWeeklySummaryTable(weeklyCommits = [], weeklyLines = [], w
   );
 }
 
-export function renderTopReposTable(rows) {
+export function renderTopReposTable(rows, { weekCount = 5 } = {}) {
   if (!Array.isArray(rows) || rows.length === 0) {
-    return '_Aucune activité sur les 4 dernières semaines._';
+    return `_Aucune activité sur les ${weekCount} dernières semaines._`;
   }
 
+  const lineKey = `lines${weekCount}w`;
+  const commitKey = `commits${weekCount}w`;
   const renderedRows = rows.map((row, index) => [
     `${index + 1}`,
     `${row.repo ?? ''}`,
-    normalizeNumber(row.lines4w ?? 0),
-    normalizeNumber(row.commits4w ?? 0),
+    normalizeNumber(row[lineKey] ?? row.lines4w ?? 0),
+    normalizeNumber(row[commitKey] ?? row.commits4w ?? 0),
     formatLastActivity(row.lastActivityAt)
   ]);
 
@@ -158,8 +160,8 @@ export function renderTopReposTable(rows) {
     [
       { heading: '#', align: 'right' },
       { heading: 'Repo', align: 'left' },
-      { heading: 'Lignes 4s', align: 'right' },
-      { heading: 'Commits 4s', align: 'right' },
+      { heading: `Lignes ${weekCount}s`, align: 'right' },
+      { heading: `Commits ${weekCount}s`, align: 'right' },
       { heading: 'Dernière activité', align: 'left' }
     ],
     renderedRows

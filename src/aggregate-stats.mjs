@@ -34,7 +34,7 @@ export function aggregateStats({ weeks = [], commits = [] } = {}) {
   const weeklyLines = weeks.map(emptyWeeklyLine);
   const weeklyLinesRaw = weeks.map(emptyWeeklyLine);
   const weekIndexByStart = new Map(weeks.map((weekStart, index) => [weekStart, index]));
-  const topWeeks = new Set(weeks.slice(-4));
+  const topWeeks = new Set(weeks.slice(-5));
   const repoStats = new Map();
 
   for (const commit of commits) {
@@ -68,12 +68,12 @@ export function aggregateStats({ weeks = [], commits = [] } = {}) {
     const current = repoStats.get(commit.repo) ?? {
       repo: commit.repo,
       lastActivityAt: commit.authoredAt ?? null,
-      commits4w: 0,
-      lines4w: 0
+      commits5w: 0,
+      lines5w: 0
     };
 
-    current.commits4w += 1;
-    current.lines4w += linesChanged;
+    current.commits5w += 1;
+    current.lines5w += linesChanged;
 
     if (
       current.lastActivityAt === null ||
@@ -85,14 +85,14 @@ export function aggregateStats({ weeks = [], commits = [] } = {}) {
     repoStats.set(commit.repo, current);
   }
 
-  const topReposLast4Weeks = [...repoStats.values()]
+  const topReposLast5Weeks = [...repoStats.values()]
     .sort((left, right) => {
-      if (right.lines4w !== left.lines4w) {
-        return right.lines4w - left.lines4w;
+      if (right.lines5w !== left.lines5w) {
+        return right.lines5w - left.lines5w;
       }
 
-      if (right.commits4w !== left.commits4w) {
-        return right.commits4w - left.commits4w;
+      if (right.commits5w !== left.commits5w) {
+        return right.commits5w - left.commits5w;
       }
 
       if (left.lastActivityAt !== right.lastActivityAt) {
@@ -115,6 +115,6 @@ export function aggregateStats({ weeks = [], commits = [] } = {}) {
     weeklyCommits,
     weeklyLines,
     weeklyLinesRaw,
-    topReposLast4Weeks
+    topReposLast5Weeks
   };
 }

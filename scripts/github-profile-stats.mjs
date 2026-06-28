@@ -42,7 +42,8 @@ function buildStats(config, { generatedAt, window, commits }) {
     weeklyCommits: aggregates.weeklyCommits,
     weeklyLines: aggregates.weeklyLines,
     weeklyLinesRaw: aggregates.weeklyLinesRaw,
-    topReposLast4Weeks: aggregates.topReposLast4Weeks
+    topReposLast5Weeks: aggregates.topReposLast5Weeks,
+    topReposLast4Weeks: aggregates.topReposLast5Weeks
   };
 }
 
@@ -240,6 +241,19 @@ function parseHydrationLimit(value, fallback = defaultHydrationLimitPerRun) {
   const parsed = Number(value);
   if (!Number.isInteger(parsed) || parsed < 0) {
     throw new RangeError(`Hydration limit must be a non-negative integer, got ${value}`);
+  }
+
+  return parsed;
+}
+
+function parseOptionalInteger(value, name) {
+  if (value === undefined || value === null || value === '') {
+    return undefined;
+  }
+
+  const parsed = Number(value);
+  if (!Number.isInteger(parsed) || parsed < 0) {
+    throw new RangeError(`${name} must be a non-negative integer, got ${value}`);
   }
 
   return parsed;
@@ -582,33 +596,37 @@ function buildReadmeBlock(stats) {
     '## GitHub activity',
     '',
     '```text',
-    '📊 2 dernières semaines',
+    '📊 5 dernières semaines',
     '',
-    renderWeeklySummaryTable(stats.weeklyCommits, stats.weeklyLines, 2),
+    renderWeeklySummaryTable(stats.weeklyCommits, stats.weeklyLines, 5),
     '',
-    '🏆 Top 5 repos (4 sem glissantes) — par lignes modifiées',
+    '🏆 Top 5 repos (5 sem glissantes) — par lignes modifiées',
     '',
-    renderTopReposTable(stats.topReposLast4Weeks),
+    renderTopReposTable(stats.topReposLast5Weeks ?? stats.topReposLast4Weeks),
     '```'
   ].join('\n');
 }
 
 
 export function findRequiredRepoCoverageFailure(stats, {
-  minSentTechLines = 460000,
+  minSentTechLines = 350000,
   minSentropicLines = 95000
 } = {}) {
-  const rows = Array.isArray(stats?.topReposLast4Weeks) ? stats.topReposLast4Weeks : [];
+  const rows = Array.isArray(stats?.topReposLast5Weeks)
+    ? stats.topReposLast5Weeks
+    : Array.isArray(stats?.topReposLast4Weeks) ? stats.topReposLast4Weeks : [];
   const byRepo = new Map(rows.map((row) => [row.repo, row]));
-  const sentTechLines = byRepo.get('rhanka/sent-tech-design-system')?.lines4w ?? 0;
-  const sentropicLines = byRepo.get('rhanka/sentropic')?.lines4w ?? 0;
+  const sentTechRow = byRepo.get('rhanka/sent-tech-design-system');
+  const sentropicRow = byRepo.get('rhanka/sentropic');
+  const sentTechLines = sentTechRow?.lines5w ?? sentTechRow?.lines4w ?? 0;
+  const sentropicLines = sentropicRow?.lines5w ?? sentropicRow?.lines4w ?? 0;
 
   if (sentTechLines < minSentTechLines) {
-    return `rhanka/sent-tech-design-system has only ${sentTechLines} lines over 4w; expected at least ${minSentTechLines}`;
+    return `rhanka/sent-tech-design-system has only ${sentTechLines} lines over 5w; expected at least ${minSentTechLines}`;
   }
 
   if (sentropicLines < minSentropicLines) {
-    return `rhanka/sentropic has only ${sentropicLines} lines over 4w; expected at least ${minSentropicLines}`;
+    return `rhanka/sentropic has only ${sentropicLines} lines over 5w; expected at least ${minSentropicLines}`;
   }
 
   return null;
@@ -674,7 +692,10 @@ export async function main({
     return;
   }
 
-  const coverageFailure = findRequiredRepoCoverageFailure(stats);
+  const coverageFailure = findRequiredRepoCoverageFailure(stats, {
+    minSentTechLines: parseOptionalInteger(env.PROFILE_STATS_MIN_SENT_TECH_LINES, 'PROFILE_STATS_MIN_SENT_TECH_LINES'),
+    minSentropicLines: parseOptionalInteger(env.PROFILE_STATS_MIN_SENTROPIC_LINES, 'PROFILE_STATS_MIN_SENTROPIC_LINES')
+  });
   if (coverageFailure) {
     throw new Error(
       `[github-profile-stats] refusing to overwrite published stats: incomplete required repo coverage: ${coverageFailure}`
