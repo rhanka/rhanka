@@ -38,7 +38,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Hydrate commit details progressively so newly reintroduced repos warm
           # the persistent cache over several runs instead of bursting the API.
-          PROFILE_STATS_HYDRATE_LIMIT: 800
+          PROFILE_STATS_HYDRATE_LIMIT: 2000
         run: node scripts/github-profile-stats.mjs --write
 
       - name: Save warmed commit details cache
