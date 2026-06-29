@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T19:43:36.867Z",
+  "generatedAt": "2026-06-29T20:30:34.554Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -263,11 +263,11 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 1391
+      "count": 1380
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 775
+      "count": 683
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 46
+      "count": 49
     }
   ],
   "weeklyLines": [
@@ -569,15 +569,15 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 320163,
-      "deletions": 26387,
-      "net": 293776
+      "additions": 310982,
+      "deletions": 26223,
+      "net": 284759
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 296272,
-      "deletions": 23812,
-      "net": 272460
+      "additions": 270558,
+      "deletions": 22426,
+      "net": 248132
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 13245,
-      "deletions": 312,
-      "net": 12933
+      "additions": 13421,
+      "deletions": 344,
+      "net": 13077
     }
   ],
   "weeklyLinesRaw": [
@@ -883,15 +883,15 @@
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "additions": 1048771,
-      "deletions": 419564,
-      "net": 629207
+      "additions": 1034495,
+      "deletions": 419368,
+      "net": 615127
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "additions": 1681946,
-      "deletions": 790671,
-      "net": 891275
+      "additions": 1625608,
+      "deletions": 788193,
+      "net": 837415
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 16027,
-      "deletions": 348,
-      "net": 15679
+      "additions": 16209,
+      "deletions": 386,
+      "net": 15823
     }
   ],
   "topReposLast5Weeks": [
