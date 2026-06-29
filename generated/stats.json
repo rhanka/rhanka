@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T11:06:36.331Z",
+  "generatedAt": "2026-06-29T11:32:35.353Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 33
+      "count": 35
     }
   ],
   "weeklyLines": [
@@ -901,8 +901,8 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 6934,
-      "deletions": 315,
+      "additions": 6938,
+      "deletions": 319,
       "net": 6619
     }
   ],
