@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T18:36:09.354Z",
+  "generatedAt": "2026-06-29T18:53:07.549Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 39
+      "count": 45
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 8160,
-      "deletions": 291,
-      "net": 7869
+      "additions": 13231,
+      "deletions": 310,
+      "net": 12921
     }
   ],
   "weeklyLinesRaw": [
@@ -901,17 +901,17 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 9623,
-      "deletions": 323,
-      "net": 9300
+      "additions": 15987,
+      "deletions": 344,
+      "net": 15643
     }
   ],
   "topReposLast5Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-29T13:08:37Z",
-      "commits5w": 828,
-      "lines5w": 514726
+      "lastActivityAt": "2026-06-29T18:44:58Z",
+      "commits5w": 830,
+      "lines5w": 518150
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -927,9 +927,9 @@
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-06-29T15:58:26Z",
-      "commits5w": 420,
-      "lines5w": 96685
+      "lastActivityAt": "2026-06-29T18:47:29Z",
+      "commits5w": 424,
+      "lines5w": 98351
     },
     {
       "repo": "rhanka/dataviz",
@@ -941,9 +941,9 @@
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-29T13:08:37Z",
-      "commits5w": 828,
-      "lines5w": 514726
+      "lastActivityAt": "2026-06-29T18:44:58Z",
+      "commits5w": 830,
+      "lines5w": 518150
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -959,9 +959,9 @@
     },
     {
       "repo": "rhanka/graphify",
-      "lastActivityAt": "2026-06-29T15:58:26Z",
-      "commits5w": 420,
-      "lines5w": 96685
+      "lastActivityAt": "2026-06-29T18:47:29Z",
+      "commits5w": 424,
+      "lines5w": 98351
     },
     {
       "repo": "rhanka/dataviz",
