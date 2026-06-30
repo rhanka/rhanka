@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T03:06:06.153Z",
+  "generatedAt": "2026-06-30T03:36:07.744Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "count": 560
+      "count": 563
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 105
+      "count": 141
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "additions": 125300,
-      "deletions": 9382,
-      "net": 115918
+      "additions": 125515,
+      "deletions": 9386,
+      "net": 116129
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 93493,
-      "deletions": 1152,
-      "net": 92341
+      "additions": 120170,
+      "deletions": 5597,
+      "net": 114573
     }
   ],
   "weeklyLinesRaw": [
@@ -895,29 +895,29 @@
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "additions": 189462,
-      "deletions": 21547,
-      "net": 167915
+      "additions": 190150,
+      "deletions": 21552,
+      "net": 168598
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 141377,
-      "deletions": 4713,
-      "net": 136664
+      "additions": 176553,
+      "deletions": 9296,
+      "net": 167257
     }
   ],
   "topReposLast5Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-30T02:55:22Z",
-      "commits5w": 838,
-      "lines5w": 536561
+      "lastActivityAt": "2026-06-30T03:26:54Z",
+      "commits5w": 841,
+      "lines5w": 551237
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-06-26T10:12:58Z",
-      "commits5w": 762,
-      "lines5w": 154979
+      "lastActivityAt": "2026-06-30T03:10:20Z",
+      "commits5w": 798,
+      "lines5w": 171644
     },
     {
       "repo": "rhanka/sentropic",
@@ -941,15 +941,15 @@
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-06-30T02:55:22Z",
-      "commits5w": 838,
-      "lines5w": 536561
+      "lastActivityAt": "2026-06-30T03:26:54Z",
+      "commits5w": 841,
+      "lines5w": 551237
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-06-26T10:12:58Z",
-      "commits5w": 762,
-      "lines5w": 154979
+      "lastActivityAt": "2026-06-30T03:10:20Z",
+      "commits5w": 798,
+      "lines5w": 171644
     },
     {
       "repo": "rhanka/sentropic",
