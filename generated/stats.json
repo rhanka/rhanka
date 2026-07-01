@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T01:20:47.026Z",
+  "generatedAt": "2026-07-01T01:36:04.485Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 174
+      "count": 178
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 135741,
-      "deletions": 8692,
-      "net": 127049
+      "additions": 135998,
+      "deletions": 8721,
+      "net": 127277
     }
   ],
   "weeklyLinesRaw": [
@@ -901,17 +901,17 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 242289,
-      "deletions": 23860,
-      "net": 218429
+      "additions": 242571,
+      "deletions": 23920,
+      "net": 218651
     }
   ],
   "topReposLast5Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-07-01T01:18:24Z",
-      "commits5w": 848,
-      "lines5w": 554673
+      "lastActivityAt": "2026-07-01T01:29:32Z",
+      "commits5w": 849,
+      "lines5w": 554734
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -933,17 +933,17 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-06-29T22:10:06Z",
-      "commits5w": 105,
-      "lines5w": 95453
+      "lastActivityAt": "2026-07-01T01:31:07Z",
+      "commits5w": 106,
+      "lines5w": 95677
     }
   ],
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-07-01T01:18:24Z",
-      "commits5w": 848,
-      "lines5w": 554673
+      "lastActivityAt": "2026-07-01T01:29:32Z",
+      "commits5w": 849,
+      "lines5w": 554734
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -965,9 +965,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-06-29T22:10:06Z",
-      "commits5w": 105,
-      "lines5w": 95453
+      "lastActivityAt": "2026-07-01T01:31:07Z",
+      "commits5w": 106,
+      "lines5w": 95677
     }
   ]
 }
