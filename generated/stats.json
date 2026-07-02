@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T22:06:10.906Z",
+  "generatedAt": "2026-07-02T22:36:14.431Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 242
+      "count": 249
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 153033,
-      "deletions": 10873,
-      "net": 142160
+      "additions": 155719,
+      "deletions": 11125,
+      "net": 144594
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 262490,
-      "deletions": 26926,
-      "net": 235564
+      "additions": 265580,
+      "deletions": 27534,
+      "net": 238046
     }
   ],
   "topReposLast5Weeks": [
@@ -915,9 +915,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-07-02T22:02:08Z",
-      "commits5w": 830,
-      "lines5w": 180199
+      "lastActivityAt": "2026-07-02T22:31:48Z",
+      "commits5w": 837,
+      "lines5w": 183137
     },
     {
       "repo": "rhanka/sentropic",
@@ -947,9 +947,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-07-02T22:02:08Z",
-      "commits5w": 830,
-      "lines5w": 180199
+      "lastActivityAt": "2026-07-02T22:31:48Z",
+      "commits5w": 837,
+      "lines5w": 183137
     },
     {
       "repo": "rhanka/sentropic",
