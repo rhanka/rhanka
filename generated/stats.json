@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T10:06:11.552Z",
+  "generatedAt": "2026-07-03T10:36:11.855Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 274
+      "count": 280
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 160385,
-      "deletions": 11725,
-      "net": 148660
+      "additions": 160596,
+      "deletions": 11905,
+      "net": 148691
     }
   ],
   "weeklyLinesRaw": [
@@ -901,23 +901,23 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 270371,
-      "deletions": 28142,
-      "net": 242229
+      "additions": 270582,
+      "deletions": 28322,
+      "net": 242260
     }
   ],
   "topReposLast5Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-07-02T11:12:01Z",
-      "commits5w": 854,
-      "lines5w": 555447
+      "lastActivityAt": "2026-07-03T10:10:40Z",
+      "commits5w": 855,
+      "lines5w": 555680
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-07-03T10:02:04Z",
-      "commits5w": 849,
-      "lines5w": 185317
+      "lastActivityAt": "2026-07-03T10:25:20Z",
+      "commits5w": 853,
+      "lines5w": 185427
     },
     {
       "repo": "rhanka/sentropic",
@@ -941,15 +941,15 @@
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-07-02T11:12:01Z",
-      "commits5w": 854,
-      "lines5w": 555447
+      "lastActivityAt": "2026-07-03T10:10:40Z",
+      "commits5w": 855,
+      "lines5w": 555680
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-07-03T10:02:04Z",
-      "commits5w": 849,
-      "lines5w": 185317
+      "lastActivityAt": "2026-07-03T10:25:20Z",
+      "commits5w": 853,
+      "lines5w": 185427
     },
     {
       "repo": "rhanka/sentropic",
