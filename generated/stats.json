@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T13:48:56.944Z",
+  "generatedAt": "2026-07-03T14:06:17.259Z",
   "window": {
     "start": "2025-07-06T00:00:00.000Z",
     "end": "2026-07-04T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 291
+      "count": 305
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 161833,
-      "deletions": 12146,
-      "net": 149687
+      "additions": 164696,
+      "deletions": 12326,
+      "net": 152370
     }
   ],
   "weeklyLinesRaw": [
@@ -901,17 +901,17 @@
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "additions": 272891,
-      "deletions": 28563,
-      "net": 244328
+      "additions": 275758,
+      "deletions": 28743,
+      "net": 247015
     }
   ],
   "topReposLast5Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-07-03T10:10:40Z",
-      "commits5w": 855,
-      "lines5w": 555680
+      "lastActivityAt": "2026-07-03T14:04:50Z",
+      "commits5w": 856,
+      "lines5w": 555792
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -941,9 +941,9 @@
   "topReposLast4Weeks": [
     {
       "repo": "rhanka/sent-tech-design-system",
-      "lastActivityAt": "2026-07-03T10:10:40Z",
-      "commits5w": 855,
-      "lines5w": 555680
+      "lastActivityAt": "2026-07-03T14:04:50Z",
+      "commits5w": 856,
+      "lines5w": 555792
     },
     {
       "repo": "rhanka/radar-immobilier",
