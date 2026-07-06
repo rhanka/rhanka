@@ -446,6 +446,56 @@ test('buildLiveStats prioritizes required coverage repos when hydrating uncached
 });
 
 
+test('buildLiveStats merges cached required repo coverage when live listing returns no commits', async () => {
+  const authoredAt = '2026-04-29T11:00:00.000Z';
+  const warnings = [];
+  const cache = {
+    schemaVersion: commitCacheSchemaVersion,
+    updatedAt: '2026-04-30T12:00:00.000Z',
+    entries: {
+      'rhanka/sentropic#cached-sha': {
+        sha: 'cached-sha',
+        parents: [{ sha: 'base' }],
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        },
+        stats: {
+          additions: 50,
+          deletions: 5
+        }
+      }
+    }
+  };
+
+  const stats = await buildLiveStats({
+    identities: {
+      logins: ['rhanka'],
+      emails: ['rhanka@example.com']
+    },
+    includeRepos: ['rhanka/sentropic'],
+    excludeRepos: [],
+    windowWeeks: 1
+  }, 'secret-token', {
+    nowIso: '2026-04-30T12:00:00.000Z',
+    warn: (message) => warnings.push(message),
+    ...withNoCommitCache({
+      loadCommitDetailsCacheImpl: async () => cache
+    }),
+    discoverReposForLoginsImpl: async () => [],
+    listCommitsForRepoImpl: async () => []
+  });
+
+  assert.equal(stats.weeklyCommits.at(-1).count, 1);
+  assert.equal(stats.topReposLast5Weeks.at(0).repo, 'rhanka/sentropic');
+  assert.equal(stats.topReposLast5Weeks.at(0).lines5w, 55);
+  assert.match(warnings.at(0), /using cached coverage because live listing returned no commits/);
+});
+
+
 test('buildLiveStats falls back to cached commit details when repo listing fails', async () => {
   const authoredAt = '2026-04-29T11:00:00.000Z';
   const warnings = [];

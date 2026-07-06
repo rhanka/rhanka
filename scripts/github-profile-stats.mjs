@@ -469,7 +469,7 @@ export async function buildLiveStats(config, token, {
 
   const commitDetailsCache = await loadCommitDetailsCacheImpl();
 
-  const collectedCommits = (
+  const liveCollectedCommits = (
     await mapWithConcurrencyImpl(listReposConcurrency, repoTasks, async ({
       owner,
       repo,
@@ -523,6 +523,30 @@ export async function buildLiveStats(config, token, {
       }
     })
   ).flat();
+
+  const liveReposWithCommits = new Set(liveCollectedCommits.map((commit) => commit.repo));
+  const cachedRequiredCommits = requiredCoverageRepos.flatMap((repo) => {
+    if (!candidateRepos.includes(repo)) {
+      return [];
+    }
+
+    const cachedCommits = collectCachedCommitsForRepo({
+      repo,
+      commitDetailsCache,
+      identitySets,
+      window
+    });
+
+    if (cachedCommits.length > 0) {
+      const reason = liveReposWithCommits.has(repo)
+        ? 'merging cached coverage with live commits'
+        : 'using cached coverage because live listing returned no commits';
+      warn(`[github-profile-stats] ${reason} for required repo "${repo}" (${cachedCommits.length} cached commits)`);
+    }
+
+    return cachedCommits;
+  });
+  const collectedCommits = [...liveCollectedCommits, ...cachedRequiredCommits];
 
   const uniqueCommits = dedupeCommitsBySha(collectedCommits).sort((left, right) => {
     const leftRequiredIndex = requiredCoverageRepos.indexOf(left.repo);
