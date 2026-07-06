@@ -7,6 +7,7 @@ import {
   findStatsRegression,
   main,
   mapWithConcurrency,
+  retainRequiredRepoCoverageFromPrevious,
   resolveGithubToken,
   totalWindowCommits
 } from '../scripts/github-profile-stats.mjs';
@@ -731,6 +732,29 @@ test('totalWindowCommits sums the weekly commit counts', () => {
   assert.equal(totalWindowCommits(statsWithWeeklyCounts([10, 0, 5])), 15);
   assert.equal(totalWindowCommits({}), 0);
   assert.equal(totalWindowCommits(null), 0);
+});
+
+
+test('retainRequiredRepoCoverageFromPrevious carries forward sentinel rows when current collection is incomplete', () => {
+  const warnings = [];
+  const retained = retainRequiredRepoCoverageFromPrevious({
+    topReposLast5Weeks: [
+      { repo: 'rhanka/sent-tech-design-system', lines5w: 512235, commits5w: 100, lastActivityAt: '2026-04-30T12:00:00.000Z' },
+      { repo: 'rhanka/graphify', lines5w: 120000, commits5w: 50, lastActivityAt: '2026-04-30T12:00:00.000Z' },
+      { repo: 'rhanka/sentropic', lines5w: 0, commits5w: 0, lastActivityAt: null }
+    ]
+  }, {
+    topReposLast5Weeks: [
+      { repo: 'rhanka/sentropic', lines5w: 106261, commits5w: 974, lastActivityAt: '2026-04-29T12:00:00.000Z' }
+    ]
+  }, {
+    warn: (message) => warnings.push(message)
+  });
+
+  const sentropic = retained.topReposLast5Weeks.find((row) => row.repo === 'rhanka/sentropic');
+  assert.equal(sentropic.lines5w, 106261);
+  assert.equal(sentropic.retainedFromPreviousRun, true);
+  assert.match(warnings.at(0), /retained previous published coverage/);
 });
 
 
