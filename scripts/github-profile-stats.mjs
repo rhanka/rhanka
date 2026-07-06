@@ -233,6 +233,36 @@ function hasHydratableCommitDetails(detail) {
   );
 }
 
+function collectCachedCommitsForRepo({
+  repo,
+  commitDetailsCache,
+  identitySets,
+  window
+}) {
+  const entries = commitDetailsCache?.entries ?? {};
+  const prefix = `${repo}#`;
+  const collected = [];
+
+  for (const [cacheKey, detail] of Object.entries(entries)) {
+    if (!cacheKey.startsWith(prefix) || !hasHydratableCommitDetails(detail)) {
+      continue;
+    }
+
+    const commit = toCollectedCommit(repo, detail);
+    if (!commit.authoredAt || commit.authoredAt < window.start || commit.authoredAt > window.end) {
+      continue;
+    }
+
+    if (!commitMatchesTrackedIdentity(commit.commit, identitySets)) {
+      continue;
+    }
+
+    collected.push(commit);
+  }
+
+  return dedupeCommitsBySha(collected);
+}
+
 function parseHydrationLimit(value, fallback = defaultHydrationLimitPerRun) {
   if (value === undefined || value === null || value === '') {
     return fallback;
@@ -437,6 +467,8 @@ export async function buildLiveStats(config, token, {
     });
   }
 
+  const commitDetailsCache = await loadCommitDetailsCacheImpl();
+
   const collectedCommits = (
     await mapWithConcurrencyImpl(listReposConcurrency, repoTasks, async ({
       owner,
@@ -471,18 +503,27 @@ export async function buildLiveStats(config, token, {
           }
         });
       } catch (error) {
+        const cachedCommits = collectCachedCommitsForRepo({
+          repo: candidateRepo,
+          commitDetailsCache,
+          identitySets,
+          window
+        });
+        const fallbackSuffix = cachedCommits.length > 0
+          ? `; using ${cachedCommits.length} cached commits for this repo`
+          : '; no cached commits available for this repo';
+
         warn(
-          warningMessage(
+          `${warningMessage(
             `skipping commits for repo "${candidateRepo}" while listing commits`,
             error
-          )
+          )}${fallbackSuffix}`
         );
-        return [];
+        return cachedCommits;
       }
     })
   ).flat();
 
-  const commitDetailsCache = await loadCommitDetailsCacheImpl();
   const uniqueCommits = dedupeCommitsBySha(collectedCommits).sort((left, right) => {
     const leftRequiredIndex = requiredCoverageRepos.indexOf(left.repo);
     const rightRequiredIndex = requiredCoverageRepos.indexOf(right.repo);
