@@ -673,6 +673,90 @@ function buildReadmeBlock(stats) {
 }
 
 
+function repoLineCount(row) {
+  return row?.lines5w ?? row?.lines4w ?? 0;
+}
+
+function repoCommitCount(row) {
+  return row?.commits5w ?? row?.commits4w ?? 0;
+}
+
+function sortTopRepoRows(rows) {
+  return [...rows].sort((left, right) => {
+    const rightLines = repoLineCount(right);
+    const leftLines = repoLineCount(left);
+    if (rightLines !== leftLines) {
+      return rightLines - leftLines;
+    }
+
+    const rightCommits = repoCommitCount(right);
+    const leftCommits = repoCommitCount(left);
+    if (rightCommits !== leftCommits) {
+      return rightCommits - leftCommits;
+    }
+
+    if (left.lastActivityAt !== right.lastActivityAt) {
+      if (!left.lastActivityAt) {
+        return 1;
+      }
+
+      if (!right.lastActivityAt) {
+        return -1;
+      }
+
+      return right.lastActivityAt.localeCompare(left.lastActivityAt);
+    }
+
+    return left.repo.localeCompare(right.repo);
+  });
+}
+
+export function retainRequiredRepoCoverageFromPrevious(nextStats, previousStats, {
+  minSentTechLines = 350000,
+  minSentropicLines = 95000,
+  warn = console.warn
+} = {}) {
+  const requiredThresholds = new Map([
+    ['rhanka/sent-tech-design-system', minSentTechLines],
+    ['rhanka/sentropic', minSentropicLines]
+  ]);
+  const nextRows = Array.isArray(nextStats?.topReposLast5Weeks)
+    ? nextStats.topReposLast5Weeks
+    : Array.isArray(nextStats?.topReposLast4Weeks) ? nextStats.topReposLast4Weeks : [];
+  const previousRows = Array.isArray(previousStats?.topReposLast5Weeks)
+    ? previousStats.topReposLast5Weeks
+    : Array.isArray(previousStats?.topReposLast4Weeks) ? previousStats.topReposLast4Weeks : [];
+  const byRepo = new Map(nextRows.map((row) => [row.repo, { ...row }]));
+  let changed = false;
+
+  for (const [repo, threshold] of requiredThresholds) {
+    const current = byRepo.get(repo);
+    if (repoLineCount(current) >= threshold) {
+      continue;
+    }
+
+    const previous = previousRows.find((row) => row.repo === repo);
+    if (repoLineCount(previous) < threshold) {
+      continue;
+    }
+
+    byRepo.set(repo, { ...previous, retainedFromPreviousRun: true });
+    changed = true;
+    warn(`[github-profile-stats] retained previous published coverage for required repo "${repo}" (${repoLineCount(previous)} lines) because current collection had ${repoLineCount(current)} lines`);
+  }
+
+  if (!changed) {
+    return nextStats;
+  }
+
+  const topReposLast5Weeks = sortTopRepoRows([...byRepo.values()]).slice(0, 5);
+  return {
+    ...nextStats,
+    topReposLast5Weeks,
+    topReposLast4Weeks: topReposLast5Weeks
+  };
+}
+
 export function findRequiredRepoCoverageFailure(stats, {
   minSentTechLines = 350000,
   minSentropicLines = 95000
@@ -746,11 +830,18 @@ export async function main({
 
   const rawConfig = JSON.parse(await readFile(configPath, 'utf8'));
   const config = normalizeConfig(rawConfig);
-  const stats = token
+  const builtStats = token
     ? await buildLiveStats(config, token, {
       hydrateLimit: parseHydrationLimit(env.PROFILE_STATS_HYDRATE_LIMIT)
     })
     : buildEmptyStats(config);
+  const previousStats = writeMode ? await readPreviousStats() : null;
+  const stats = writeMode
+    ? retainRequiredRepoCoverageFromPrevious(builtStats, previousStats, {
+      minSentTechLines: parseOptionalInteger(env.PROFILE_STATS_MIN_SENT_TECH_LINES, 'PROFILE_STATS_MIN_SENT_TECH_LINES'),
+      minSentropicLines: parseOptionalInteger(env.PROFILE_STATS_MIN_SENTROPIC_LINES, 'PROFILE_STATS_MIN_SENTROPIC_LINES')
+    })
+    : builtStats;
 
   if (!writeMode) {
     console.log(JSON.stringify(stats, null, 2));
@@ -767,7 +858,7 @@ export async function main({
     );
   }
 
-  const regression = findStatsRegression(stats, await readPreviousStats());
+  const regression = findStatsRegression(stats, previousStats);
   if (regression) {
     throw new Error(
       `[github-profile-stats] refusing to overwrite published stats: ${regression}`
