@@ -228,7 +228,7 @@ test('buildLiveStats warns and skips failing repos and failing commit details', 
     }
   ]);
   assert.deepEqual([...warnings].sort(), [
-    '[github-profile-stats] skipping commits for repo "org/bad-list" while listing commits: 502 listing failed for tracked identity set',
+    '[github-profile-stats] skipping commits for repo "org/bad-list" while listing commits: 502 listing failed for tracked identity set; no cached commits available for this repo',
     '[github-profile-stats] skipping commit "bad-sha" in repo "org/good" while fetching details: 500 detail lookup failed'
   ].sort());
 });
@@ -443,6 +443,79 @@ test('buildLiveStats prioritizes required coverage repos when hydrating uncached
 
   assert.deepEqual(fetchedShas, ['rhanka-sent-tech-design-system-sha']);
   assert.equal(stats.topReposLast5Weeks.at(0).repo, 'rhanka/sent-tech-design-system');
+});
+
+
+test('buildLiveStats falls back to cached commit details when repo listing fails', async () => {
+  const authoredAt = '2026-04-29T11:00:00.000Z';
+  const warnings = [];
+  const cache = {
+    schemaVersion: commitCacheSchemaVersion,
+    updatedAt: '2026-04-30T12:00:00.000Z',
+    entries: {
+      'rhanka/sentropic#cached-sha': {
+        sha: 'cached-sha',
+        parents: [{ sha: 'base' }],
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: authoredAt
+          }
+        },
+        stats: {
+          additions: 99,
+          deletions: 4
+        }
+      },
+      'rhanka/sentropic#outside-window-sha': {
+        sha: 'outside-window-sha',
+        parents: [{ sha: 'base' }],
+        commit: {
+          author: {
+            name: 'Rhanka',
+            email: 'rhanka@example.com',
+            date: '2026-01-01T00:00:00.000Z'
+          }
+        },
+        stats: {
+          additions: 999,
+          deletions: 1
+        }
+      }
+    }
+  };
+  let fetchCallCount = 0;
+
+  const stats = await buildLiveStats({
+    identities: {
+      logins: ['rhanka'],
+      emails: ['rhanka@example.com']
+    },
+    includeRepos: ['rhanka/sentropic'],
+    excludeRepos: [],
+    windowWeeks: 1
+  }, 'secret-token', {
+    nowIso: '2026-04-30T12:00:00.000Z',
+    warn: (message) => warnings.push(message),
+    ...withNoCommitCache({
+      loadCommitDetailsCacheImpl: async () => cache
+    }),
+    discoverReposForLoginsImpl: async () => [],
+    listCommitsForRepoImpl: async () => {
+      throw new Error('403 rate limited');
+    },
+    fetchCommitDetailsImpl: async () => {
+      fetchCallCount += 1;
+      return {};
+    }
+  });
+
+  assert.equal(fetchCallCount, 0);
+  assert.equal(stats.weeklyCommits.at(-1).count, 1);
+  assert.equal(stats.topReposLast5Weeks.at(0).repo, 'rhanka/sentropic');
+  assert.equal(stats.topReposLast5Weeks.at(0).lines5w, 103);
+  assert.match(warnings.at(0), /using 1 cached commits/);
 });
 
 
