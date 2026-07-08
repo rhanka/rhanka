@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T13:12:07.792Z",
+  "generatedAt": "2026-07-08T15:52:04.157Z",
   "window": {
     "start": "2025-07-13T00:00:00.000Z",
     "end": "2026-07-11T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-07-05T00:00:00.000Z",
-      "count": 86
+      "count": 88
     }
   ],
   "weeklyLines": [
@@ -588,8 +588,8 @@
     {
       "weekStart": "2026-07-05T00:00:00.000Z",
       "additions": 43356,
-      "deletions": 2230,
-      "net": 41126
+      "deletions": 2232,
+      "net": 41124
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-07-05T00:00:00.000Z",
-      "additions": 611440,
-      "deletions": 298877,
-      "net": 312563
+      "additions": 611793,
+      "deletions": 298879,
+      "net": 312914
     }
   ],
   "topReposLast5Weeks": [
