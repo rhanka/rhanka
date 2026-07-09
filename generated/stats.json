@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T18:56:50.269Z",
+  "generatedAt": "2026-07-09T20:53:41.605Z",
   "window": {
     "start": "2025-07-13T00:00:00.000Z",
     "end": "2026-07-11T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-07-05T00:00:00.000Z",
-      "count": 101
+      "count": 102
     }
   ],
   "weeklyLines": [
@@ -587,8 +587,8 @@
     },
     {
       "weekStart": "2026-07-05T00:00:00.000Z",
-      "additions": 44539,
-      "deletions": 2384,
+      "additions": 44575,
+      "deletions": 2420,
       "net": 42155
     }
   ],
@@ -901,8 +901,8 @@
     },
     {
       "weekStart": "2026-07-05T00:00:00.000Z",
-      "additions": 613206,
-      "deletions": 299127,
+      "additions": 613242,
+      "deletions": 299163,
       "net": 314079
     }
   ],
