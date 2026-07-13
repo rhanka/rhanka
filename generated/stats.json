@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T00:04:37.258Z",
+  "generatedAt": "2026-07-13T00:18:50.077Z",
   "window": {
     "start": "2025-07-20T00:00:00.000Z",
     "end": "2026-07-18T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-07-12T00:00:00.000Z",
-      "count": 24
+      "count": 36
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-07-12T00:00:00.000Z",
-      "additions": 1272,
-      "deletions": 57,
-      "net": 1215
+      "additions": 3929,
+      "deletions": 97,
+      "net": 3832
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-07-12T00:00:00.000Z",
-      "additions": 1957,
-      "deletions": 84,
-      "net": 1873
+      "additions": 4644,
+      "deletions": 124,
+      "net": 4520
     }
   ],
   "topReposLast5Weeks": [
@@ -915,17 +915,17 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/radar-immobilier",
+      "lastActivityAt": "2026-07-13T00:11:23Z",
+      "commits5w": 512,
+      "lines5w": 108470
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-07-12T01:33:39Z",
-      "commits5w": 501,
-      "lines5w": 105811
     },
     {
       "repo": "rhanka/geo",
@@ -949,17 +949,17 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/radar-immobilier",
+      "lastActivityAt": "2026-07-13T00:11:23Z",
+      "commits5w": 512,
+      "lines5w": 108470
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-07-12T01:33:39Z",
-      "commits5w": 501,
-      "lines5w": 105811
     },
     {
       "repo": "rhanka/geo",
