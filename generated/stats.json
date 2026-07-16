@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T11:19:41.121Z",
+  "generatedAt": "2026-07-16T13:04:01.468Z",
   "window": {
     "start": "2025-07-20T00:00:00.000Z",
     "end": "2026-07-18T23:59:59.999Z",
@@ -115,11 +115,11 @@
     },
     {
       "weekStart": "2025-10-05T00:00:00.000Z",
-      "count": 192
+      "count": 188
     },
     {
       "weekStart": "2025-10-12T00:00:00.000Z",
-      "count": 158
+      "count": 154
     },
     {
       "weekStart": "2025-10-19T00:00:00.000Z",
@@ -131,11 +131,11 @@
     },
     {
       "weekStart": "2025-11-02T00:00:00.000Z",
-      "count": 50
+      "count": 49
     },
     {
       "weekStart": "2025-11-09T00:00:00.000Z",
-      "count": 79
+      "count": 78
     },
     {
       "weekStart": "2025-11-16T00:00:00.000Z",
@@ -143,31 +143,31 @@
     },
     {
       "weekStart": "2025-11-23T00:00:00.000Z",
-      "count": 74
+      "count": 72
     },
     {
       "weekStart": "2025-11-30T00:00:00.000Z",
-      "count": 101
+      "count": 100
     },
     {
       "weekStart": "2025-12-07T00:00:00.000Z",
-      "count": 59
+      "count": 57
     },
     {
       "weekStart": "2025-12-14T00:00:00.000Z",
-      "count": 89
+      "count": 87
     },
     {
       "weekStart": "2025-12-21T00:00:00.000Z",
-      "count": 248
+      "count": 242
     },
     {
       "weekStart": "2025-12-28T00:00:00.000Z",
-      "count": 170
+      "count": 166
     },
     {
       "weekStart": "2026-01-04T00:00:00.000Z",
-      "count": 127
+      "count": 125
     },
     {
       "weekStart": "2026-01-11T00:00:00.000Z",
@@ -179,47 +179,47 @@
     },
     {
       "weekStart": "2026-01-25T00:00:00.000Z",
-      "count": 141
+      "count": 137
     },
     {
       "weekStart": "2026-02-01T00:00:00.000Z",
-      "count": 173
+      "count": 170
     },
     {
       "weekStart": "2026-02-08T00:00:00.000Z",
-      "count": 211
+      "count": 207
     },
     {
       "weekStart": "2026-02-15T00:00:00.000Z",
-      "count": 224
+      "count": 222
     },
     {
       "weekStart": "2026-02-22T00:00:00.000Z",
-      "count": 203
+      "count": 195
     },
     {
       "weekStart": "2026-03-01T00:00:00.000Z",
-      "count": 394
+      "count": 391
     },
     {
       "weekStart": "2026-03-08T00:00:00.000Z",
-      "count": 427
+      "count": 424
     },
     {
       "weekStart": "2026-03-15T00:00:00.000Z",
-      "count": 146
+      "count": 142
     },
     {
       "weekStart": "2026-03-22T00:00:00.000Z",
-      "count": 213
+      "count": 212
     },
     {
       "weekStart": "2026-03-29T00:00:00.000Z",
-      "count": 152
+      "count": 150
     },
     {
       "weekStart": "2026-04-05T00:00:00.000Z",
-      "count": 183
+      "count": 180
     },
     {
       "weekStart": "2026-04-12T00:00:00.000Z",
@@ -227,55 +227,55 @@
     },
     {
       "weekStart": "2026-04-19T00:00:00.000Z",
-      "count": 371
+      "count": 368
     },
     {
       "weekStart": "2026-04-26T00:00:00.000Z",
-      "count": 113
+      "count": 109
     },
     {
       "weekStart": "2026-05-03T00:00:00.000Z",
-      "count": 350
+      "count": 347
     },
     {
       "weekStart": "2026-05-10T00:00:00.000Z",
-      "count": 1263
+      "count": 1249
     },
     {
       "weekStart": "2026-05-17T00:00:00.000Z",
-      "count": 954
+      "count": 944
     },
     {
       "weekStart": "2026-05-24T00:00:00.000Z",
-      "count": 1306
+      "count": 1285
     },
     {
       "weekStart": "2026-05-31T00:00:00.000Z",
-      "count": 1403
+      "count": 1317
     },
     {
       "weekStart": "2026-06-07T00:00:00.000Z",
-      "count": 1391
+      "count": 1342
     },
     {
       "weekStart": "2026-06-14T00:00:00.000Z",
-      "count": 775
+      "count": 757
     },
     {
       "weekStart": "2026-06-21T00:00:00.000Z",
-      "count": 564
+      "count": 540
     },
     {
       "weekStart": "2026-06-28T00:00:00.000Z",
-      "count": 378
+      "count": 372
     },
     {
       "weekStart": "2026-07-05T00:00:00.000Z",
-      "count": 202
+      "count": 182
     },
     {
       "weekStart": "2026-07-12T00:00:00.000Z",
-      "count": 119
+      "count": 105
     }
   ],
   "weeklyLines": [
