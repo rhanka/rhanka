@@ -18,10 +18,12 @@ const DISCOVER_REPOS_QUERY = `
 `;
 
 // GitHub caps the cost of a single contributionsCollection query. A full
-// rolling-year window across a high-volume account now trips
+// rolling-year window across a high-volume account trips
 // "Resource limits for this query exceeded", so split the discovery window
-// into cheaper sub-ranges and union the repos.
-const defaultDiscoverWindowDays = 90;
+// into cheaper sub-ranges and union the repos. Empirically 30-day windows
+// stay under the budget even across the densest weeks while ~90-day windows
+// exceed it, so keep the chunk conservative.
+const defaultDiscoverWindowDays = 30;
 
 export function splitDiscoveryWindow(from, to, maxWindowDays = defaultDiscoverWindowDays) {
   const fromMs = Date.parse(from);
