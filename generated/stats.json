@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T21:03:02.728Z",
+  "generatedAt": "2026-07-22T21:44:33.083Z",
   "window": {
     "start": "2025-07-27T00:00:00.000Z",
     "end": "2026-07-25T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "count": 53
+      "count": 57
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 11486,
-      "deletions": 748,
-      "net": 10738
+      "additions": 13728,
+      "deletions": 2201,
+      "net": 11527
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 12324,
-      "deletions": 846,
-      "net": 11478
+      "additions": 956965,
+      "deletions": 2352,
+      "net": 954613
     }
   ],
   "topReposLast5Weeks": [
@@ -923,9 +923,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-22T17:03:04Z",
-      "commits5w": 264,
-      "lines5w": 96146
+      "lastActivityAt": "2026-07-22T21:12:07Z",
+      "commits5w": 266,
+      "lines5w": 96949
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -957,9 +957,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-22T17:03:04Z",
-      "commits5w": 264,
-      "lines5w": 96146
+      "lastActivityAt": "2026-07-22T21:12:07Z",
+      "commits5w": 266,
+      "lines5w": 96949
     },
     {
       "repo": "rhanka/radar-immobilier",
