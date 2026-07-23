@@ -20,7 +20,7 @@
 │ 28 juin    │  378 ↓↓ │ +175 636 / −13 954 │ +161 682 │
 │ 5 juillet  │  202 ↓↓ │   +56 663 / −3 474 │  +53 189 │
 │ 12 juillet │  240 ↑↑ │   +50 584 / −3 232 │  +47 352 │
-│ 19 juillet │   82 ↓↓ │   +27 008 / −5 428 │  +21 580 │
+│ 19 juillet │  105 ↓↓ │   +27 631 / −5 487 │  +22 144 │
 └────────────┴─────────┴────────────────────┴──────────┘
 
 🏆 Top 5 repos (5 sem glissantes) — par lignes modifiées
@@ -31,7 +31,7 @@
 │ 1 │ rhanka/sent-tech-design-system │   404 930 │        515 │ 7 juillet 03:17   │
 │ 2 │ rhanka/sentropic               │   106 261 │        974 │ 4 juillet 21:57   │
 │ 3 │ rhanka/h2a                     │    97 082 │        278 │ 23 juillet 13:40  │
-│ 4 │ rhanka/radar-immobilier        │    81 198 │        458 │ 23 juillet 22:29  │
+│ 4 │ rhanka/radar-immobilier        │    81 880 │        481 │ 23 juillet 22:54  │
 │ 5 │ rhanka/geo                     │    63 632 │         20 │ 10 juillet 03:54  │
 └───┴────────────────────────────────┴───────────┴────────────┴───────────────────┘
 ```
