@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   buildLiveStats,
+  buildReadmeBlock,
   discoverReposForLogins,
   findRequiredRepoCoverageFailure,
   findStatsRegression,
@@ -727,6 +728,19 @@ function statsWithWeeklyCounts(counts) {
     }))
   };
 }
+
+test('buildReadmeBlock embeds the generated weekly charts and keeps detail collapsible', () => {
+  const block = buildReadmeBlock({
+    weeklyCommits: [{ weekStart: '2026-04-26T00:00:00.000Z', count: 4 }],
+    weeklyLines: [{ weekStart: '2026-04-26T00:00:00.000Z', additions: 10, deletions: 2, net: 8 }],
+    topReposLast5Weeks: []
+  });
+
+  assert.match(block, /<img src="generated\/weekly-commits\.svg" alt="Commits par semaine" width="100%">/);
+  assert.match(block, /<img src="generated\/weekly-lines\.svg" alt="Lignes ajoutées et supprimées par semaine" width="100%">/);
+  assert.match(block, /<details>[\s\S]*<summary>Détail des 5 dernières semaines et top repos<\/summary>/);
+  assert.match(block, /<\/details>$/);
+});
 
 test('totalWindowCommits sums the weekly commit counts', () => {
   assert.equal(totalWindowCommits(statsWithWeeklyCounts([10, 0, 5])), 15);

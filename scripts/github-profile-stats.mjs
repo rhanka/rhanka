@@ -656,9 +656,16 @@ export async function buildLiveStats(config, token, {
   });
 }
 
-function buildReadmeBlock(stats) {
+export function buildReadmeBlock(stats) {
   return [
     '## GitHub activity',
+    '',
+    '<img src="generated/weekly-commits.svg" alt="Commits par semaine" width="100%">',
+    '',
+    '<img src="generated/weekly-lines.svg" alt="Lignes ajoutées et supprimées par semaine" width="100%">',
+    '',
+    '<details>',
+    '<summary>Détail des 5 dernières semaines et top repos</summary>',
     '',
     '```text',
     '📊 5 dernières semaines',
@@ -668,7 +675,9 @@ function buildReadmeBlock(stats) {
     '🏆 Top 5 repos (5 sem glissantes) — par lignes modifiées',
     '',
     renderTopReposTable(stats.topReposLast5Weeks ?? stats.topReposLast4Weeks),
-    '```'
+    '```',
+    '',
+    '</details>'
   ].join('\n');
 }
 
