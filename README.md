@@ -3,6 +3,13 @@
 <!-- github-profile-stats:start -->
 ## GitHub activity
 
+<img src="generated/weekly-commits.svg" alt="Commits par semaine" width="100%">
+
+<img src="generated/weekly-lines.svg" alt="Lignes ajoutées et supprimées par semaine" width="100%">
+
+<details>
+<summary>Détail des 5 dernières semaines et top repos</summary>
+
 ```text
 📊 5 dernières semaines
 
@@ -13,7 +20,7 @@
 │ 28 juin    │  378 ↓↓ │ +175 636 / −13 954 │ +161 682 │
 │ 5 juillet  │  202 ↓↓ │   +56 663 / −3 474 │  +53 189 │
 │ 12 juillet │  240 ↑↑ │   +50 584 / −3 232 │  +47 352 │
-│ 19 juillet │   58 ↓↓ │   +18 861 / −3 229 │  +15 632 │
+│ 19 juillet │   61 ↓↓ │   +18 949 / −3 231 │  +15 718 │
 └────────────┴─────────┴────────────────────┴──────────┘
 
 🏆 Top 5 repos (5 sem glissantes) — par lignes modifiées
@@ -23,11 +30,13 @@
 ├───┼────────────────────────────────┼───────────┼────────────┼───────────────────┤
 │ 1 │ rhanka/sent-tech-design-system │   404 930 │        515 │ 7 juillet 03:17   │
 │ 2 │ rhanka/sentropic               │   106 261 │        974 │ 4 juillet 21:57   │
-│ 3 │ rhanka/h2a                     │    96 949 │        266 │ 22 juillet 21:12  │
+│ 3 │ rhanka/h2a                     │    97 012 │        268 │ 23 juillet 11:10  │
 │ 4 │ rhanka/radar-immobilier        │    80 108 │        448 │ 20 juillet 12:26  │
 │ 5 │ rhanka/geo                     │    63 632 │         20 │ 10 juillet 03:54  │
 └───┴────────────────────────────────┴───────────┴────────────┴───────────────────┘
 ```
+
+</details>
 <!-- github-profile-stats:end -->
 
 
