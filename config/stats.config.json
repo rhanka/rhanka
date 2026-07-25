@@ -21,7 +21,16 @@
       "**/*.generated.*",
       "**/dist/**",
       "**/build/**",
-      "**/coverage/**"
+      "**/coverage/**",
+      "**/work/**",
+      "**/data/**",
+      "**/.track/**",
+      "**/*.geojson",
+      "**/*.parquet",
+      "**/*.csv",
+      "**/*.tsv",
+      "**/*.jsonl",
+      "**/*.gpkg"
     ]
   }
 }
