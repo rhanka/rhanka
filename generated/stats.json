@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T18:33:22.493Z",
+  "generatedAt": "2026-07-25T19:48:40.392Z",
   "window": {
     "start": "2025-07-27T00:00:00.000Z",
     "end": "2026-07-25T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "count": 534
+      "count": 541
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 491376,
-      "deletions": 7775,
-      "net": 483601
+      "additions": 494336,
+      "deletions": 8102,
+      "net": 486234
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 1767849,
-      "deletions": 10072,
-      "net": 1757777
+      "additions": 1770982,
+      "deletions": 10431,
+      "net": 1760551
     }
   ],
   "topReposLast5Weeks": [
@@ -921,17 +921,17 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/h2a",
+      "lastActivityAt": "2026-07-25T19:41:29Z",
+      "commits5w": 329,
+      "lines5w": 109176
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-25T10:21:52Z",
-      "commits5w": 322,
-      "lines5w": 105889
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -955,17 +955,17 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/h2a",
+      "lastActivityAt": "2026-07-25T19:41:29Z",
+      "commits5w": 329,
+      "lines5w": 109176
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-25T10:21:52Z",
-      "commits5w": 322,
-      "lines5w": 105889
     },
     {
       "repo": "rhanka/radar-immobilier",
