@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T18:36:38.499Z",
+  "generatedAt": "2026-07-26T19:25:56.855Z",
   "window": {
     "start": "2025-08-03T00:00:00.000Z",
     "end": "2026-08-01T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "count": 49
+      "count": 52
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 9691,
-      "deletions": 819,
-      "net": 8872
+      "additions": 12633,
+      "deletions": 2407,
+      "net": 10226
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 64884,
-      "deletions": 841,
-      "net": 64043
+      "additions": 70447,
+      "deletions": 2510,
+      "net": 67937
     }
   ],
   "topReposLast5Weeks": [
@@ -921,17 +921,17 @@
       "lines5w": 186123
     },
     {
+      "repo": "rhanka/h2a",
+      "lastActivityAt": "2026-07-26T19:13:07Z",
+      "commits5w": 325,
+      "lines5w": 109081
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-25T19:41:29Z",
-      "commits5w": 322,
-      "lines5w": 104551
     },
     {
       "repo": "rhanka/radar-immobilier",
@@ -955,17 +955,17 @@
       "lines5w": 186123
     },
     {
+      "repo": "rhanka/h2a",
+      "lastActivityAt": "2026-07-26T19:13:07Z",
+      "commits5w": 325,
+      "lines5w": 109081
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-25T19:41:29Z",
-      "commits5w": 322,
-      "lines5w": 104551
     },
     {
       "repo": "rhanka/radar-immobilier",
