@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T17:19:13.593Z",
+  "generatedAt": "2026-07-27T18:59:02.190Z",
   "window": {
     "start": "2025-08-03T00:00:00.000Z",
     "end": "2026-08-01T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "count": 557
+      "count": 566
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "count": 70
+      "count": 83
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 71560,
-      "deletions": 8289,
-      "net": 63271
+      "additions": 75042,
+      "deletions": 8523,
+      "net": 66519
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 16233,
-      "deletions": 3288,
-      "net": 12945
+      "additions": 16237,
+      "deletions": 3289,
+      "net": 12948
     }
   ],
   "weeklyLinesRaw": [
@@ -895,15 +895,15 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 1384093,
-      "deletions": 10652,
-      "net": 1373441
+      "additions": 1389900,
+      "deletions": 11056,
+      "net": 1378844
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 74234,
-      "deletions": 3431,
-      "net": 70803
+      "additions": 75705,
+      "deletions": 3433,
+      "net": 72272
     }
   ],
   "topReposLast5Weeks": [
@@ -922,9 +922,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-26T20:16:48Z",
-      "commits5w": 329,
-      "lines5w": 109081
+      "lastActivityAt": "2026-07-27T18:59:09Z",
+      "commits5w": 351,
+      "lines5w": 112802
     },
     {
       "repo": "rhanka/sentropic",
@@ -956,9 +956,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-26T20:16:48Z",
-      "commits5w": 329,
-      "lines5w": 109081
+      "lastActivityAt": "2026-07-27T18:59:09Z",
+      "commits5w": 351,
+      "lines5w": 112802
     },
     {
       "repo": "rhanka/sentropic",
