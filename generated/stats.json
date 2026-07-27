@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T18:59:02.190Z",
+  "generatedAt": "2026-07-27T20:39:21.480Z",
   "window": {
     "start": "2025-08-03T00:00:00.000Z",
     "end": "2026-08-01T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "count": 566
+      "count": 576
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "count": 83
+      "count": 116
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 75042,
-      "deletions": 8523,
-      "net": 66519
+      "additions": 78930,
+      "deletions": 8665,
+      "net": 70265
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 16237,
-      "deletions": 3289,
-      "net": 12948
+      "additions": 26278,
+      "deletions": 4681,
+      "net": 21597
     }
   ],
   "weeklyLinesRaw": [
@@ -895,15 +895,15 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 1389900,
-      "deletions": 11056,
-      "net": 1378844
+      "additions": 1394370,
+      "deletions": 11248,
+      "net": 1383122
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 75705,
-      "deletions": 3433,
-      "net": 72272
+      "additions": 87989,
+      "deletions": 4922,
+      "net": 83067
     }
   ],
   "topReposLast5Weeks": [
@@ -922,9 +922,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-27T18:59:09Z",
-      "commits5w": 351,
-      "lines5w": 112802
+      "lastActivityAt": "2026-07-27T19:52:20Z",
+      "commits5w": 394,
+      "lines5w": 128265
     },
     {
       "repo": "rhanka/sentropic",
@@ -956,9 +956,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-27T18:59:09Z",
-      "commits5w": 351,
-      "lines5w": 112802
+      "lastActivityAt": "2026-07-27T19:52:20Z",
+      "commits5w": 394,
+      "lines5w": 128265
     },
     {
       "repo": "rhanka/sentropic",
