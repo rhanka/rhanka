@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T21:16:54.876Z",
+  "generatedAt": "2026-07-28T22:37:13.954Z",
   "window": {
     "start": "2025-08-03T00:00:00.000Z",
     "end": "2026-08-01T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "count": 576
+      "count": 577
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "count": 183
+      "count": 193
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 78930,
-      "deletions": 8665,
-      "net": 70265
+      "additions": 79516,
+      "deletions": 8803,
+      "net": 70713
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 40548,
-      "deletions": 6914,
-      "net": 33634
+      "additions": 46728,
+      "deletions": 7045,
+      "net": 39683
     }
   ],
   "weeklyLinesRaw": [
@@ -895,15 +895,15 @@
     },
     {
       "weekStart": "2026-07-19T00:00:00.000Z",
-      "additions": 1394370,
-      "deletions": 11248,
-      "net": 1383122
+      "additions": 1395343,
+      "deletions": 11552,
+      "net": 1383791
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 107332,
-      "deletions": 8061,
-      "net": 99271
+      "additions": 113701,
+      "deletions": 8214,
+      "net": 105487
     }
   ],
   "topReposLast5Weeks": [
@@ -922,9 +922,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-28T05:59:16Z",
-      "commits5w": 418,
-      "lines5w": 131193
+      "lastActivityAt": "2026-07-28T21:49:00Z",
+      "commits5w": 420,
+      "lines5w": 131209
     },
     {
       "repo": "rhanka/sentropic",
@@ -956,9 +956,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-28T05:59:16Z",
-      "commits5w": 418,
-      "lines5w": 131193
+      "lastActivityAt": "2026-07-28T21:49:00Z",
+      "commits5w": 420,
+      "lines5w": 131209
     },
     {
       "repo": "rhanka/sentropic",
