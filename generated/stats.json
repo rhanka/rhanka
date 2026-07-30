@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T14:25:39.166Z",
+  "generatedAt": "2026-07-30T16:09:43.494Z",
   "window": {
     "start": "2025-08-03T00:00:00.000Z",
     "end": "2026-08-01T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "count": 264
+      "count": 277
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 58764,
-      "deletions": 8289,
-      "net": 50475
+      "additions": 61091,
+      "deletions": 8433,
+      "net": 52658
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 131583,
-      "deletions": 11282,
-      "net": 120301
+      "additions": 133910,
+      "deletions": 11426,
+      "net": 122484
     }
   ],
   "topReposLast5Weeks": [
@@ -922,9 +922,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-29T23:18:07Z",
-      "commits5w": 447,
-      "lines5w": 134689
+      "lastActivityAt": "2026-07-30T15:28:06Z",
+      "commits5w": 460,
+      "lines5w": 137160
     },
     {
       "repo": "rhanka/sentropic",
@@ -956,9 +956,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-07-29T23:18:07Z",
-      "commits5w": 447,
-      "lines5w": 134689
+      "lastActivityAt": "2026-07-30T15:28:06Z",
+      "commits5w": 460,
+      "lines5w": 137160
     },
     {
       "repo": "rhanka/sentropic",
