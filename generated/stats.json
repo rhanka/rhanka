@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-01T23:07:39.264Z",
+  "generatedAt": "2026-08-02T01:09:48.255Z",
   "window": {
-    "start": "2025-08-03T00:00:00.000Z",
-    "end": "2026-08-01T23:59:59.999Z",
+    "start": "2025-08-10T00:00:00.000Z",
+    "end": "2026-08-08T23:59:59.999Z",
     "weeks": [
-      "2025-08-03T00:00:00.000Z",
       "2025-08-10T00:00:00.000Z",
       "2025-08-17T00:00:00.000Z",
       "2025-08-24T00:00:00.000Z",
@@ -55,7 +54,8 @@
       "2026-07-05T00:00:00.000Z",
       "2026-07-12T00:00:00.000Z",
       "2026-07-19T00:00:00.000Z",
-      "2026-07-26T00:00:00.000Z"
+      "2026-07-26T00:00:00.000Z",
+      "2026-08-02T00:00:00.000Z"
     ]
   },
   "identities": {
@@ -69,10 +69,6 @@
     ]
   },
   "weeklyCommits": [
-    {
-      "weekStart": "2025-08-03T00:00:00.000Z",
-      "count": 0
-    },
     {
       "weekStart": "2025-08-10T00:00:00.000Z",
       "count": 22
@@ -275,16 +271,14 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "count": 468
+      "count": 538
+    },
+    {
+      "weekStart": "2026-08-02T00:00:00.000Z",
+      "count": 3
     }
   ],
   "weeklyLines": [
-    {
-      "weekStart": "2025-08-03T00:00:00.000Z",
-      "additions": 0,
-      "deletions": 0,
-      "net": 0
-    },
     {
       "weekStart": "2025-08-10T00:00:00.000Z",
       "additions": 2914,
@@ -587,18 +581,18 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 72339,
-      "deletions": 12411,
-      "net": 59928
+      "additions": 79983,
+      "deletions": 13357,
+      "net": 66626
+    },
+    {
+      "weekStart": "2026-08-02T00:00:00.000Z",
+      "additions": 19,
+      "deletions": 0,
+      "net": 19
     }
   ],
   "weeklyLinesRaw": [
-    {
-      "weekStart": "2025-08-03T00:00:00.000Z",
-      "additions": 0,
-      "deletions": 0,
-      "net": 0
-    },
     {
       "weekStart": "2025-08-10T00:00:00.000Z",
       "additions": 10800,
@@ -901,9 +895,15 @@
     },
     {
       "weekStart": "2026-07-26T00:00:00.000Z",
-      "additions": 148783,
-      "deletions": 15811,
-      "net": 132972
+      "additions": 157240,
+      "deletions": 17346,
+      "net": 139894
+    },
+    {
+      "weekStart": "2026-08-02T00:00:00.000Z",
+      "additions": 19,
+      "deletions": 0,
+      "net": 19
     }
   ],
   "topReposLast5Weeks": [
@@ -915,16 +915,10 @@
       "retainedFromPreviousRun": true
     },
     {
-      "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-01T22:24:02Z",
-      "commits5w": 1444,
-      "lines5w": 186123
-    },
-    {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-08-01T23:06:58Z",
-      "commits5w": 620,
-      "lines5w": 151468
+      "lastActivityAt": "2026-08-02T00:37:34Z",
+      "commits5w": 599,
+      "lines5w": 139404
     },
     {
       "repo": "rhanka/sentropic",
@@ -934,10 +928,16 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/geo",
+      "lastActivityAt": "2026-08-01T22:24:02Z",
+      "commits5w": 1182,
+      "lines5w": 82411
+    },
+    {
       "repo": "rhanka/radar-immobilier",
       "lastActivityAt": "2026-07-29T13:02:25Z",
-      "commits5w": 441,
-      "lines5w": 76718
+      "commits5w": 309,
+      "lines5w": 40479
     }
   ],
   "topReposLast4Weeks": [
@@ -949,16 +949,10 @@
       "retainedFromPreviousRun": true
     },
     {
-      "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-01T22:24:02Z",
-      "commits5w": 1444,
-      "lines5w": 186123
-    },
-    {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-08-01T23:06:58Z",
-      "commits5w": 620,
-      "lines5w": 151468
+      "lastActivityAt": "2026-08-02T00:37:34Z",
+      "commits5w": 599,
+      "lines5w": 139404
     },
     {
       "repo": "rhanka/sentropic",
@@ -968,10 +962,16 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/geo",
+      "lastActivityAt": "2026-08-01T22:24:02Z",
+      "commits5w": 1182,
+      "lines5w": 82411
+    },
+    {
       "repo": "rhanka/radar-immobilier",
       "lastActivityAt": "2026-07-29T13:02:25Z",
-      "commits5w": 441,
-      "lines5w": 76718
+      "commits5w": 309,
+      "lines5w": 40479
     }
   ]
 }
