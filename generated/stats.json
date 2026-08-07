@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-07T15:03:41.067Z",
+  "generatedAt": "2026-08-07T16:04:25.945Z",
   "window": {
     "start": "2025-08-10T00:00:00.000Z",
     "end": "2026-08-08T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-08-02T00:00:00.000Z",
-      "count": 184
+      "count": 188
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-08-02T00:00:00.000Z",
-      "additions": 8633,
+      "additions": 8932,
       "deletions": 2576,
-      "net": 6057
+      "net": 6356
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-08-02T00:00:00.000Z",
-      "additions": 11145,
+      "additions": 11491,
       "deletions": 3503,
-      "net": 7642
+      "net": 7988
     }
   ],
   "topReposLast5Weeks": [
@@ -916,9 +916,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-08-07T13:49:25Z",
-      "commits5w": 713,
-      "lines5w": 149170
+      "lastActivityAt": "2026-08-07T15:43:00Z",
+      "commits5w": 715,
+      "lines5w": 149380
     },
     {
       "repo": "rhanka/sentropic",
@@ -935,9 +935,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-08-03T21:25:46Z",
-      "commits5w": 380,
-      "lines5w": 42841
+      "lastActivityAt": "2026-08-07T15:56:30Z",
+      "commits5w": 382,
+      "lines5w": 42930
     }
   ],
   "topReposLast4Weeks": [
@@ -950,9 +950,9 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-08-07T13:49:25Z",
-      "commits5w": 713,
-      "lines5w": 149170
+      "lastActivityAt": "2026-08-07T15:43:00Z",
+      "commits5w": 715,
+      "lines5w": 149380
     },
     {
       "repo": "rhanka/sentropic",
@@ -969,9 +969,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-08-03T21:25:46Z",
-      "commits5w": 380,
-      "lines5w": 42841
+      "lastActivityAt": "2026-08-07T15:56:30Z",
+      "commits5w": 382,
+      "lines5w": 42930
     }
   ]
 }
