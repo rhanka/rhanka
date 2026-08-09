@@ -325,6 +325,12 @@
 <rect x="714" y="116" width="7" height="1" rx="2" fill="#cf222e">
 <title>2026-08-02: +16507 / -3038 lines</title>
 </rect>
+<rect x="727" y="115" width="7" height="1" rx="2" fill="#1a7f37">
+<title>2026-08-09: +1467 / -12749 lines</title>
+</rect>
+<rect x="727" y="116" width="7" height="3" rx="2" fill="#cf222e">
+<title>2026-08-09: +1467 / -12749 lines</title>
+</rect>
 <text x="67.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Aug</text>
 <text x="106.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Sep</text>
 <text x="158.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Oct</text>
