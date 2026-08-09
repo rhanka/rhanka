@@ -10,173 +10,170 @@
 <text x="746" y="68" fill="#57606a" font-size="10" text-anchor="start">1.4k</text>
 <text x="746" y="126" fill="#57606a" font-size="10" text-anchor="start">702</text>
 <text x="746" y="184" fill="#57606a" font-size="10" text-anchor="start">0</text>
-<rect x="64" y="178" width="7" height="2" rx="2" fill="#0969da">
-<title>2025-08-10: 22 commits</title>
-</rect>
-<rect x="77" y="171" width="7" height="9" rx="2" fill="#0969da">
+<rect x="64" y="171" width="7" height="9" rx="2" fill="#0969da">
 <title>2025-08-17: 103 commits</title>
 </rect>
-<rect x="90" y="179" width="7" height="1" rx="2" fill="#0969da">
+<rect x="77" y="179" width="7" height="1" rx="2" fill="#0969da">
 <title>2025-08-24: 16 commits</title>
 </rect>
-<rect x="103" y="179" width="7" height="1" rx="2" fill="#0969da">
+<rect x="90" y="179" width="7" height="1" rx="2" fill="#0969da">
 <title>2025-08-31: 1 commits</title>
 </rect>
-<rect x="116" y="179" width="7" height="1" rx="2" fill="#0969da">
+<rect x="103" y="179" width="7" height="1" rx="2" fill="#0969da">
 <title>2025-09-07: 10 commits</title>
 </rect>
-<rect x="129" y="179" width="7" height="1" rx="2" fill="#0969da">
+<rect x="116" y="179" width="7" height="1" rx="2" fill="#0969da">
 <title>2025-09-14: 1 commits</title>
 </rect>
-<rect x="142" y="179" width="7" height="1" rx="2" fill="#0969da">
+<rect x="129" y="179" width="7" height="1" rx="2" fill="#0969da">
 <title>2025-09-21: 3 commits</title>
 </rect>
-<rect x="155" y="172" width="7" height="8" rx="2" fill="#0969da">
+<rect x="142" y="172" width="7" height="8" rx="2" fill="#0969da">
 <title>2025-09-28: 92 commits</title>
 </rect>
-<rect x="168" y="164" width="7" height="16" rx="2" fill="#0969da">
+<rect x="155" y="164" width="7" height="16" rx="2" fill="#0969da">
 <title>2025-10-05: 192 commits</title>
 </rect>
-<rect x="181" y="167" width="7" height="13" rx="2" fill="#0969da">
+<rect x="168" y="167" width="7" height="13" rx="2" fill="#0969da">
 <title>2025-10-12: 158 commits</title>
 </rect>
-<rect x="194" y="179" width="7" height="1" rx="2" fill="#0969da">
+<rect x="181" y="179" width="7" height="1" rx="2" fill="#0969da">
 <title>2025-10-19: 10 commits</title>
 </rect>
-<rect x="207" y="179" width="7" height="1" rx="2" fill="#0969da">
+<rect x="194" y="179" width="7" height="1" rx="2" fill="#0969da">
 <title>2025-10-26: 18 commits</title>
 </rect>
-<rect x="220" y="176" width="7" height="4" rx="2" fill="#0969da">
+<rect x="207" y="176" width="7" height="4" rx="2" fill="#0969da">
 <title>2025-11-02: 50 commits</title>
 </rect>
-<rect x="233" y="173" width="7" height="7" rx="2" fill="#0969da">
+<rect x="220" y="173" width="7" height="7" rx="2" fill="#0969da">
 <title>2025-11-09: 79 commits</title>
 </rect>
-<rect x="246" y="176" width="7" height="4" rx="2" fill="#0969da">
+<rect x="233" y="176" width="7" height="4" rx="2" fill="#0969da">
 <title>2025-11-16: 46 commits</title>
 </rect>
-<rect x="259" y="174" width="7" height="6" rx="2" fill="#0969da">
+<rect x="246" y="174" width="7" height="6" rx="2" fill="#0969da">
 <title>2025-11-23: 74 commits</title>
 </rect>
-<rect x="272" y="172" width="7" height="8" rx="2" fill="#0969da">
+<rect x="259" y="172" width="7" height="8" rx="2" fill="#0969da">
 <title>2025-11-30: 101 commits</title>
 </rect>
-<rect x="285" y="175" width="7" height="5" rx="2" fill="#0969da">
+<rect x="272" y="175" width="7" height="5" rx="2" fill="#0969da">
 <title>2025-12-07: 59 commits</title>
 </rect>
-<rect x="298" y="173" width="7" height="7" rx="2" fill="#0969da">
+<rect x="285" y="173" width="7" height="7" rx="2" fill="#0969da">
 <title>2025-12-14: 89 commits</title>
 </rect>
-<rect x="311" y="159" width="7" height="21" rx="2" fill="#0969da">
+<rect x="298" y="159" width="7" height="21" rx="2" fill="#0969da">
 <title>2025-12-21: 248 commits</title>
 </rect>
-<rect x="324" y="166" width="7" height="14" rx="2" fill="#0969da">
+<rect x="311" y="166" width="7" height="14" rx="2" fill="#0969da">
 <title>2025-12-28: 170 commits</title>
 </rect>
-<rect x="337" y="169" width="7" height="11" rx="2" fill="#0969da">
+<rect x="324" y="169" width="7" height="11" rx="2" fill="#0969da">
 <title>2026-01-04: 127 commits</title>
 </rect>
-<rect x="350" y="163" width="7" height="17" rx="2" fill="#0969da">
+<rect x="337" y="163" width="7" height="17" rx="2" fill="#0969da">
 <title>2026-01-11: 205 commits</title>
 </rect>
-<rect x="363" y="173" width="7" height="7" rx="2" fill="#0969da">
+<rect x="350" y="173" width="7" height="7" rx="2" fill="#0969da">
 <title>2026-01-18: 86 commits</title>
 </rect>
-<rect x="376" y="168" width="7" height="12" rx="2" fill="#0969da">
+<rect x="363" y="168" width="7" height="12" rx="2" fill="#0969da">
 <title>2026-01-25: 141 commits</title>
 </rect>
-<rect x="389" y="166" width="7" height="14" rx="2" fill="#0969da">
+<rect x="376" y="166" width="7" height="14" rx="2" fill="#0969da">
 <title>2026-02-01: 173 commits</title>
 </rect>
-<rect x="402" y="163" width="7" height="17" rx="2" fill="#0969da">
+<rect x="389" y="163" width="7" height="17" rx="2" fill="#0969da">
 <title>2026-02-08: 211 commits</title>
 </rect>
-<rect x="415" y="161" width="7" height="19" rx="2" fill="#0969da">
+<rect x="402" y="161" width="7" height="19" rx="2" fill="#0969da">
 <title>2026-02-15: 224 commits</title>
 </rect>
-<rect x="428" y="163" width="7" height="17" rx="2" fill="#0969da">
+<rect x="415" y="163" width="7" height="17" rx="2" fill="#0969da">
 <title>2026-02-22: 203 commits</title>
 </rect>
-<rect x="441" y="147" width="7" height="33" rx="2" fill="#0969da">
+<rect x="428" y="147" width="7" height="33" rx="2" fill="#0969da">
 <title>2026-03-01: 394 commits</title>
 </rect>
-<rect x="454" y="145" width="7" height="35" rx="2" fill="#0969da">
+<rect x="441" y="145" width="7" height="35" rx="2" fill="#0969da">
 <title>2026-03-08: 427 commits</title>
 </rect>
-<rect x="467" y="168" width="7" height="12" rx="2" fill="#0969da">
+<rect x="454" y="168" width="7" height="12" rx="2" fill="#0969da">
 <title>2026-03-15: 146 commits</title>
 </rect>
-<rect x="480" y="162" width="7" height="18" rx="2" fill="#0969da">
+<rect x="467" y="162" width="7" height="18" rx="2" fill="#0969da">
 <title>2026-03-22: 213 commits</title>
 </rect>
-<rect x="493" y="167" width="7" height="13" rx="2" fill="#0969da">
+<rect x="480" y="167" width="7" height="13" rx="2" fill="#0969da">
 <title>2026-03-29: 152 commits</title>
 </rect>
-<rect x="506" y="165" width="7" height="15" rx="2" fill="#0969da">
+<rect x="493" y="165" width="7" height="15" rx="2" fill="#0969da">
 <title>2026-04-05: 183 commits</title>
 </rect>
-<rect x="519" y="157" width="7" height="23" rx="2" fill="#0969da">
+<rect x="506" y="157" width="7" height="23" rx="2" fill="#0969da">
 <title>2026-04-12: 278 commits</title>
 </rect>
-<rect x="532" y="149" width="7" height="31" rx="2" fill="#0969da">
+<rect x="519" y="149" width="7" height="31" rx="2" fill="#0969da">
 <title>2026-04-19: 371 commits</title>
 </rect>
-<rect x="545" y="171" width="7" height="9" rx="2" fill="#0969da">
+<rect x="532" y="171" width="7" height="9" rx="2" fill="#0969da">
 <title>2026-04-26: 113 commits</title>
 </rect>
-<rect x="558" y="151" width="7" height="29" rx="2" fill="#0969da">
+<rect x="545" y="151" width="7" height="29" rx="2" fill="#0969da">
 <title>2026-05-03: 350 commits</title>
 </rect>
-<rect x="571" y="76" width="7" height="104" rx="2" fill="#0969da">
+<rect x="558" y="76" width="7" height="104" rx="2" fill="#0969da">
 <title>2026-05-10: 1263 commits</title>
 </rect>
-<rect x="584" y="101" width="7" height="79" rx="2" fill="#0969da">
+<rect x="571" y="101" width="7" height="79" rx="2" fill="#0969da">
 <title>2026-05-17: 954 commits</title>
 </rect>
-<rect x="597" y="72" width="7" height="108" rx="2" fill="#0969da">
+<rect x="584" y="72" width="7" height="108" rx="2" fill="#0969da">
 <title>2026-05-24: 1306 commits</title>
 </rect>
-<rect x="610" y="64" width="7" height="116" rx="2" fill="#0969da">
+<rect x="597" y="64" width="7" height="116" rx="2" fill="#0969da">
 <title>2026-05-31: 1403 commits</title>
 </rect>
-<rect x="623" y="65" width="7" height="115" rx="2" fill="#0969da">
+<rect x="610" y="65" width="7" height="115" rx="2" fill="#0969da">
 <title>2026-06-07: 1391 commits</title>
 </rect>
-<rect x="636" y="116" width="7" height="64" rx="2" fill="#0969da">
+<rect x="623" y="116" width="7" height="64" rx="2" fill="#0969da">
 <title>2026-06-14: 779 commits</title>
 </rect>
-<rect x="649" y="125" width="7" height="55" rx="2" fill="#0969da">
+<rect x="636" y="125" width="7" height="55" rx="2" fill="#0969da">
 <title>2026-06-21: 662 commits</title>
 </rect>
-<rect x="662" y="127" width="7" height="53" rx="2" fill="#0969da">
+<rect x="649" y="127" width="7" height="53" rx="2" fill="#0969da">
 <title>2026-06-28: 635 commits</title>
 </rect>
-<rect x="675" y="153" width="7" height="27" rx="2" fill="#0969da">
+<rect x="662" y="153" width="7" height="27" rx="2" fill="#0969da">
 <title>2026-07-05: 332 commits</title>
 </rect>
-<rect x="688" y="103" width="7" height="77" rx="2" fill="#0969da">
+<rect x="675" y="103" width="7" height="77" rx="2" fill="#0969da">
 <title>2026-07-12: 931 commits</title>
 </rect>
-<rect x="701" y="132" width="7" height="48" rx="2" fill="#0969da">
+<rect x="688" y="132" width="7" height="48" rx="2" fill="#0969da">
 <title>2026-07-19: 577 commits</title>
 </rect>
-<rect x="714" y="134" width="7" height="46" rx="2" fill="#0969da">
+<rect x="701" y="134" width="7" height="46" rx="2" fill="#0969da">
 <title>2026-07-26: 553 commits</title>
 </rect>
-<rect x="727" y="156" width="7" height="24" rx="2" fill="#0969da">
+<rect x="714" y="156" width="7" height="24" rx="2" fill="#0969da">
 <title>2026-08-02: 290 commits</title>
 </rect>
 <text x="67.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Aug</text>
-<text x="119.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Sep</text>
-<text x="171.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Oct</text>
-<text x="223.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Nov</text>
-<text x="288.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Dec</text>
-<text x="340.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jan</text>
-<text x="392.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Feb</text>
-<text x="444.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Mar</text>
-<text x="509.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Apr</text>
-<text x="561.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">May</text>
-<text x="626.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jun</text>
-<text x="678.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jul</text>
-<text x="730.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Aug</text>
+<text x="106.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Sep</text>
+<text x="158.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Oct</text>
+<text x="210.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Nov</text>
+<text x="275.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Dec</text>
+<text x="327.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jan</text>
+<text x="379.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Feb</text>
+<text x="431.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Mar</text>
+<text x="496.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Apr</text>
+<text x="548.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">May</text>
+<text x="613.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jun</text>
+<text x="665.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Jul</text>
+<text x="717.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Aug</text>
 </svg>
