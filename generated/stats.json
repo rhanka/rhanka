@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T12:25:35.218Z",
+  "generatedAt": "2026-08-10T13:59:51.679Z",
   "window": {
     "start": "2025-08-17T00:00:00.000Z",
     "end": "2026-08-15T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-08-02T00:00:00.000Z",
-      "count": 446
+      "count": 469
     },
     {
       "weekStart": "2026-08-09T00:00:00.000Z",
-      "count": 654
+      "count": 667
     }
   ],
   "weeklyLines": [
@@ -581,15 +581,15 @@
     },
     {
       "weekStart": "2026-08-02T00:00:00.000Z",
-      "additions": 38213,
-      "deletions": 5438,
-      "net": 32775
+      "additions": 42853,
+      "deletions": 5497,
+      "net": 37356
     },
     {
       "weekStart": "2026-08-09T00:00:00.000Z",
-      "additions": 13797,
-      "deletions": 14184,
-      "net": -387
+      "additions": 13912,
+      "deletions": 14221,
+      "net": -309
     }
   ],
   "weeklyLinesRaw": [
@@ -895,15 +895,15 @@
     },
     {
       "weekStart": "2026-08-02T00:00:00.000Z",
-      "additions": 1693010,
-      "deletions": 30831,
-      "net": 1662179
+      "additions": 1900714,
+      "deletions": 35235,
+      "net": 1865479
     },
     {
       "weekStart": "2026-08-09T00:00:00.000Z",
-      "additions": 653058,
-      "deletions": 27225,
-      "net": 625833
+      "additions": 662204,
+      "deletions": 29282,
+      "net": 632922
     }
   ],
   "topReposLast5Weeks": [
@@ -922,9 +922,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-10T08:39:54Z",
-      "commits5w": 2445,
-      "lines5w": 136366
+      "lastActivityAt": "2026-08-10T13:23:58Z",
+      "commits5w": 2481,
+      "lines5w": 141217
     },
     {
       "repo": "rhanka/sentropic",
@@ -956,9 +956,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-10T08:39:54Z",
-      "commits5w": 2445,
-      "lines5w": 136366
+      "lastActivityAt": "2026-08-10T13:23:58Z",
+      "commits5w": 2481,
+      "lines5w": 141217
     },
     {
       "repo": "rhanka/sentropic",
