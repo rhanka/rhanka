@@ -1,10 +1,9 @@
 {
-  "generatedAt": "2026-08-15T23:49:39.136Z",
+  "generatedAt": "2026-08-16T01:52:47.130Z",
   "window": {
-    "start": "2025-08-17T00:00:00.000Z",
-    "end": "2026-08-15T23:59:59.999Z",
+    "start": "2025-08-24T00:00:00.000Z",
+    "end": "2026-08-22T23:59:59.999Z",
     "weeks": [
-      "2025-08-17T00:00:00.000Z",
       "2025-08-24T00:00:00.000Z",
       "2025-08-31T00:00:00.000Z",
       "2025-09-07T00:00:00.000Z",
@@ -55,7 +54,8 @@
       "2026-07-19T00:00:00.000Z",
       "2026-07-26T00:00:00.000Z",
       "2026-08-02T00:00:00.000Z",
-      "2026-08-09T00:00:00.000Z"
+      "2026-08-09T00:00:00.000Z",
+      "2026-08-16T00:00:00.000Z"
     ]
   },
   "identities": {
@@ -69,10 +69,6 @@
     ]
   },
   "weeklyCommits": [
-    {
-      "weekStart": "2025-08-17T00:00:00.000Z",
-      "count": 103
-    },
     {
       "weekStart": "2025-08-24T00:00:00.000Z",
       "count": 16
@@ -276,15 +272,13 @@
     {
       "weekStart": "2026-08-09T00:00:00.000Z",
       "count": 766
+    },
+    {
+      "weekStart": "2026-08-16T00:00:00.000Z",
+      "count": 0
     }
   ],
   "weeklyLines": [
-    {
-      "weekStart": "2025-08-17T00:00:00.000Z",
-      "additions": 4421,
-      "deletions": 1472,
-      "net": 2949
-    },
     {
       "weekStart": "2025-08-24T00:00:00.000Z",
       "additions": 182,
@@ -590,15 +584,15 @@
       "additions": 17280,
       "deletions": 14537,
       "net": 2743
+    },
+    {
+      "weekStart": "2026-08-16T00:00:00.000Z",
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     }
   ],
   "weeklyLinesRaw": [
-    {
-      "weekStart": "2025-08-17T00:00:00.000Z",
-      "additions": 23353,
-      "deletions": 7898,
-      "net": 15455
-    },
     {
       "weekStart": "2025-08-24T00:00:00.000Z",
       "additions": 289,
@@ -904,6 +898,12 @@
       "additions": 744405,
       "deletions": 30063,
       "net": 714342
+    },
+    {
+      "weekStart": "2026-08-16T00:00:00.000Z",
+      "additions": 0,
+      "deletions": 0,
+      "net": 0
     }
   ],
   "topReposLast5Weeks": [
@@ -917,14 +917,14 @@
     {
       "repo": "rhanka/h2a",
       "lastActivityAt": "2026-08-15T23:14:47Z",
-      "commits5w": 745,
-      "lines5w": 149078
+      "commits5w": 676,
+      "lines5w": 113174
     },
     {
       "repo": "rhanka/geo",
       "lastActivityAt": "2026-08-15T01:17:17Z",
-      "commits5w": 2533,
-      "lines5w": 142675
+      "commits5w": 1840,
+      "lines5w": 111593
     },
     {
       "repo": "rhanka/sentropic",
@@ -936,8 +936,8 @@
     {
       "repo": "rhanka/radar-immobilier",
       "lastActivityAt": "2026-08-13T09:02:07Z",
-      "commits5w": 440,
-      "lines5w": 44506
+      "commits5w": 313,
+      "lines5w": 27878
     }
   ],
   "topReposLast4Weeks": [
@@ -951,14 +951,14 @@
     {
       "repo": "rhanka/h2a",
       "lastActivityAt": "2026-08-15T23:14:47Z",
-      "commits5w": 745,
-      "lines5w": 149078
+      "commits5w": 676,
+      "lines5w": 113174
     },
     {
       "repo": "rhanka/geo",
       "lastActivityAt": "2026-08-15T01:17:17Z",
-      "commits5w": 2533,
-      "lines5w": 142675
+      "commits5w": 1840,
+      "lines5w": 111593
     },
     {
       "repo": "rhanka/sentropic",
@@ -970,8 +970,8 @@
     {
       "repo": "rhanka/radar-immobilier",
       "lastActivityAt": "2026-08-13T09:02:07Z",
-      "commits5w": 440,
-      "lines5w": 44506
+      "commits5w": 313,
+      "lines5w": 27878
     }
   ]
 }
