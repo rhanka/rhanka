@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T23:29:34.740Z",
+  "generatedAt": "2026-08-23T23:50:40.569Z",
   "window": {
     "start": "2025-08-31T00:00:00.000Z",
     "end": "2026-08-29T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-08-16T00:00:00.000Z",
-      "count": 248
+      "count": 250
     },
     {
       "weekStart": "2026-08-23T00:00:00.000Z",
-      "count": 7
+      "count": 9
     }
   ],
   "weeklyLines": [
@@ -581,9 +581,9 @@
     },
     {
       "weekStart": "2026-08-16T00:00:00.000Z",
-      "additions": 13813,
-      "deletions": 3197,
-      "net": 10616
+      "additions": 14041,
+      "deletions": 3276,
+      "net": 10765
     },
     {
       "weekStart": "2026-08-23T00:00:00.000Z",
@@ -895,9 +895,9 @@
     },
     {
       "weekStart": "2026-08-16T00:00:00.000Z",
-      "additions": 93747,
-      "deletions": 3862,
-      "net": 89885
+      "additions": 93975,
+      "deletions": 3941,
+      "net": 90034
     },
     {
       "weekStart": "2026-08-23T00:00:00.000Z",
