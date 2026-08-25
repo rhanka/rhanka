@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T03:07:47.954Z",
+  "generatedAt": "2026-08-25T04:18:33.662Z",
   "window": {
     "start": "2025-08-31T00:00:00.000Z",
     "end": "2026-08-29T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-08-23T00:00:00.000Z",
-      "count": 73
+      "count": 76
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-08-23T00:00:00.000Z",
-      "additions": 7403,
-      "deletions": 518,
-      "net": 6885
+      "additions": 8491,
+      "deletions": 521,
+      "net": 7970
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-08-23T00:00:00.000Z",
-      "additions": 118297,
-      "deletions": 619,
-      "net": 117678
+      "additions": 119385,
+      "deletions": 622,
+      "net": 118763
     }
   ],
   "topReposLast5Weeks": [
@@ -915,17 +915,17 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/geo",
+      "lastActivityAt": "2026-08-25T03:32:04Z",
+      "commits5w": 1788,
+      "lines5w": 106283
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-25T02:55:10Z",
-      "commits5w": 1785,
-      "lines5w": 105192
     },
     {
       "repo": "rhanka/h2a",
@@ -949,17 +949,17 @@
       "retainedFromPreviousRun": true
     },
     {
+      "repo": "rhanka/geo",
+      "lastActivityAt": "2026-08-25T03:32:04Z",
+      "commits5w": 1788,
+      "lines5w": 106283
+    },
+    {
       "repo": "rhanka/sentropic",
       "lastActivityAt": "2026-07-04T21:57:28Z",
       "commits5w": 974,
       "lines5w": 106261,
       "retainedFromPreviousRun": true
-    },
-    {
-      "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-25T02:55:10Z",
-      "commits5w": 1785,
-      "lines5w": 105192
     },
     {
       "repo": "rhanka/h2a",
