@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-30T22:01:10.222Z",
+  "generatedAt": "2026-08-31T00:25:46.048Z",
   "window": {
     "start": "2025-09-07T00:00:00.000Z",
     "end": "2026-09-05T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "count": 49
+      "count": 66
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "additions": 2598,
-      "deletions": 160,
-      "net": 2438
+      "additions": 3861,
+      "deletions": 225,
+      "net": 3636
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "additions": 43329,
-      "deletions": 526,
-      "net": 42803
+      "additions": 44646,
+      "deletions": 604,
+      "net": 44042
     }
   ],
   "topReposLast5Weeks": [
@@ -923,9 +923,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-30T21:19:40Z",
-      "commits5w": 1148,
-      "lines5w": 51075
+      "lastActivityAt": "2026-08-31T00:12:39Z",
+      "commits5w": 1152,
+      "lines5w": 51177
     },
     {
       "repo": "rhanka/h2a",
@@ -935,9 +935,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-08-30T21:14:16Z",
-      "commits5w": 222,
-      "lines5w": 17999
+      "lastActivityAt": "2026-08-31T00:13:48Z",
+      "commits5w": 235,
+      "lines5w": 19225
     }
   ],
   "topReposLast4Weeks": [
@@ -957,9 +957,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-30T21:19:40Z",
-      "commits5w": 1148,
-      "lines5w": 51075
+      "lastActivityAt": "2026-08-31T00:12:39Z",
+      "commits5w": 1152,
+      "lines5w": 51177
     },
     {
       "repo": "rhanka/h2a",
@@ -969,9 +969,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-08-30T21:14:16Z",
-      "commits5w": 222,
-      "lines5w": 17999
+      "lastActivityAt": "2026-08-31T00:13:48Z",
+      "commits5w": 235,
+      "lines5w": 19225
     }
   ]
 }
