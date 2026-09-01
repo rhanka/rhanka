@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T02:00:52.918Z",
+  "generatedAt": "2026-09-01T07:41:49.467Z",
   "window": {
     "start": "2025-09-07T00:00:00.000Z",
     "end": "2026-09-05T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "count": 160
+      "count": 169
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "additions": 10810,
-      "deletions": 675,
-      "net": 10135
+      "additions": 12904,
+      "deletions": 707,
+      "net": 12197
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "additions": 131865,
-      "deletions": 1129,
-      "net": 130736
+      "additions": 134192,
+      "deletions": 1163,
+      "net": 133029
     }
   ],
   "topReposLast5Weeks": [
@@ -923,9 +923,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-31T23:44:09Z",
-      "commits5w": 1184,
-      "lines5w": 54156
+      "lastActivityAt": "2026-09-01T06:47:56Z",
+      "commits5w": 1193,
+      "lines5w": 56282
     },
     {
       "repo": "rhanka/h2a",
@@ -957,9 +957,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-08-31T23:44:09Z",
-      "commits5w": 1184,
-      "lines5w": 54156
+      "lastActivityAt": "2026-09-01T06:47:56Z",
+      "commits5w": 1193,
+      "lines5w": 56282
     },
     {
       "repo": "rhanka/h2a",
