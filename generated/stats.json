@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T11:17:30.620Z",
+  "generatedAt": "2026-09-06T14:22:05.864Z",
   "window": {
     "start": "2025-09-14T00:00:00.000Z",
     "end": "2026-09-12T23:59:59.999Z",
@@ -271,11 +271,11 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "count": 527
+      "count": 529
     },
     {
       "weekStart": "2026-09-06T00:00:00.000Z",
-      "count": 11
+      "count": 16
     }
   ],
   "weeklyLines": [
@@ -581,9 +581,9 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "additions": 33251,
-      "deletions": 3451,
-      "net": 29800
+      "additions": 33353,
+      "deletions": 3465,
+      "net": 29888
     },
     {
       "weekStart": "2026-09-06T00:00:00.000Z",
@@ -895,15 +895,15 @@
     },
     {
       "weekStart": "2026-08-30T00:00:00.000Z",
-      "additions": 160704,
-      "deletions": 6986,
-      "net": 153718
+      "additions": 160806,
+      "deletions": 7000,
+      "net": 153806
     },
     {
       "weekStart": "2026-09-06T00:00:00.000Z",
-      "additions": 508,
-      "deletions": 27,
-      "net": 481
+      "additions": 521,
+      "deletions": 38,
+      "net": 483
     }
   ],
   "topReposLast5Weeks": [
@@ -929,14 +929,14 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-09-05T14:13:39Z",
-      "commits5w": 104,
-      "lines5w": 32189
+      "lastActivityAt": "2026-09-06T12:52:31Z",
+      "commits5w": 107,
+      "lines5w": 32305
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-09-06T05:33:58Z",
-      "commits5w": 364,
+      "lastActivityAt": "2026-09-06T13:39:16Z",
+      "commits5w": 366,
       "lines5w": 26901
     }
   ],
@@ -963,14 +963,14 @@
     },
     {
       "repo": "rhanka/h2a",
-      "lastActivityAt": "2026-09-05T14:13:39Z",
-      "commits5w": 104,
-      "lines5w": 32189
+      "lastActivityAt": "2026-09-06T12:52:31Z",
+      "commits5w": 107,
+      "lines5w": 32305
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-09-06T05:33:58Z",
-      "commits5w": 364,
+      "lastActivityAt": "2026-09-06T13:39:16Z",
+      "commits5w": 366,
       "lines5w": 26901
     }
   ]
