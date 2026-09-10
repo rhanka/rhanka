@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T11:46:57.286Z",
+  "generatedAt": "2026-09-10T16:18:03.011Z",
   "window": {
     "start": "2025-09-14T00:00:00.000Z",
     "end": "2026-09-12T23:59:59.999Z",
@@ -275,7 +275,7 @@
     },
     {
       "weekStart": "2026-09-06T00:00:00.000Z",
-      "count": 71
+      "count": 80
     }
   ],
   "weeklyLines": [
@@ -587,9 +587,9 @@
     },
     {
       "weekStart": "2026-09-06T00:00:00.000Z",
-      "additions": 6212,
-      "deletions": 800,
-      "net": 5412
+      "additions": 6358,
+      "deletions": 825,
+      "net": 5533
     }
   ],
   "weeklyLinesRaw": [
@@ -901,9 +901,9 @@
     },
     {
       "weekStart": "2026-09-06T00:00:00.000Z",
-      "additions": 6578,
-      "deletions": 845,
-      "net": 5733
+      "additions": 6724,
+      "deletions": 870,
+      "net": 5854
     }
   ],
   "topReposLast5Weeks": [
@@ -923,9 +923,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-09-06T00:54:13Z",
-      "commits5w": 1190,
-      "lines5w": 43631
+      "lastActivityAt": "2026-09-10T13:24:20Z",
+      "commits5w": 1194,
+      "lines5w": 43732
     },
     {
       "repo": "rhanka/h2a",
@@ -935,9 +935,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-09-10T00:28:05Z",
-      "commits5w": 415,
-      "lines5w": 33103
+      "lastActivityAt": "2026-09-10T15:18:16Z",
+      "commits5w": 420,
+      "lines5w": 33173
     }
   ],
   "topReposLast4Weeks": [
@@ -957,9 +957,9 @@
     },
     {
       "repo": "rhanka/geo",
-      "lastActivityAt": "2026-09-06T00:54:13Z",
-      "commits5w": 1190,
-      "lines5w": 43631
+      "lastActivityAt": "2026-09-10T13:24:20Z",
+      "commits5w": 1194,
+      "lines5w": 43732
     },
     {
       "repo": "rhanka/h2a",
@@ -969,9 +969,9 @@
     },
     {
       "repo": "rhanka/radar-immobilier",
-      "lastActivityAt": "2026-09-10T00:28:05Z",
-      "commits5w": 415,
-      "lines5w": 33103
+      "lastActivityAt": "2026-09-10T15:18:16Z",
+      "commits5w": 420,
+      "lines5w": 33173
     }
   ]
 }
