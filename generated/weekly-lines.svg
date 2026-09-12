@@ -139,41 +139,41 @@
 <rect x="311" y="116" width="7" height="1" rx="2" fill="#cf222e">
 <title>2026-01-25: +13691 / -2089 lines</title>
 </rect>
-<rect x="324" y="113" width="7" height="3" rx="2" fill="#1a7f37">
-<title>2026-02-01: +16670 / -4302 lines</title>
+<rect x="324" y="112" width="7" height="4" rx="2" fill="#1a7f37">
+<title>2026-02-01: +21825 / -5980 lines</title>
 </rect>
 <rect x="324" y="116" width="7" height="1" rx="2" fill="#cf222e">
-<title>2026-02-01: +16670 / -4302 lines</title>
+<title>2026-02-01: +21825 / -5980 lines</title>
 </rect>
-<rect x="337" y="112" width="7" height="4" rx="2" fill="#1a7f37">
-<title>2026-02-08: +20102 / -7039 lines</title>
+<rect x="337" y="110" width="7" height="6" rx="2" fill="#1a7f37">
+<title>2026-02-08: +30149 / -10555 lines</title>
 </rect>
-<rect x="337" y="116" width="7" height="1" rx="2" fill="#cf222e">
-<title>2026-02-08: +20102 / -7039 lines</title>
+<rect x="337" y="116" width="7" height="2" rx="2" fill="#cf222e">
+<title>2026-02-08: +30149 / -10555 lines</title>
 </rect>
-<rect x="350" y="110" width="7" height="6" rx="2" fill="#1a7f37">
-<title>2026-02-15: +33021 / -7375 lines</title>
+<rect x="350" y="107" width="7" height="9" rx="2" fill="#1a7f37">
+<title>2026-02-15: +48937 / -11056 lines</title>
 </rect>
-<rect x="350" y="116" width="7" height="1" rx="2" fill="#cf222e">
-<title>2026-02-15: +33021 / -7375 lines</title>
+<rect x="350" y="116" width="7" height="2" rx="2" fill="#cf222e">
+<title>2026-02-15: +48937 / -11056 lines</title>
 </rect>
-<rect x="363" y="109" width="7" height="7" rx="2" fill="#1a7f37">
-<title>2026-02-22: +36495 / -9626 lines</title>
+<rect x="363" y="107" width="7" height="9" rx="2" fill="#1a7f37">
+<title>2026-02-22: +50951 / -10894 lines</title>
 </rect>
 <rect x="363" y="116" width="7" height="2" rx="2" fill="#cf222e">
-<title>2026-02-22: +36495 / -9626 lines</title>
+<title>2026-02-22: +50951 / -10894 lines</title>
 </rect>
-<rect x="376" y="106" width="7" height="10" rx="2" fill="#1a7f37">
-<title>2026-03-01: +51456 / -11064 lines</title>
+<rect x="376" y="102" width="7" height="14" rx="2" fill="#1a7f37">
+<title>2026-03-01: +77184 / -16596 lines</title>
 </rect>
-<rect x="376" y="116" width="7" height="2" rx="2" fill="#cf222e">
-<title>2026-03-01: +51456 / -11064 lines</title>
+<rect x="376" y="116" width="7" height="3" rx="2" fill="#cf222e">
+<title>2026-03-01: +77184 / -16596 lines</title>
 </rect>
 <rect x="389" y="108" width="7" height="8" rx="2" fill="#1a7f37">
-<title>2026-03-08: +42177 / -14222 lines</title>
+<title>2026-03-08: +44679 / -14856 lines</title>
 </rect>
 <rect x="389" y="116" width="7" height="3" rx="2" fill="#cf222e">
-<title>2026-03-08: +42177 / -14222 lines</title>
+<title>2026-03-08: +44679 / -14856 lines</title>
 </rect>
 <rect x="402" y="114" width="7" height="2" rx="2" fill="#1a7f37">
 <title>2026-03-15: +9192 / -5058 lines</title>
@@ -289,23 +289,47 @@
 <rect x="636" y="116" width="7" height="1" rx="2" fill="#cf222e">
 <title>2026-07-19: +23735 / -4160 lines</title>
 </rect>
-<rect x="649" y="110" width="7" height="6" rx="2" fill="#1a7f37">
-<title>2026-07-26: +30403 / -3412 lines</title>
+<rect x="649" y="108" width="7" height="8" rx="2" fill="#1a7f37">
+<title>2026-07-26: +44133 / -7221 lines</title>
 </rect>
 <rect x="649" y="116" width="7" height="1" rx="2" fill="#cf222e">
-<title>2026-07-26: +30403 / -3412 lines</title>
+<title>2026-07-26: +44133 / -7221 lines</title>
 </rect>
-<rect x="675" y="115" width="7" height="1" rx="2" fill="#1a7f37">
-<title>2026-08-09: +1 / -6 lines</title>
+<rect x="662" y="107" width="7" height="9" rx="2" fill="#1a7f37">
+<title>2026-08-02: +49376 / -6087 lines</title>
 </rect>
-<rect x="675" y="116" width="7" height="1" rx="2" fill="#cf222e">
-<title>2026-08-09: +1 / -6 lines</title>
+<rect x="662" y="116" width="7" height="1" rx="2" fill="#cf222e">
+<title>2026-08-02: +49376 / -6087 lines</title>
 </rect>
-<rect x="688" y="115" width="7" height="1" rx="2" fill="#1a7f37">
-<title>2026-08-16: +484 / -484 lines</title>
+<rect x="675" y="113" width="7" height="3" rx="2" fill="#1a7f37">
+<title>2026-08-09: +18010 / -14541 lines</title>
+</rect>
+<rect x="675" y="116" width="7" height="3" rx="2" fill="#cf222e">
+<title>2026-08-09: +18010 / -14541 lines</title>
+</rect>
+<rect x="688" y="113" width="7" height="3" rx="2" fill="#1a7f37">
+<title>2026-08-16: +18720 / -3668 lines</title>
 </rect>
 <rect x="688" y="116" width="7" height="1" rx="2" fill="#cf222e">
-<title>2026-08-16: +484 / -484 lines</title>
+<title>2026-08-16: +18720 / -3668 lines</title>
+</rect>
+<rect x="701" y="114" width="7" height="2" rx="2" fill="#1a7f37">
+<title>2026-08-23: +12883 / -1435 lines</title>
+</rect>
+<rect x="701" y="116" width="7" height="1" rx="2" fill="#cf222e">
+<title>2026-08-23: +12883 / -1435 lines</title>
+</rect>
+<rect x="714" y="110" width="7" height="6" rx="2" fill="#1a7f37">
+<title>2026-08-30: +34225 / -3498 lines</title>
+</rect>
+<rect x="714" y="116" width="7" height="1" rx="2" fill="#cf222e">
+<title>2026-08-30: +34225 / -3498 lines</title>
+</rect>
+<rect x="727" y="115" width="7" height="1" rx="2" fill="#1a7f37">
+<title>2026-09-06: +7678 / -1477 lines</title>
+</rect>
+<rect x="727" y="116" width="7" height="1" rx="2" fill="#cf222e">
+<title>2026-09-06: +7678 / -1477 lines</title>
 </rect>
 <text x="67.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Sep</text>
 <text x="106.5" y="214" fill="#57606a" font-size="10" text-anchor="middle">Oct</text>
