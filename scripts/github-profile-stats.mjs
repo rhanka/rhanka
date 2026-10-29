@@ -15,6 +15,12 @@ import { buildRollingWindow } from '../src/time.mjs';
 import { renderWeeklyCommitsSvg, renderWeeklyLinesSvg } from '../src/render-svg.mjs';
 import { renderTopReposTable, renderWeeklySummaryTable, replaceStatsBlock } from '../src/update-readme.mjs';
 import { createPathExcluder } from '../src/path-filter.mjs';
+import {
+  loadCommitDetailsCache as loadCommitDetailsCacheFromDir,
+  pruneCommitDetailsCache,
+  saveCommitDetailsCache as saveCommitDetailsCacheToDir,
+  slimCommitDetail
+} from '../src/commit-details-cache.mjs';
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const configPath = path.join(rootDir, 'config/stats.config.json');
@@ -24,8 +30,6 @@ const statsPath = path.join(generatedDir, 'stats.json');
 const weeklyCommitsPath = path.join(generatedDir, 'weekly-commits.svg');
 const weeklyLinesPath = path.join(generatedDir, 'weekly-lines.svg');
 const cacheDir = path.join(rootDir, '.cache', 'github-profile-stats');
-const commitDetailsCachePath = path.join(cacheDir, 'commit-details-cache.json');
-const cacheSchemaVersion = 1;
 const defaultHydrationLimitPerRun = 800;
 const requiredCoverageRepos = [
   'rhanka/sent-tech-design-system',
@@ -59,55 +63,16 @@ function warningMessage(message, error) {
   return `[github-profile-stats] ${message}: ${detail}`;
 }
 
-function createCommitCacheEnvelope(entries = {}) {
-  return {
-    schemaVersion: cacheSchemaVersion,
-    updatedAt: new Date().toISOString(),
-    entries
-  };
-}
-
 function buildCommitCacheKey(repo, sha) {
   return `${repo}#${sha}`;
 }
 
-function sanitizeCommitDetail(detail, fetchedAt = new Date().toISOString()) {
-  if (!detail || typeof detail !== 'object') {
-    return null;
-  }
-
-  return {
-    sha: detail.sha,
-    parents: detail.parents,
-    commit: detail.commit,
-    stats: detail.stats,
-    files: detail.files,
-    fetchedAt
-  };
+function loadCommitDetailsCache() {
+  return loadCommitDetailsCacheFromDir({ cacheDir });
 }
 
-async function loadCommitDetailsCache() {
-  try {
-    const raw = await readFile(commitDetailsCachePath, 'utf8');
-    const parsed = JSON.parse(raw);
-
-    if (parsed && parsed.schemaVersion === cacheSchemaVersion && parsed.entries) {
-      return parsed;
-    }
-
-    return createCommitCacheEnvelope();
-  } catch (error) {
-    if (error.code === 'ENOENT') {
-      return createCommitCacheEnvelope();
-    }
-
-    return createCommitCacheEnvelope();
-  }
-}
-
-async function saveCommitDetailsCache(cache) {
-  await mkdir(cacheDir, { recursive: true });
-  await writeFile(commitDetailsCachePath, `${JSON.stringify({ ...cache, updatedAt: new Date().toISOString() }, null, 2)}\n`);
+function saveCommitDetailsCache(cache) {
+  return saveCommitDetailsCacheToDir(cache, { cacheDir });
 }
 
 export async function mapWithConcurrency(limit, items, worker) {
@@ -617,7 +582,7 @@ export async function buildLiveStats(config, token, {
             }
 
             const { owner, name } = splitRepoName(commit.repo);
-            details = sanitizeCommitDetail(
+            details = slimCommitDetail(
               await fetchCommitDetailsImpl(owner, name, commit.sha, token)
             );
 
@@ -646,6 +611,11 @@ export async function buildLiveStats(config, token, {
       }
     )
   ).filter((commit) => commit !== null);
+
+  const prunedCount = pruneCommitDetailsCache(commitDetailsCache, { before: window.start });
+  if (prunedCount > 0) {
+    warn(`[github-profile-stats] pruned ${prunedCount} cached commit details older than the window start ${window.start}`);
+  }
 
   await saveCommitDetailsCacheImpl(commitDetailsCache);
 
