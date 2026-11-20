@@ -827,3 +827,102 @@ test('findStatsRegression accepts a healthy run and normal fluctuations', () => 
   // Recovering from a previously-empty publish must not be blocked.
   assert.equal(findStatsRegression(statsWithWeeklyCounts([5000]), statsWithWeeklyCounts([0])), null);
 });
+
+test('buildLiveStats migrates a legacy cache from disk, prunes stale entries and saves slim NDJSON entries', async () => {
+  const { mkdtemp, readFile, rm, stat, writeFile } = await import('node:fs/promises');
+  const os = await import('node:os');
+  const path = await import('node:path');
+  const {
+    loadCommitDetailsCache,
+    saveCommitDetailsCache
+  } = await import('../src/commit-details-cache.mjs');
+  const cacheDir = await mkdtemp(path.join(os.tmpdir(), 'profile-stats-live-'));
+  const authoredAt = '2026-04-29T11:00:00Z';
+  const fullDetail = (sha, date, files) => ({
+    sha,
+    url: `https://api.github.com/repos/rhanka/sentropic/commits/${sha}`,
+    parents: [{ sha: 'base', url: 'https://api.github.com/parent' }],
+    commit: {
+      author: { name: 'Rhanka', email: 'rhanka@example.com', date },
+      committer: { name: 'Rhanka', email: 'rhanka@example.com', date },
+      message: 'm'.repeat(1000)
+    },
+    stats: { additions: 30, deletions: 3, total: 33 },
+    files: files.map(([filename, additions, deletions]) => ({
+      filename,
+      additions,
+      deletions,
+      patch: '+x\n'.repeat(500)
+    }))
+  });
+
+  try {
+    await writeFile(path.join(cacheDir, 'commit-details-cache.json'), `${JSON.stringify({
+      schemaVersion: 1,
+      updatedAt: '2026-04-01T00:00:00.000Z',
+      entries: {
+        'rhanka/sentropic#cached-sha': fullDetail('cached-sha', authoredAt, [
+          ['src/app.ts', 20, 2],
+          ['package-lock.json', 10, 1]
+        ]),
+        'rhanka/sentropic#stale-sha': fullDetail('stale-sha', '2025-01-01T00:00:00Z', [['src/old.ts', 1, 1]])
+      }
+    }, null, 2)}\n`);
+
+    const warnings = [];
+    const fetchedShas = [];
+    const stats = await buildLiveStats({
+      identities: { logins: ['rhanka'], emails: ['rhanka@example.com'] },
+      includeRepos: ['rhanka/sentropic'],
+      excludeRepos: [],
+      windowWeeks: 1,
+      lineFilters: { excludePathGlobs: ['**/package-lock.json'] }
+    }, 'secret-token', {
+      nowIso: '2026-04-30T12:00:00.000Z',
+      warn: (message) => warnings.push(message),
+      loadCommitDetailsCacheImpl: () => loadCommitDetailsCache({ cacheDir, warn: (message) => warnings.push(message) }),
+      saveCommitDetailsCacheImpl: (cache) => saveCommitDetailsCache(cache, { cacheDir }),
+      discoverReposForLoginsImpl: async () => [],
+      listCommitsForRepoImpl: async () => [
+        {
+          sha: 'cached-sha',
+          repo: 'rhanka/sentropic',
+          authoredAt,
+          weekStart: '2026-04-26T00:00:00.000Z',
+          commit: { author: { name: 'Rhanka', email: 'rhanka@example.com', date: authoredAt } }
+        },
+        {
+          sha: 'new-sha',
+          repo: 'rhanka/sentropic',
+          authoredAt,
+          weekStart: '2026-04-26T00:00:00.000Z',
+          commit: { author: { name: 'Rhanka', email: 'rhanka@example.com', date: authoredAt } }
+        }
+      ],
+      fetchCommitDetailsImpl: async (_owner, _repo, sha) => {
+        fetchedShas.push(sha);
+        return fullDetail(sha, authoredAt, [['src/new.ts', 4, 0]]);
+      }
+    });
+
+    assert.deepEqual(fetchedShas, ['new-sha']);
+    assert.equal(stats.weeklyCommits.at(-1).count, 2);
+    // cached-sha: 22 filtered lines (package-lock.json excluded) + new-sha: 4 lines.
+    assert.equal(stats.topReposLast5Weeks.at(0).lines5w, 26);
+    assert.equal(stats.weeklyLinesRaw.at(-1).additions, 60);
+    assert.ok(warnings.some((message) => /migrated 2 entries from legacy/.test(message)));
+    assert.ok(warnings.some((message) => /pruned 1 cached commit details older than the window start/.test(message)));
+
+    await assert.rejects(stat(path.join(cacheDir, 'commit-details-cache.json')), { code: 'ENOENT' });
+    const lines = (await readFile(path.join(cacheDir, 'commit-details-cache.ndjson'), 'utf8')).trimEnd().split('\n');
+    const saved = lines.slice(1).map((line) => JSON.parse(line));
+    assert.deepEqual(saved.map(({ key }) => key).sort(), ['rhanka/sentropic#cached-sha', 'rhanka/sentropic#new-sha']);
+    for (const { detail } of saved) {
+      assert.equal(detail.url, undefined);
+      assert.equal(detail.commit.message, undefined);
+      assert.ok(detail.files.every((file) => file.patch === undefined));
+    }
+  } finally {
+    await rm(cacheDir, { recursive: true, force: true });
+  }
+});

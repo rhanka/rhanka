@@ -24,8 +24,12 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache/github-profile-stats
-          key: github-profile-stats-commit-cache-v2-${{ runner.os }}-${{ github.run_id }}
+          key: github-profile-stats-commit-cache-v3-${{ runner.os }}-${{ github.run_id }}
+          # v3 = NDJSON slim cache. Falling back to v2/v1 restores the legacy
+          # commit-details-cache.json once; the script migrates it by streaming
+          # and deletes it after writing commit-details-cache.ndjson.
           restore-keys: |
+            github-profile-stats-commit-cache-v3-${{ runner.os }}-
             github-profile-stats-commit-cache-v2-${{ runner.os }}-
             github-profile-stats-commit-cache-v1-${{ runner.os }}-
 
@@ -46,7 +50,7 @@ jobs:
         if: always()
         with:
           path: .cache/github-profile-stats
-          key: github-profile-stats-commit-cache-v2-${{ runner.os }}-${{ github.run_id }}
+          key: github-profile-stats-commit-cache-v3-${{ runner.os }}-${{ github.run_id }}
 
       - name: Commit refreshed artifacts
         run: |
